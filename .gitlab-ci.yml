@@ -1,0 +1,12 @@
+image: git.int.evident.io:5000/full-stack/esp_web/sdk:java
+
+before_script:
+  - whoami
+  - whereis java
+  - mvn install
+
+tests:
+  tags:
+    - docker
+  script:
+    - mvn clean test
