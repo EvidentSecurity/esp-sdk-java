@@ -14,8 +14,6 @@ Name | Type | Description | Notes
 **updatedAt** | [**DateTime**](DateTime.md) | ISO 8601 timestamp when the resource was updated |  [optional]
 **organization** | [**Organization**](Organization.md) | Associated Organization |  [optional]
 **organizationId** | **Integer** | Associated Organization ID |  [optional]
-**teams** | [**List&lt;Team&gt;**](Team.md) | Associated Teams |  [optional]
-**teamIds** | **List&lt;Integer&gt;** | Associated Teams IDs |  [optional]
 **externalAccounts** | [**List&lt;ExternalAccount&gt;**](ExternalAccount.md) | Associated External Accounts |  [optional]
 **externalAccountIds** | **List&lt;Integer&gt;** | Associated External Accounts IDs |  [optional]
 **definitions** | [**List&lt;CustomSignatureDefinition&gt;**](CustomSignatureDefinition.md) | Associated Definitions |  [optional]

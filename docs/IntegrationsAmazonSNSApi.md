@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="create"></a>
 # **create**
-> IntegrationAmazonSns create(arn, externalId, topic, name, externalAccountIds, allHighRisk, allMediumRisk, allLowRisk, sendUpdates, sendWhenSuppressed, signatureIds, statuses, customSignatureIds, include)
+> IntegrationAmazonSns create(arn, externalAccountIds, externalId, name, topic, include, allHighRisk, allLowRisk, allMediumRisk, customSignatureIds, sendUpdates, sendWhenSuppressed, signatureIds, statuses)
 
 Create an Amazon SNS Integration
 
@@ -26,21 +26,21 @@ Create an Amazon SNS Integration
 
 IntegrationsAmazonSNSApi apiInstance = new IntegrationsAmazonSNSApi();
 String arn = "arn_example"; // String | The role arn for accessing the SNS topic
-String externalId = "externalId_example"; // String | The external ID for the IAM role
-String topic = "topic_example"; // String | The SNS topic arn
-String name = "name_example"; // String | Name of the integration
 List<Integer> externalAccountIds = Arrays.asList(56); // List<Integer> | External accounts for integration
+String externalId = "externalId_example"; // String | The external ID for the IAM role
+String name = "name_example"; // String | Name of the integration
+String topic = "topic_example"; // String | The SNS topic arn
+String include = "include_example"; // String | Related objects that can be included in the response:  region, integration See Including Objects for more information.
 Boolean allHighRisk = true; // Boolean | Send all high risk alerts
-Boolean allMediumRisk = true; // Boolean | Send all medium risk alerts
 Boolean allLowRisk = true; // Boolean | Send all low risk alerts
+Boolean allMediumRisk = true; // Boolean | Send all medium risk alerts
+List<Integer> customSignatureIds = Arrays.asList(56); // List<Integer> | Custom signatures for integration
 Boolean sendUpdates = true; // Boolean | This feature enables the integration to send alerts when they are updated. When disabled, alerts will only be sent when they are initially created. When enabled, alerts will additionally be sent when a change is made such as the alert ending. An alert may end for multiple reasons.
 Boolean sendWhenSuppressed = true; // Boolean | Send notifications for suppressed alerts
 List<Integer> signatureIds = Arrays.asList(56); // List<Integer> | Signatures for integration
 List<String> statuses = Arrays.asList("statuses_example"); // List<String> | Only send alerts that have the status in this list. Valid values are fail, warn, error, pass, info
-List<Integer> customSignatureIds = Arrays.asList(56); // List<Integer> | Custom signatures for integration
-String include = "include_example"; // String | Related objects that can be included in the response:  region, integration See Including Objects for more information.
 try {
-    IntegrationAmazonSns result = apiInstance.create(arn, externalId, topic, name, externalAccountIds, allHighRisk, allMediumRisk, allLowRisk, sendUpdates, sendWhenSuppressed, signatureIds, statuses, customSignatureIds, include);
+    IntegrationAmazonSns result = apiInstance.create(arn, externalAccountIds, externalId, name, topic, include, allHighRisk, allLowRisk, allMediumRisk, customSignatureIds, sendUpdates, sendWhenSuppressed, signatureIds, statuses);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IntegrationsAmazonSNSApi#create");
@@ -53,19 +53,19 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **arn** | **String**| The role arn for accessing the SNS topic |
- **externalId** | **String**| The external ID for the IAM role |
- **topic** | **String**| The SNS topic arn |
- **name** | **String**| Name of the integration |
  **externalAccountIds** | [**List&lt;Integer&gt;**](Integer.md)| External accounts for integration |
+ **externalId** | **String**| The external ID for the IAM role |
+ **name** | **String**| Name of the integration |
+ **topic** | **String**| The SNS topic arn |
+ **include** | **String**| Related objects that can be included in the response:  region, integration See Including Objects for more information. | [optional]
  **allHighRisk** | **Boolean**| Send all high risk alerts | [optional]
- **allMediumRisk** | **Boolean**| Send all medium risk alerts | [optional]
  **allLowRisk** | **Boolean**| Send all low risk alerts | [optional]
+ **allMediumRisk** | **Boolean**| Send all medium risk alerts | [optional]
+ **customSignatureIds** | [**List&lt;Integer&gt;**](Integer.md)| Custom signatures for integration | [optional]
  **sendUpdates** | **Boolean**| This feature enables the integration to send alerts when they are updated. When disabled, alerts will only be sent when they are initially created. When enabled, alerts will additionally be sent when a change is made such as the alert ending. An alert may end for multiple reasons. | [optional]
  **sendWhenSuppressed** | **Boolean**| Send notifications for suppressed alerts | [optional]
  **signatureIds** | [**List&lt;Integer&gt;**](Integer.md)| Signatures for integration | [optional]
  **statuses** | [**List&lt;String&gt;**](String.md)| Only send alerts that have the status in this list. Valid values are fail, warn, error, pass, info | [optional]
- **customSignatureIds** | [**List&lt;Integer&gt;**](Integer.md)| Custom signatures for integration | [optional]
- **include** | **String**| Related objects that can be included in the response:  region, integration See Including Objects for more information. | [optional]
 
 ### Return type
 
@@ -129,7 +129,7 @@ No authorization required
 
 <a name="update"></a>
 # **update**
-> IntegrationAmazonSns update(integrationId, arn, externalId, topic, name, allHighRisk, allMediumRisk, allLowRisk, sendUpdates, sendWhenSuppressed, signatureIds, statuses, externalAccountIds, customSignatureIds, include)
+> IntegrationAmazonSns update(integrationId, include, allHighRisk, allLowRisk, allMediumRisk, arn, customSignatureIds, externalAccountIds, externalId, name, sendUpdates, sendWhenSuppressed, signatureIds, statuses, topic)
 
 Update an Amazon SNS Integration
 
@@ -144,22 +144,22 @@ Update an Amazon SNS Integration
 
 IntegrationsAmazonSNSApi apiInstance = new IntegrationsAmazonSNSApi();
 Integer integrationId = 56; // Integer | The ID of the integration
-String arn = "arn_example"; // String | The role arn for accessing the SNS topic
-String externalId = "externalId_example"; // String | The external ID for the IAM role
-String topic = "topic_example"; // String | The SNS topic arn
-String name = "name_example"; // String | Name of the integration
+String include = "include_example"; // String | Related objects that can be included in the response:  region, integration See Including Objects for more information.
 Boolean allHighRisk = true; // Boolean | Send all high risk alerts
-Boolean allMediumRisk = true; // Boolean | Send all medium risk alerts
 Boolean allLowRisk = true; // Boolean | Send all low risk alerts
+Boolean allMediumRisk = true; // Boolean | Send all medium risk alerts
+String arn = "arn_example"; // String | The role arn for accessing the SNS topic
+List<Integer> customSignatureIds = Arrays.asList(56); // List<Integer> | Custom signatures for integration
+List<Integer> externalAccountIds = Arrays.asList(56); // List<Integer> | External accounts for integration
+String externalId = "externalId_example"; // String | The external ID for the IAM role
+String name = "name_example"; // String | Name of the integration
 Boolean sendUpdates = true; // Boolean | This feature enables the integration to send alerts when they are updated. When disabled, alerts will only be sent when they are initially created. When enabled, alerts will additionally be sent when a change is made such as the alert ending. An alert may end for multiple reasons.
 Boolean sendWhenSuppressed = true; // Boolean | Send notifications for suppressed alerts
 List<Integer> signatureIds = Arrays.asList(56); // List<Integer> | Signatures for integration
 List<String> statuses = Arrays.asList("statuses_example"); // List<String> | Only send alerts that have the status in this list. Valid values are fail, warn, error, pass, info
-List<Integer> externalAccountIds = Arrays.asList(56); // List<Integer> | External accounts for integration
-List<Integer> customSignatureIds = Arrays.asList(56); // List<Integer> | Custom signatures for integration
-String include = "include_example"; // String | Related objects that can be included in the response:  region, integration See Including Objects for more information.
+String topic = "topic_example"; // String | The SNS topic arn
 try {
-    IntegrationAmazonSns result = apiInstance.update(integrationId, arn, externalId, topic, name, allHighRisk, allMediumRisk, allLowRisk, sendUpdates, sendWhenSuppressed, signatureIds, statuses, externalAccountIds, customSignatureIds, include);
+    IntegrationAmazonSns result = apiInstance.update(integrationId, include, allHighRisk, allLowRisk, allMediumRisk, arn, customSignatureIds, externalAccountIds, externalId, name, sendUpdates, sendWhenSuppressed, signatureIds, statuses, topic);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IntegrationsAmazonSNSApi#update");
@@ -172,20 +172,20 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **integrationId** | **Integer**| The ID of the integration |
- **arn** | **String**| The role arn for accessing the SNS topic | [optional]
- **externalId** | **String**| The external ID for the IAM role | [optional]
- **topic** | **String**| The SNS topic arn | [optional]
- **name** | **String**| Name of the integration | [optional]
+ **include** | **String**| Related objects that can be included in the response:  region, integration See Including Objects for more information. | [optional]
  **allHighRisk** | **Boolean**| Send all high risk alerts | [optional]
- **allMediumRisk** | **Boolean**| Send all medium risk alerts | [optional]
  **allLowRisk** | **Boolean**| Send all low risk alerts | [optional]
+ **allMediumRisk** | **Boolean**| Send all medium risk alerts | [optional]
+ **arn** | **String**| The role arn for accessing the SNS topic | [optional]
+ **customSignatureIds** | [**List&lt;Integer&gt;**](Integer.md)| Custom signatures for integration | [optional]
+ **externalAccountIds** | [**List&lt;Integer&gt;**](Integer.md)| External accounts for integration | [optional]
+ **externalId** | **String**| The external ID for the IAM role | [optional]
+ **name** | **String**| Name of the integration | [optional]
  **sendUpdates** | **Boolean**| This feature enables the integration to send alerts when they are updated. When disabled, alerts will only be sent when they are initially created. When enabled, alerts will additionally be sent when a change is made such as the alert ending. An alert may end for multiple reasons. | [optional]
  **sendWhenSuppressed** | **Boolean**| Send notifications for suppressed alerts | [optional]
  **signatureIds** | [**List&lt;Integer&gt;**](Integer.md)| Signatures for integration | [optional]
  **statuses** | [**List&lt;String&gt;**](String.md)| Only send alerts that have the status in this list. Valid values are fail, warn, error, pass, info | [optional]
- **externalAccountIds** | [**List&lt;Integer&gt;**](Integer.md)| External accounts for integration | [optional]
- **customSignatureIds** | [**List&lt;Integer&gt;**](Integer.md)| Custom signatures for integration | [optional]
- **include** | **String**| Related objects that can be included in the response:  region, integration See Including Objects for more information. | [optional]
+ **topic** | **String**| The SNS topic arn | [optional]
 
 ### Return type
 

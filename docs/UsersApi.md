@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="create"></a>
 # **create**
-> User create(firstName, lastName, email, roleId, subOrganizationIds, teamIds, disableDailyEmails, phone, timeZone, include)
+> User create(email, firstName, lastName, include, disableDailyEmails, phone, roleId, subOrganizationIds, teamIds, timeZone)
 
 Create a(n) User
 
@@ -27,18 +27,18 @@ Create a(n) User
 
 
 UsersApi apiInstance = new UsersApi();
+String email = "email_example"; // String | The email of the user
 String firstName = "firstName_example"; // String | The first name of the user
 String lastName = "lastName_example"; // String | The last name of the user
-String email = "email_example"; // String | The email of the user
-Integer roleId = 56; // Integer | The ID of the role of the user
-List<Integer> subOrganizationIds = Arrays.asList(56); // List<Integer> | A list of sub organization IDs that the user should have access to
-List<Integer> teamIds = Arrays.asList(56); // List<Integer> | A list of team IDs that the user should have access to
+String include = "include_example"; // String | Related objects that can be included in the response:  organization, sub_organizations, teams, role See Including Objects for more information.
 Boolean disableDailyEmails = true; // Boolean | Specifies whether the daily emails should be turned off or not
 String phone = "phone_example"; // String | The phone number of the user
+Integer roleId = 56; // Integer | The ID of the role of the user. Only a manager can set or modify the role id.
+List<Integer> subOrganizationIds = Arrays.asList(56); // List<Integer> | A list of sub organization IDs that the user should have access to. Only a manager can set or modify the sub organization ids.
+List<Integer> teamIds = Arrays.asList(56); // List<Integer> | A list of team IDs that the user should have access to. Only a manager can set or modify the team ids.
 String timeZone = "timeZone_example"; // String | The time zone of the user. See Time Zones for a list of valid time zones
-String include = "include_example"; // String | Related objects that can be included in the response:  organization, sub_organizations, teams, role See Including Objects for more information.
 try {
-    User result = apiInstance.create(firstName, lastName, email, roleId, subOrganizationIds, teamIds, disableDailyEmails, phone, timeZone, include);
+    User result = apiInstance.create(email, firstName, lastName, include, disableDailyEmails, phone, roleId, subOrganizationIds, teamIds, timeZone);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#create");
@@ -50,16 +50,16 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **email** | **String**| The email of the user |
  **firstName** | **String**| The first name of the user |
  **lastName** | **String**| The last name of the user |
- **email** | **String**| The email of the user |
- **roleId** | **Integer**| The ID of the role of the user | [optional]
- **subOrganizationIds** | [**List&lt;Integer&gt;**](Integer.md)| A list of sub organization IDs that the user should have access to | [optional]
- **teamIds** | [**List&lt;Integer&gt;**](Integer.md)| A list of team IDs that the user should have access to | [optional]
+ **include** | **String**| Related objects that can be included in the response:  organization, sub_organizations, teams, role See Including Objects for more information. | [optional]
  **disableDailyEmails** | **Boolean**| Specifies whether the daily emails should be turned off or not | [optional]
  **phone** | **String**| The phone number of the user | [optional]
+ **roleId** | **Integer**| The ID of the role of the user. Only a manager can set or modify the role id. | [optional]
+ **subOrganizationIds** | [**List&lt;Integer&gt;**](Integer.md)| A list of sub organization IDs that the user should have access to. Only a manager can set or modify the sub organization ids. | [optional]
+ **teamIds** | [**List&lt;Integer&gt;**](Integer.md)| A list of team IDs that the user should have access to. Only a manager can set or modify the team ids. | [optional]
  **timeZone** | **String**| The time zone of the user. See Time Zones for a list of valid time zones | [optional]
- **include** | **String**| Related objects that can be included in the response:  organization, sub_organizations, teams, role See Including Objects for more information. | [optional]
 
 ### Return type
 
@@ -90,7 +90,7 @@ The users current password is required when deleting yourself.
 
 
 UsersApi apiInstance = new UsersApi();
-Integer id = 56; // Integer |  ID
+Integer id = 56; // Integer | User ID
 String currentPassword = "currentPassword_example"; // String | The user's currently stored password
 try {
     Meta result = apiInstance.delete(id, currentPassword);
@@ -105,7 +105,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  ID |
+ **id** | **Integer**| User ID |
  **currentPassword** | **String**| The user&#39;s currently stored password | [optional]
 
 ### Return type
@@ -123,7 +123,7 @@ No authorization required
 
 <a name="list"></a>
 # **list**
-> PaginatedCollection list(filter, page, include)
+> PaginatedCollection list(include, filter, page)
 
 Get a list of Users
 
@@ -137,11 +137,11 @@ Get a list of Users
 
 
 UsersApi apiInstance = new UsersApi();
-Map<String, String> filter = new HashMap(); // Map<String, String> | Filter Params for Searching.  Equality Searchable Attributes: [id, email] Matching Searchable Attribute: [email]  Sortable Attributes: [email, current_sign_in_at, updated_at, created_at, id] Searchable Associations: [role, organization, sub_organizations, teams] See Searching Lists for more information. See the filter parameter of the association's list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information.
-String page = "{:number=>1,+:size=>20}"; // String | Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page
 String include = "include_example"; // String | Related objects that can be included in the response:  organization, sub_organizations, teams, role See Including Objects for more information.
+Map<String, String> filter = new HashMap(); // Map<String, String> | Filter Params for Searching.  Equality Searchable Attributes: [id, email] Matching Searchable Attribute: [email]  Sortable Attributes: [email, current_sign_in_at, updated_at, created_at, id] Searchable Associations: [role, organization, sub_organizations, teams] See Searching Lists for more information. See the filter parameter of the association's list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information.
+String page = "{:number=>1,+:size=>20}"; // String | Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page.
 try {
-    PaginatedCollection result = apiInstance.list(filter, page, include);
+    PaginatedCollection result = apiInstance.list(include, filter, page);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#list");
@@ -153,9 +153,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | [**Map&lt;String, String&gt;**](String.md)| Filter Params for Searching.  Equality Searchable Attributes: [id, email] Matching Searchable Attribute: [email]  Sortable Attributes: [email, current_sign_in_at, updated_at, created_at, id] Searchable Associations: [role, organization, sub_organizations, teams] See Searching Lists for more information. See the filter parameter of the association&#39;s list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information. | [optional]
- **page** | **String**| Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page | [optional] [default to {:number&#x3D;&gt;1,+:size&#x3D;&gt;20}]
  **include** | **String**| Related objects that can be included in the response:  organization, sub_organizations, teams, role See Including Objects for more information. | [optional]
+ **filter** | [**Map&lt;String, String&gt;**](String.md)| Filter Params for Searching.  Equality Searchable Attributes: [id, email] Matching Searchable Attribute: [email]  Sortable Attributes: [email, current_sign_in_at, updated_at, created_at, id] Searchable Associations: [role, organization, sub_organizations, teams] See Searching Lists for more information. See the filter parameter of the association&#39;s list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information. | [optional]
+ **page** | **String**| Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page. | [optional] [default to {:number&#x3D;&gt;1,+:size&#x3D;&gt;20}]
 
 ### Return type
 
@@ -219,7 +219,7 @@ No authorization required
 
 <a name="update"></a>
 # **update**
-> User update(id, firstName, lastName, email, roleId, subOrganizationIds, teamIds, disableDailyEmails, phone, timeZone, include)
+> User update(id, include, disableDailyEmails, firstName, lastName, phone, roleId, subOrganizationIds, teamIds, timeZone)
 
 Update a(n) User
 
@@ -234,18 +234,17 @@ Update a(n) User
 
 UsersApi apiInstance = new UsersApi();
 Integer id = 56; // Integer | User ID
+String include = "include_example"; // String | Related objects that can be included in the response:  organization, sub_organizations, teams, role See Including Objects for more information.
+Boolean disableDailyEmails = true; // Boolean | Specifies whether the daily emails should be turned off or not
 String firstName = "firstName_example"; // String | The first name of the user
 String lastName = "lastName_example"; // String | The last name of the user
-String email = "email_example"; // String | The email of the user
-Integer roleId = 56; // Integer | The ID of the role of the user
-List<Integer> subOrganizationIds = Arrays.asList(56); // List<Integer> | A list of sub organization IDs that the user should have access to
-List<Integer> teamIds = Arrays.asList(56); // List<Integer> | A list of team IDs that the user should have access to
-Boolean disableDailyEmails = true; // Boolean | Specifies whether the daily emails should be turned off or not
 String phone = "phone_example"; // String | The phone number of the user
+Integer roleId = 56; // Integer | The ID of the role of the user. Only a manager can set or modify the role id.
+List<Integer> subOrganizationIds = Arrays.asList(56); // List<Integer> | A list of sub organization IDs that the user should have access to. Only a manager can set or modify the sub organization ids.
+List<Integer> teamIds = Arrays.asList(56); // List<Integer> | A list of team IDs that the user should have access to. Only a manager can set or modify the team ids.
 String timeZone = "timeZone_example"; // String | The time zone of the user. See Time Zones for a list of valid time zones
-String include = "include_example"; // String | Related objects that can be included in the response:  organization, sub_organizations, teams, role See Including Objects for more information.
 try {
-    User result = apiInstance.update(id, firstName, lastName, email, roleId, subOrganizationIds, teamIds, disableDailyEmails, phone, timeZone, include);
+    User result = apiInstance.update(id, include, disableDailyEmails, firstName, lastName, phone, roleId, subOrganizationIds, teamIds, timeZone);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#update");
@@ -258,16 +257,15 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| User ID |
+ **include** | **String**| Related objects that can be included in the response:  organization, sub_organizations, teams, role See Including Objects for more information. | [optional]
+ **disableDailyEmails** | **Boolean**| Specifies whether the daily emails should be turned off or not | [optional]
  **firstName** | **String**| The first name of the user | [optional]
  **lastName** | **String**| The last name of the user | [optional]
- **email** | **String**| The email of the user | [optional]
- **roleId** | **Integer**| The ID of the role of the user | [optional]
- **subOrganizationIds** | [**List&lt;Integer&gt;**](Integer.md)| A list of sub organization IDs that the user should have access to | [optional]
- **teamIds** | [**List&lt;Integer&gt;**](Integer.md)| A list of team IDs that the user should have access to | [optional]
- **disableDailyEmails** | **Boolean**| Specifies whether the daily emails should be turned off or not | [optional]
  **phone** | **String**| The phone number of the user | [optional]
+ **roleId** | **Integer**| The ID of the role of the user. Only a manager can set or modify the role id. | [optional]
+ **subOrganizationIds** | [**List&lt;Integer&gt;**](Integer.md)| A list of sub organization IDs that the user should have access to. Only a manager can set or modify the sub organization ids. | [optional]
+ **teamIds** | [**List&lt;Integer&gt;**](Integer.md)| A list of team IDs that the user should have access to. Only a manager can set or modify the team ids. | [optional]
  **timeZone** | **String**| The time zone of the user. See Time Zones for a list of valid time zones | [optional]
- **include** | **String**| Related objects that can be included in the response:  organization, sub_organizations, teams, role See Including Objects for more information. | [optional]
 
 ### Return type
 

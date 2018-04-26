@@ -21,22 +21,20 @@ public interface PlansApi {
   /**
    * Get a list of Plans
    * 
-   * @param page Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page (optional, default to {:number=>1,+:size=>20})
-   * @param include Related objects that can be included in the response:   See Including Objects for more information. (optional)
+   * @param page Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page. (optional, default to {:number=>1,+:size=>20})
    * @return Call&lt;PaginatedCollection&gt;
    */
   
   @retrofit2.http.FormUrlEncoded
   @GET("api/v2/plans.json_api")
   Call<PaginatedCollection> list(
-    @retrofit2.http.Field("page") String page, @retrofit2.http.Query("include") String include
+    @retrofit2.http.Field("page") String page
   );
 
   /**
    * Show a single Plan
    * 
    * @param id Plan ID (required)
-   * @param include Related objects that can be included in the response:   See Including Objects for more information. (optional)
    * @return Call&lt;Plan&gt;
    */
   
@@ -45,7 +43,7 @@ public interface PlansApi {
   })
   @GET("api/v2/plans/{id}.json_api")
   Call<Plan> show(
-    @retrofit2.http.Path("id") Integer id, @retrofit2.http.Query("include") String include
+    @retrofit2.http.Path("id") Integer id
   );
 
 }

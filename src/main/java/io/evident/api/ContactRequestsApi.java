@@ -20,9 +20,9 @@ public interface ContactRequestsApi {
   /**
    * Create a(n) Contact Request
    * 
-   * @param title Subject of your message (required)
    * @param description Body of your message (required)
    * @param requestType Type of contact request. Valid values are support, feature (required)
+   * @param title Subject of your message (required)
    * @param include Related objects that can be included in the response:  user See Including Objects for more information. (optional)
    * @return Call&lt;ContactRequest&gt;
    */
@@ -30,7 +30,7 @@ public interface ContactRequestsApi {
   @retrofit2.http.FormUrlEncoded
   @POST("api/v2/contact_requests.json_api")
   Call<ContactRequest> create(
-    @retrofit2.http.Field("title") String title, @retrofit2.http.Field("description") String description, @retrofit2.http.Field("request_type") String requestType, @retrofit2.http.Query("include") String include
+    @retrofit2.http.Field("description") String description, @retrofit2.http.Field("request_type") String requestType, @retrofit2.http.Field("title") String title, @retrofit2.http.Query("include") String include
   );
 
 }

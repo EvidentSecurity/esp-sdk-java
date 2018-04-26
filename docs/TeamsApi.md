@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="create"></a>
 # **create**
-> Team create(name, subOrganizationId, include)
+> Team create(name, subOrganizationId, include, reportInterval)
 
 Create a(n) Team
 
@@ -30,8 +30,9 @@ TeamsApi apiInstance = new TeamsApi();
 String name = "name_example"; // String | Name of the team
 Integer subOrganizationId = 56; // Integer | The ID of the sub organization to attach this team to
 String include = "include_example"; // String | Related objects that can be included in the response:  custom_signatures, external_accounts, organization, sub_organization See Including Objects for more information.
+Integer reportInterval = 56; // Integer | The interval period in hours for Evident.io to run reports
 try {
-    Team result = apiInstance.create(name, subOrganizationId, include);
+    Team result = apiInstance.create(name, subOrganizationId, include, reportInterval);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TeamsApi#create");
@@ -46,6 +47,7 @@ Name | Type | Description  | Notes
  **name** | **String**| Name of the team |
  **subOrganizationId** | **Integer**| The ID of the sub organization to attach this team to |
  **include** | **String**| Related objects that can be included in the response:  custom_signatures, external_accounts, organization, sub_organization See Including Objects for more information. | [optional]
+ **reportInterval** | **Integer**| The interval period in hours for Evident.io to run reports | [optional]
 
 ### Return type
 
@@ -76,7 +78,7 @@ Delete a(n) Team
 
 
 TeamsApi apiInstance = new TeamsApi();
-Integer id = 56; // Integer |  ID
+Integer id = 56; // Integer | Team ID
 try {
     Meta result = apiInstance.delete(id);
     System.out.println(result);
@@ -90,7 +92,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  ID |
+ **id** | **Integer**| Team ID |
 
 ### Return type
 
@@ -107,7 +109,7 @@ No authorization required
 
 <a name="list"></a>
 # **list**
-> PaginatedCollection list(filter, page, include)
+> PaginatedCollection list(include, filter, page)
 
 Get a list of Teams
 
@@ -121,11 +123,11 @@ Get a list of Teams
 
 
 TeamsApi apiInstance = new TeamsApi();
-Map<String, String> filter = new HashMap(); // Map<String, String> | Filter Params for Searching.  Equality Searchable Attributes: [id, name] Matching Searchable Attribute: [name]  Sortable Attributes: [name, updated_at, created_at, id] Searchable Associations: [organization, sub_organization, custom_signatures, integrations] See Searching Lists for more information. See the filter parameter of the association's list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information.
-String page = "{:number=>1,+:size=>20}"; // String | Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page
 String include = "include_example"; // String | Related objects that can be included in the response:  custom_signatures, external_accounts, organization, sub_organization See Including Objects for more information.
+Map<String, String> filter = new HashMap(); // Map<String, String> | Filter Params for Searching.  Equality Searchable Attributes: [id, name] Matching Searchable Attribute: [name]  Sortable Attributes: [name, updated_at, created_at, id] Searchable Associations: [organization, sub_organization, custom_signatures, integrations] See Searching Lists for more information. See the filter parameter of the association's list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information.
+String page = "{:number=>1,+:size=>20}"; // String | Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page.
 try {
-    PaginatedCollection result = apiInstance.list(filter, page, include);
+    PaginatedCollection result = apiInstance.list(include, filter, page);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TeamsApi#list");
@@ -137,9 +139,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | [**Map&lt;String, String&gt;**](String.md)| Filter Params for Searching.  Equality Searchable Attributes: [id, name] Matching Searchable Attribute: [name]  Sortable Attributes: [name, updated_at, created_at, id] Searchable Associations: [organization, sub_organization, custom_signatures, integrations] See Searching Lists for more information. See the filter parameter of the association&#39;s list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information. | [optional]
- **page** | **String**| Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page | [optional] [default to {:number&#x3D;&gt;1,+:size&#x3D;&gt;20}]
  **include** | **String**| Related objects that can be included in the response:  custom_signatures, external_accounts, organization, sub_organization See Including Objects for more information. | [optional]
+ **filter** | [**Map&lt;String, String&gt;**](String.md)| Filter Params for Searching.  Equality Searchable Attributes: [id, name] Matching Searchable Attribute: [name]  Sortable Attributes: [name, updated_at, created_at, id] Searchable Associations: [organization, sub_organization, custom_signatures, integrations] See Searching Lists for more information. See the filter parameter of the association&#39;s list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information. | [optional]
+ **page** | **String**| Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page. | [optional] [default to {:number&#x3D;&gt;1,+:size&#x3D;&gt;20}]
 
 ### Return type
 
@@ -203,7 +205,7 @@ No authorization required
 
 <a name="update"></a>
 # **update**
-> Team update(id, name, include)
+> Team update(id, include, name, reportInterval)
 
 Update a(n) Team
 
@@ -218,10 +220,11 @@ Update a(n) Team
 
 TeamsApi apiInstance = new TeamsApi();
 Integer id = 56; // Integer | Team ID
-String name = "name_example"; // String | Name of the team
 String include = "include_example"; // String | Related objects that can be included in the response:  custom_signatures, external_accounts, organization, sub_organization See Including Objects for more information.
+String name = "name_example"; // String | Name of the team
+Integer reportInterval = 56; // Integer | The interval period in hours for Evident.io to run reports
 try {
-    Team result = apiInstance.update(id, name, include);
+    Team result = apiInstance.update(id, include, name, reportInterval);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TeamsApi#update");
@@ -234,8 +237,9 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| Team ID |
- **name** | **String**| Name of the team | [optional]
  **include** | **String**| Related objects that can be included in the response:  custom_signatures, external_accounts, organization, sub_organization See Including Objects for more information. | [optional]
+ **name** | **String**| Name of the team | [optional]
+ **reportInterval** | **Integer**| The interval period in hours for Evident.io to run reports | [optional]
 
 ### Return type
 

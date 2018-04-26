@@ -5,7 +5,7 @@ All URIs are relative to *http://localhost/*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**forReport**](StatsApi.md#forReport) | **GET** api/v2/reports/{report_id}/stats.json_api | Stats for a report
-[**latestForTeams**](StatsApi.md#latestForTeams) | **PUT** api/v2/stats/latest_for_teams.json_api | Stats for teams
+[**latestForTeams**](StatsApi.md#latestForTeams) | **PUT** api/v2/stats/latest_for_teams.json_api | Statistics for teams
 [**show**](StatsApi.md#show) | **GET** api/v2/stats/{id}.json_api | Show a single Stat
 
 
@@ -58,11 +58,11 @@ No authorization required
 
 <a name="latestForTeams"></a>
 # **latestForTeams**
-> PaginatedCollection latestForTeams(filter, page, include)
+> PaginatedCollection latestForTeams(include, filter, page)
 
-Stats for teams
+Statistics for teams
 
-A successful call to this API returns all the stats for the most recent report of each team accessible by the given API key
+A successful call to this API returns all the statistics for the most recent report of each team accessible by the given API key
 
 ### Example
 ```java
@@ -72,11 +72,11 @@ A successful call to this API returns all the stats for the most recent report o
 
 
 StatsApi apiInstance = new StatsApi();
-Map<String, String> filter = new HashMap(); // Map<String, String> | Filter Params for Searching.      Searchable Association: [report] See Searching Lists for more information. See the filter parameter of the association's list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information.
-String page = "{:number=>1,+:size=>20}"; // String | Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page
 String include = "include_example"; // String | Related objects that can be included in the response:  report, regions, services, signatures, custom_signatures, custom_compliance_controls, compliance_controls See Including Objects for more information.
+Map<String, String> filter = new HashMap(); // Map<String, String> | Filter Params for Searching.      Searchable Association: [report] See Searching Lists for more information. See the filter parameter of the association's list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information.
+String page = "{:number=>1,+:size=>20}"; // String | Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page.
 try {
-    PaginatedCollection result = apiInstance.latestForTeams(filter, page, include);
+    PaginatedCollection result = apiInstance.latestForTeams(include, filter, page);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StatsApi#latestForTeams");
@@ -88,9 +88,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | [**Map&lt;String, String&gt;**](String.md)| Filter Params for Searching.      Searchable Association: [report] See Searching Lists for more information. See the filter parameter of the association&#39;s list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information. | [optional]
- **page** | **String**| Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page | [optional] [default to {:number&#x3D;&gt;1,+:size&#x3D;&gt;20}]
  **include** | **String**| Related objects that can be included in the response:  report, regions, services, signatures, custom_signatures, custom_compliance_controls, compliance_controls See Including Objects for more information. | [optional]
+ **filter** | [**Map&lt;String, String&gt;**](String.md)| Filter Params for Searching.      Searchable Association: [report] See Searching Lists for more information. See the filter parameter of the association&#39;s list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information. | [optional]
+ **page** | **String**| Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page. | [optional] [default to {:number&#x3D;&gt;1,+:size&#x3D;&gt;20}]
 
 ### Return type
 

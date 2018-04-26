@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="create"></a>
 # **create**
-> IntegrationHipchat create(token, room, name, externalAccountIds, allHighRisk, allMediumRisk, allLowRisk, sendUpdates, sendWhenSuppressed, signatureIds, statuses, customSignatureIds, include)
+> IntegrationHipchat create(externalAccountIds, name, room, token, include, allHighRisk, allLowRisk, allMediumRisk, customSignatureIds, sendUpdates, sendWhenSuppressed, signatureIds, statuses)
 
 Create a Hipchat Integration
 
@@ -25,21 +25,21 @@ Create a Hipchat Integration
 
 
 IntegrationsHipchatApi apiInstance = new IntegrationsHipchatApi();
-String token = "token_example"; // String | The Hipchat token
-String room = "room_example"; // String | The Hipchat room
-String name = "name_example"; // String | Name of the integration
 List<Integer> externalAccountIds = Arrays.asList(56); // List<Integer> | External accounts for integration
+String name = "name_example"; // String | Name of the integration
+String room = "room_example"; // String | The Hipchat room
+String token = "token_example"; // String | The Hipchat token
+String include = "include_example"; // String | Related objects that can be included in the response:  integration See Including Objects for more information.
 Boolean allHighRisk = true; // Boolean | Send all high risk alerts
-Boolean allMediumRisk = true; // Boolean | Send all medium risk alerts
 Boolean allLowRisk = true; // Boolean | Send all low risk alerts
+Boolean allMediumRisk = true; // Boolean | Send all medium risk alerts
+List<Integer> customSignatureIds = Arrays.asList(56); // List<Integer> | Custom signatures for integration
 Boolean sendUpdates = true; // Boolean | This feature enables the integration to send alerts when they are updated. When disabled, alerts will only be sent when they are initially created. When enabled, alerts will additionally be sent when a change is made such as the alert ending. An alert may end for multiple reasons.
 Boolean sendWhenSuppressed = true; // Boolean | Send notifications for suppressed alerts
 List<Integer> signatureIds = Arrays.asList(56); // List<Integer> | Signatures for integration
 List<String> statuses = Arrays.asList("statuses_example"); // List<String> | Only send alerts that have the status in this list. Valid values are fail, warn, error, pass, info
-List<Integer> customSignatureIds = Arrays.asList(56); // List<Integer> | Custom signatures for integration
-String include = "include_example"; // String | Related objects that can be included in the response:  integration See Including Objects for more information.
 try {
-    IntegrationHipchat result = apiInstance.create(token, room, name, externalAccountIds, allHighRisk, allMediumRisk, allLowRisk, sendUpdates, sendWhenSuppressed, signatureIds, statuses, customSignatureIds, include);
+    IntegrationHipchat result = apiInstance.create(externalAccountIds, name, room, token, include, allHighRisk, allLowRisk, allMediumRisk, customSignatureIds, sendUpdates, sendWhenSuppressed, signatureIds, statuses);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IntegrationsHipchatApi#create");
@@ -51,19 +51,19 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **token** | **String**| The Hipchat token |
- **room** | **String**| The Hipchat room |
- **name** | **String**| Name of the integration |
  **externalAccountIds** | [**List&lt;Integer&gt;**](Integer.md)| External accounts for integration |
+ **name** | **String**| Name of the integration |
+ **room** | **String**| The Hipchat room |
+ **token** | **String**| The Hipchat token |
+ **include** | **String**| Related objects that can be included in the response:  integration See Including Objects for more information. | [optional]
  **allHighRisk** | **Boolean**| Send all high risk alerts | [optional]
- **allMediumRisk** | **Boolean**| Send all medium risk alerts | [optional]
  **allLowRisk** | **Boolean**| Send all low risk alerts | [optional]
+ **allMediumRisk** | **Boolean**| Send all medium risk alerts | [optional]
+ **customSignatureIds** | [**List&lt;Integer&gt;**](Integer.md)| Custom signatures for integration | [optional]
  **sendUpdates** | **Boolean**| This feature enables the integration to send alerts when they are updated. When disabled, alerts will only be sent when they are initially created. When enabled, alerts will additionally be sent when a change is made such as the alert ending. An alert may end for multiple reasons. | [optional]
  **sendWhenSuppressed** | **Boolean**| Send notifications for suppressed alerts | [optional]
  **signatureIds** | [**List&lt;Integer&gt;**](Integer.md)| Signatures for integration | [optional]
  **statuses** | [**List&lt;String&gt;**](String.md)| Only send alerts that have the status in this list. Valid values are fail, warn, error, pass, info | [optional]
- **customSignatureIds** | [**List&lt;Integer&gt;**](Integer.md)| Custom signatures for integration | [optional]
- **include** | **String**| Related objects that can be included in the response:  integration See Including Objects for more information. | [optional]
 
 ### Return type
 
@@ -127,7 +127,7 @@ No authorization required
 
 <a name="update"></a>
 # **update**
-> IntegrationHipchat update(integrationId, token, room, name, allHighRisk, allMediumRisk, allLowRisk, sendUpdates, sendWhenSuppressed, signatureIds, statuses, externalAccountIds, customSignatureIds, include)
+> IntegrationHipchat update(integrationId, include, allHighRisk, allLowRisk, allMediumRisk, customSignatureIds, externalAccountIds, name, room, sendUpdates, sendWhenSuppressed, signatureIds, statuses, token)
 
 Update a Hipchat Integration
 
@@ -142,21 +142,21 @@ Update a Hipchat Integration
 
 IntegrationsHipchatApi apiInstance = new IntegrationsHipchatApi();
 Integer integrationId = 56; // Integer | The ID of the integration
-String token = "token_example"; // String | The Hipchat token
-String room = "room_example"; // String | The Hipchat room
-String name = "name_example"; // String | Name of the integration
+String include = "include_example"; // String | Related objects that can be included in the response:  integration See Including Objects for more information.
 Boolean allHighRisk = true; // Boolean | Send all high risk alerts
-Boolean allMediumRisk = true; // Boolean | Send all medium risk alerts
 Boolean allLowRisk = true; // Boolean | Send all low risk alerts
+Boolean allMediumRisk = true; // Boolean | Send all medium risk alerts
+List<Integer> customSignatureIds = Arrays.asList(56); // List<Integer> | Custom signatures for integration
+List<Integer> externalAccountIds = Arrays.asList(56); // List<Integer> | External accounts for integration
+String name = "name_example"; // String | Name of the integration
+String room = "room_example"; // String | The Hipchat room
 Boolean sendUpdates = true; // Boolean | This feature enables the integration to send alerts when they are updated. When disabled, alerts will only be sent when they are initially created. When enabled, alerts will additionally be sent when a change is made such as the alert ending. An alert may end for multiple reasons.
 Boolean sendWhenSuppressed = true; // Boolean | Send notifications for suppressed alerts
 List<Integer> signatureIds = Arrays.asList(56); // List<Integer> | Signatures for integration
 List<String> statuses = Arrays.asList("statuses_example"); // List<String> | Only send alerts that have the status in this list. Valid values are fail, warn, error, pass, info
-List<Integer> externalAccountIds = Arrays.asList(56); // List<Integer> | External accounts for integration
-List<Integer> customSignatureIds = Arrays.asList(56); // List<Integer> | Custom signatures for integration
-String include = "include_example"; // String | Related objects that can be included in the response:  integration See Including Objects for more information.
+String token = "token_example"; // String | The Hipchat token
 try {
-    IntegrationHipchat result = apiInstance.update(integrationId, token, room, name, allHighRisk, allMediumRisk, allLowRisk, sendUpdates, sendWhenSuppressed, signatureIds, statuses, externalAccountIds, customSignatureIds, include);
+    IntegrationHipchat result = apiInstance.update(integrationId, include, allHighRisk, allLowRisk, allMediumRisk, customSignatureIds, externalAccountIds, name, room, sendUpdates, sendWhenSuppressed, signatureIds, statuses, token);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IntegrationsHipchatApi#update");
@@ -169,19 +169,19 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **integrationId** | **Integer**| The ID of the integration |
- **token** | **String**| The Hipchat token | [optional]
- **room** | **String**| The Hipchat room | [optional]
- **name** | **String**| Name of the integration | [optional]
+ **include** | **String**| Related objects that can be included in the response:  integration See Including Objects for more information. | [optional]
  **allHighRisk** | **Boolean**| Send all high risk alerts | [optional]
- **allMediumRisk** | **Boolean**| Send all medium risk alerts | [optional]
  **allLowRisk** | **Boolean**| Send all low risk alerts | [optional]
+ **allMediumRisk** | **Boolean**| Send all medium risk alerts | [optional]
+ **customSignatureIds** | [**List&lt;Integer&gt;**](Integer.md)| Custom signatures for integration | [optional]
+ **externalAccountIds** | [**List&lt;Integer&gt;**](Integer.md)| External accounts for integration | [optional]
+ **name** | **String**| Name of the integration | [optional]
+ **room** | **String**| The Hipchat room | [optional]
  **sendUpdates** | **Boolean**| This feature enables the integration to send alerts when they are updated. When disabled, alerts will only be sent when they are initially created. When enabled, alerts will additionally be sent when a change is made such as the alert ending. An alert may end for multiple reasons. | [optional]
  **sendWhenSuppressed** | **Boolean**| Send notifications for suppressed alerts | [optional]
  **signatureIds** | [**List&lt;Integer&gt;**](Integer.md)| Signatures for integration | [optional]
  **statuses** | [**List&lt;String&gt;**](String.md)| Only send alerts that have the status in this list. Valid values are fail, warn, error, pass, info | [optional]
- **externalAccountIds** | [**List&lt;Integer&gt;**](Integer.md)| External accounts for integration | [optional]
- **customSignatureIds** | [**List&lt;Integer&gt;**](Integer.md)| Custom signatures for integration | [optional]
- **include** | **String**| Related objects that can be included in the response:  integration See Including Objects for more information. | [optional]
+ **token** | **String**| The Hipchat token | [optional]
 
 ### Return type
 

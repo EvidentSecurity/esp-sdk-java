@@ -35,18 +35,18 @@ public interface StatsApi {
   );
 
   /**
-   * Stats for teams
-   * A successful call to this API returns all the stats for the most recent report of each team accessible by the given API key
-   * @param filter Filter Params for Searching.      Searchable Association: [report] See Searching Lists for more information. See the filter parameter of the association&#39;s list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information. (optional)
-   * @param page Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page (optional, default to {:number=>1,+:size=>20})
+   * Statistics for teams
+   * A successful call to this API returns all the statistics for the most recent report of each team accessible by the given API key
    * @param include Related objects that can be included in the response:  report, regions, services, signatures, custom_signatures, custom_compliance_controls, compliance_controls See Including Objects for more information. (optional)
+   * @param filter Filter Params for Searching.      Searchable Association: [report] See Searching Lists for more information. See the filter parameter of the association&#39;s list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information. (optional)
+   * @param page Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page. (optional, default to {:number=>1,+:size=>20})
    * @return Call&lt;PaginatedCollection&gt;
    */
   
   @retrofit2.http.FormUrlEncoded
   @PUT("api/v2/stats/latest_for_teams.json_api")
   Call<PaginatedCollection> latestForTeams(
-    @retrofit2.http.Field("filter") Map<String, String> filter, @retrofit2.http.Field("page") String page, @retrofit2.http.Query("include") String include
+    @retrofit2.http.Query("include") String include, @retrofit2.http.Field("filter") Map<String, String> filter, @retrofit2.http.Field("page") String page
   );
 
   /**

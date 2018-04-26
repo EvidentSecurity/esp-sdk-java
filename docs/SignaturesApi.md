@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 <a name="list"></a>
 # **list**
-> PaginatedCollection list(filter, page, include)
+> PaginatedCollection list(include, filter, page)
 
 Get a list of Signatures
 
@@ -29,11 +29,11 @@ Get a list of Signatures
 
 
 SignaturesApi apiInstance = new SignaturesApi();
-Map<String, String> filter = new HashMap(); // Map<String, String> | Filter Params for Searching.  Equality Searchable Attributes: [id, risk_level, service_id, disabled, supports_user_attribution, name, identifier, description, resolution] Matching Searchable Attributes: [name, identifier, description, resolution] Limited Searchable Attribute: [service_provider_eq] Sortable Attributes: [name, identifier, updated_at, created_at, id] Searchable Associations: [signature_copy, disabled_external_accounts, integrations, suppressions] See Searching Lists for more information. See the filter parameter of the association's list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information.
-String page = "{:number=>1,+:size=>20}"; // String | Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page
 String include = "include_example"; // String | Related objects that can be included in the response:  service, suppressions See Including Objects for more information.
+Map<String, String> filter = new HashMap(); // Map<String, String> | Filter Params for Searching.  Equality Searchable Attributes: [id, risk_level, service_id, disabled, supports_user_attribution, name, identifier, description, resolution] Matching Searchable Attributes: [name, identifier, description, resolution] Limited Searchable Attribute: [service_provider_eq] Sortable Attributes: [name, identifier, updated_at, created_at, id] Searchable Associations: [signature_copy, disabled_external_accounts, integrations, suppressions] See Searching Lists for more information. See the filter parameter of the association's list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information.
+String page = "{:number=>1,+:size=>20}"; // String | Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page.
 try {
-    PaginatedCollection result = apiInstance.list(filter, page, include);
+    PaginatedCollection result = apiInstance.list(include, filter, page);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SignaturesApi#list");
@@ -45,9 +45,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | [**Map&lt;String, String&gt;**](String.md)| Filter Params for Searching.  Equality Searchable Attributes: [id, risk_level, service_id, disabled, supports_user_attribution, name, identifier, description, resolution] Matching Searchable Attributes: [name, identifier, description, resolution] Limited Searchable Attribute: [service_provider_eq] Sortable Attributes: [name, identifier, updated_at, created_at, id] Searchable Associations: [signature_copy, disabled_external_accounts, integrations, suppressions] See Searching Lists for more information. See the filter parameter of the association&#39;s list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information. | [optional]
- **page** | **String**| Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page | [optional] [default to {:number&#x3D;&gt;1,+:size&#x3D;&gt;20}]
  **include** | **String**| Related objects that can be included in the response:  service, suppressions See Including Objects for more information. | [optional]
+ **filter** | [**Map&lt;String, String&gt;**](String.md)| Filter Params for Searching.  Equality Searchable Attributes: [id, risk_level, service_id, disabled, supports_user_attribution, name, identifier, description, resolution] Matching Searchable Attributes: [name, identifier, description, resolution] Limited Searchable Attribute: [service_provider_eq] Sortable Attributes: [name, identifier, updated_at, created_at, id] Searchable Associations: [signature_copy, disabled_external_accounts, integrations, suppressions] See Searching Lists for more information. See the filter parameter of the association&#39;s list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information. | [optional]
+ **page** | **String**| Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page. | [optional] [default to {:number&#x3D;&gt;1,+:size&#x3D;&gt;20}]
 
 ### Return type
 
@@ -64,7 +64,7 @@ No authorization required
 
 <a name="listDisabledExternalAccounts"></a>
 # **listDisabledExternalAccounts**
-> PaginatedCollection listDisabledExternalAccounts(filter, page, include)
+> PaginatedCollection listDisabledExternalAccounts(signatureId, include, filter, page)
 
 Get a list of disabled External Accounts for a signature
 
@@ -78,11 +78,12 @@ Get a list of disabled External Accounts for a signature
 
 
 SignaturesApi apiInstance = new SignaturesApi();
-Map<String, String> filter = new HashMap(); // Map<String, String> | Filter Params for Searching.  Equality Searchable Attributes: [id, nickname, name] Matching Searchable Attributes: [nickname, name] Limited Searchable Attributes: [account_eq, arn_eq, provider_eq, subscription_id_eq] Sortable Attributes: [name, updated_at, created_at, id] Searchable Associations: [organization, sub_organization, team, compliance_standards, azure_group, disabled_signatures, suppressions] See Searching Lists for more information. See the filter parameter of the association's list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information.
-String page = "{:number=>1,+:size=>20}"; // String | Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page
+Integer signatureId = 56; // Integer | The ID of the signature to get the list of disabled external accounts for
 String include = "include_example"; // String | Related objects that can be included in the response:  organization, sub_organization, team, scan_intervals, disabled_signatures, suppressions, azure_group, credentials See Including Objects for more information.
+Map<String, String> filter = new HashMap(); // Map<String, String> | Filter Params for Searching.  Equality Searchable Attributes: [id, nickname, name] Matching Searchable Attributes: [nickname, name] Limited Searchable Attributes: [account_eq, arn_eq, provider_eq, subscription_id_eq] Sortable Attributes: [name, updated_at, created_at, id] Searchable Associations: [organization, sub_organization, team, compliance_standards, azure_group, disabled_signatures, suppressions] See Searching Lists for more information. See the filter parameter of the association's list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information.
+String page = "{:number=>1,+:size=>20}"; // String | Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page.
 try {
-    PaginatedCollection result = apiInstance.listDisabledExternalAccounts(filter, page, include);
+    PaginatedCollection result = apiInstance.listDisabledExternalAccounts(signatureId, include, filter, page);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SignaturesApi#listDisabledExternalAccounts");
@@ -94,9 +95,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | [**Map&lt;String, String&gt;**](String.md)| Filter Params for Searching.  Equality Searchable Attributes: [id, nickname, name] Matching Searchable Attributes: [nickname, name] Limited Searchable Attributes: [account_eq, arn_eq, provider_eq, subscription_id_eq] Sortable Attributes: [name, updated_at, created_at, id] Searchable Associations: [organization, sub_organization, team, compliance_standards, azure_group, disabled_signatures, suppressions] See Searching Lists for more information. See the filter parameter of the association&#39;s list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information. | [optional]
- **page** | **String**| Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page | [optional] [default to {:number&#x3D;&gt;1,+:size&#x3D;&gt;20}]
+ **signatureId** | **Integer**| The ID of the signature to get the list of disabled external accounts for |
  **include** | **String**| Related objects that can be included in the response:  organization, sub_organization, team, scan_intervals, disabled_signatures, suppressions, azure_group, credentials See Including Objects for more information. | [optional]
+ **filter** | [**Map&lt;String, String&gt;**](String.md)| Filter Params for Searching.  Equality Searchable Attributes: [id, nickname, name] Matching Searchable Attributes: [nickname, name] Limited Searchable Attributes: [account_eq, arn_eq, provider_eq, subscription_id_eq] Sortable Attributes: [name, updated_at, created_at, id] Searchable Associations: [organization, sub_organization, team, compliance_standards, azure_group, disabled_signatures, suppressions] See Searching Lists for more information. See the filter parameter of the association&#39;s list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information. | [optional]
+ **page** | **String**| Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page. | [optional] [default to {:number&#x3D;&gt;1,+:size&#x3D;&gt;20}]
 
 ### Return type
 
@@ -113,7 +115,7 @@ No authorization required
 
 <a name="listWithCustomRiskLevelForExternalAccount"></a>
 # **listWithCustomRiskLevelForExternalAccount**
-> PaginatedCollection listWithCustomRiskLevelForExternalAccount(externalAccountId, page, include, filter)
+> PaginatedCollection listWithCustomRiskLevelForExternalAccount(externalAccountId, include, filter, page)
 
 Get A list of Signatures with default and custom risk levels for an External Account
 
@@ -128,11 +130,11 @@ Return only signatures that have a custom risk level set by searching with &#x60
 
 SignaturesApi apiInstance = new SignaturesApi();
 Integer externalAccountId = 56; // Integer | The ID of the external account to retrieve
-String page = "{:number=>1,+:size=>20}"; // String | Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page
 String include = "include_example"; // String | Related objects that can be included in the response:  service, suppressions See Including Objects for more information.
 Map<String, String> filter = new HashMap(); // Map<String, String> | Filter Params for Searching.  Equality Searchable Attributes: [id, risk_level, service_id, disabled, supports_user_attribution, name, identifier, description, resolution] Matching Searchable Attributes: [name, identifier, description, resolution] Limited Searchable Attributes: [custom_risk_level_present, service_provider_eq] Sortable Attributes: [name, identifier, updated_at, created_at, id] Searchable Associations: [signature_copy, disabled_external_accounts, integrations, suppressions] See Searching Lists for more information. See the filter parameter of the association's list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information.
+String page = "{:number=>1,+:size=>20}"; // String | Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page.
 try {
-    PaginatedCollection result = apiInstance.listWithCustomRiskLevelForExternalAccount(externalAccountId, page, include, filter);
+    PaginatedCollection result = apiInstance.listWithCustomRiskLevelForExternalAccount(externalAccountId, include, filter, page);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SignaturesApi#listWithCustomRiskLevelForExternalAccount");
@@ -145,9 +147,9 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **externalAccountId** | **Integer**| The ID of the external account to retrieve |
- **page** | **String**| Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page | [optional] [default to {:number&#x3D;&gt;1,+:size&#x3D;&gt;20}]
  **include** | **String**| Related objects that can be included in the response:  service, suppressions See Including Objects for more information. | [optional]
  **filter** | [**Map&lt;String, String&gt;**](String.md)| Filter Params for Searching.  Equality Searchable Attributes: [id, risk_level, service_id, disabled, supports_user_attribution, name, identifier, description, resolution] Matching Searchable Attributes: [name, identifier, description, resolution] Limited Searchable Attributes: [custom_risk_level_present, service_provider_eq] Sortable Attributes: [name, identifier, updated_at, created_at, id] Searchable Associations: [signature_copy, disabled_external_accounts, integrations, suppressions] See Searching Lists for more information. See the filter parameter of the association&#39;s list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information. | [optional]
+ **page** | **String**| Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page. | [optional] [default to {:number&#x3D;&gt;1,+:size&#x3D;&gt;20}]
 
 ### Return type
 
@@ -211,7 +213,7 @@ No authorization required
 
 <a name="setCustomRiskLevelForExternalAccount"></a>
 # **setCustomRiskLevelForExternalAccount**
-> Signature setCustomRiskLevelForExternalAccount(externalAccountId, signatureId, riskLevel, include)
+> Signature setCustomRiskLevelForExternalAccount(externalAccountId, riskLevel, signatureId, include)
 
 Add a custom risk level to a Signature for an External Account
 
@@ -226,11 +228,11 @@ Add a custom risk level to a Signature for an External Account
 
 SignaturesApi apiInstance = new SignaturesApi();
 Integer externalAccountId = 56; // Integer | The ID of the external account this signature custom risk level is for
-Integer signatureId = 56; // Integer | The signature ID this signature custom risk level is for
 String riskLevel = "riskLevel_example"; // String | The custom risk-level of the problem identified by the signature for this external_account. Valid values are low, medium, high
+Integer signatureId = 56; // Integer | The signature ID this signature custom risk level is for
 String include = "include_example"; // String | Related objects that can be included in the response:  service, suppressions See Including Objects for more information.
 try {
-    Signature result = apiInstance.setCustomRiskLevelForExternalAccount(externalAccountId, signatureId, riskLevel, include);
+    Signature result = apiInstance.setCustomRiskLevelForExternalAccount(externalAccountId, riskLevel, signatureId, include);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SignaturesApi#setCustomRiskLevelForExternalAccount");
@@ -243,8 +245,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **externalAccountId** | **Integer**| The ID of the external account this signature custom risk level is for |
- **signatureId** | **Integer**| The signature ID this signature custom risk level is for |
  **riskLevel** | **String**| The custom risk-level of the problem identified by the signature for this external_account. Valid values are low, medium, high | [enum: low, medium, high]
+ **signatureId** | **Integer**| The signature ID this signature custom risk level is for |
  **include** | **String**| Related objects that can be included in the response:  service, suppressions See Including Objects for more information. | [optional]
 
 ### Return type
@@ -309,7 +311,7 @@ No authorization required
 
 <a name="updateCustomRiskLevelForExternalAccount"></a>
 # **updateCustomRiskLevelForExternalAccount**
-> Signature updateCustomRiskLevelForExternalAccount(externalAccountId, signatureId, riskLevel, include)
+> Signature updateCustomRiskLevelForExternalAccount(externalAccountId, signatureId, include, riskLevel)
 
 Update a Signature&#39;s custom risk level for an External Account
 
@@ -325,10 +327,10 @@ Update a Signature&#39;s custom risk level for an External Account
 SignaturesApi apiInstance = new SignaturesApi();
 Integer externalAccountId = 56; // Integer | The ID of the external account this signature custom risk level is for
 Integer signatureId = 56; // Integer | The signature ID this signature custom risk level is for
-String riskLevel = "riskLevel_example"; // String | The custom risk-level of the problem identified by the signature for this external_account. Valid values are low, medium, high
 String include = "include_example"; // String | Related objects that can be included in the response:  service, suppressions See Including Objects for more information.
+String riskLevel = "riskLevel_example"; // String | The custom risk-level of the problem identified by the signature for this external_account. Valid values are low, medium, high
 try {
-    Signature result = apiInstance.updateCustomRiskLevelForExternalAccount(externalAccountId, signatureId, riskLevel, include);
+    Signature result = apiInstance.updateCustomRiskLevelForExternalAccount(externalAccountId, signatureId, include, riskLevel);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SignaturesApi#updateCustomRiskLevelForExternalAccount");
@@ -342,8 +344,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **externalAccountId** | **Integer**| The ID of the external account this signature custom risk level is for |
  **signatureId** | **Integer**| The signature ID this signature custom risk level is for |
- **riskLevel** | **String**| The custom risk-level of the problem identified by the signature for this external_account. Valid values are low, medium, high | [optional] [enum: low, medium, high]
  **include** | **String**| Related objects that can be included in the response:  service, suppressions See Including Objects for more information. | [optional]
+ **riskLevel** | **String**| The custom risk-level of the problem identified by the signature for this external_account. Valid values are low, medium, high | [optional] [enum: low, medium, high]
 
 ### Return type
 

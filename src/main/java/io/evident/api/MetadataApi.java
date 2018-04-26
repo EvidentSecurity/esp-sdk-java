@@ -21,7 +21,6 @@ public interface MetadataApi {
    * Show the metadata for an alert
    * 
    * @param alertId Alert Id (required)
-   * @param include Related objects that can be included in the response:   See Including Objects for more information. (optional)
    * @return Call&lt;Metadata&gt;
    */
   
@@ -30,14 +29,13 @@ public interface MetadataApi {
   })
   @GET("api/v2/alerts/{alert_id}/metadata.json_api")
   Call<Metadata> forAlert(
-    @retrofit2.http.Path("alert_id") Integer alertId, @retrofit2.http.Query("include") String include
+    @retrofit2.http.Path("alert_id") Integer alertId
   );
 
   /**
    * Show a single Metadata
    * 
    * @param id Metadata ID (required)
-   * @param include Related objects that can be included in the response:   See Including Objects for more information. (optional)
    * @return Call&lt;Metadata&gt;
    */
   
@@ -46,7 +44,7 @@ public interface MetadataApi {
   })
   @GET("api/v2/metadata/{id}.json_api")
   Call<Metadata> show(
-    @retrofit2.http.Path("id") Integer id, @retrofit2.http.Query("include") String include
+    @retrofit2.http.Path("id") Integer id
   );
 
 }

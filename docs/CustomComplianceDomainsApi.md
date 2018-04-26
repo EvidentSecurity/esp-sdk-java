@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="create"></a>
 # **create**
-> CustomComplianceDomain create(identifier, customComplianceStandardId, name, position, include)
+> CustomComplianceDomain create(customComplianceStandardId, identifier, name, include, position)
 
 Create a(n) Custom Compliance Domain
 
@@ -26,13 +26,13 @@ Create a(n) Custom Compliance Domain
 
 
 CustomComplianceDomainsApi apiInstance = new CustomComplianceDomainsApi();
-String identifier = "identifier_example"; // String | The identifier of this custom domain
 Integer customComplianceStandardId = 56; // Integer | The ID of the Custom Compliance Standard this custom domain belongs to
+String identifier = "identifier_example"; // String | The identifier of this custom domain
 String name = "name_example"; // String | Name
-Integer position = 56; // Integer | The position of this custom domain within the custom standard
 String include = "include_example"; // String | Related objects that can be included in the response:  custom_compliance_standard, custom_compliance_controls See Including Objects for more information.
+Integer position = 56; // Integer | The position of this custom domain within the custom standard
 try {
-    CustomComplianceDomain result = apiInstance.create(identifier, customComplianceStandardId, name, position, include);
+    CustomComplianceDomain result = apiInstance.create(customComplianceStandardId, identifier, name, include, position);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CustomComplianceDomainsApi#create");
@@ -44,11 +44,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identifier** | **String**| The identifier of this custom domain |
  **customComplianceStandardId** | **Integer**| The ID of the Custom Compliance Standard this custom domain belongs to |
+ **identifier** | **String**| The identifier of this custom domain |
  **name** | **String**| Name |
- **position** | **Integer**| The position of this custom domain within the custom standard | [optional]
  **include** | **String**| Related objects that can be included in the response:  custom_compliance_standard, custom_compliance_controls See Including Objects for more information. | [optional]
+ **position** | **Integer**| The position of this custom domain within the custom standard | [optional]
 
 ### Return type
 
@@ -79,7 +79,7 @@ Delete a(n) Custom Compliance Domain
 
 
 CustomComplianceDomainsApi apiInstance = new CustomComplianceDomainsApi();
-Integer id = 56; // Integer |  ID
+Integer id = 56; // Integer | Custom Compliance Domain ID
 try {
     Meta result = apiInstance.delete(id);
     System.out.println(result);
@@ -93,7 +93,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  ID |
+ **id** | **Integer**| Custom Compliance Domain ID |
 
 ### Return type
 
@@ -157,7 +157,7 @@ No authorization required
 
 <a name="update"></a>
 # **update**
-> CustomComplianceDomain update(id, identifier, customComplianceStandardId, name, position, include)
+> CustomComplianceDomain update(id, include, customComplianceStandardId, identifier, name, position)
 
 Update a(n) Custom Compliance Domain
 
@@ -172,13 +172,13 @@ Update a(n) Custom Compliance Domain
 
 CustomComplianceDomainsApi apiInstance = new CustomComplianceDomainsApi();
 Integer id = 56; // Integer | Custom Compliance Domain ID
-String identifier = "identifier_example"; // String | The identifier of this custom domain
+String include = "include_example"; // String | Related objects that can be included in the response:  custom_compliance_standard, custom_compliance_controls See Including Objects for more information.
 Integer customComplianceStandardId = 56; // Integer | The ID of the Custom Compliance Standard this custom domain belongs to
+String identifier = "identifier_example"; // String | The identifier of this custom domain
 String name = "name_example"; // String | Name
 Integer position = 56; // Integer | The position of this custom domain within the custom standard
-String include = "include_example"; // String | Related objects that can be included in the response:  custom_compliance_standard, custom_compliance_controls See Including Objects for more information.
 try {
-    CustomComplianceDomain result = apiInstance.update(id, identifier, customComplianceStandardId, name, position, include);
+    CustomComplianceDomain result = apiInstance.update(id, include, customComplianceStandardId, identifier, name, position);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CustomComplianceDomainsApi#update");
@@ -191,11 +191,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| Custom Compliance Domain ID |
- **identifier** | **String**| The identifier of this custom domain | [optional]
+ **include** | **String**| Related objects that can be included in the response:  custom_compliance_standard, custom_compliance_controls See Including Objects for more information. | [optional]
  **customComplianceStandardId** | **Integer**| The ID of the Custom Compliance Standard this custom domain belongs to | [optional]
+ **identifier** | **String**| The identifier of this custom domain | [optional]
  **name** | **String**| Name | [optional]
  **position** | **Integer**| The position of this custom domain within the custom standard | [optional]
- **include** | **String**| Related objects that can be included in the response:  custom_compliance_standard, custom_compliance_controls See Including Objects for more information. | [optional]
 
 ### Return type
 

@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="list"></a>
 # **list**
-> PaginatedCollection list(filter, page, include)
+> PaginatedCollection list(include, filter, page)
 
 Get a list of Organizations
 
@@ -26,11 +26,11 @@ Get a list of Organizations
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
-Map<String, String> filter = new HashMap(); // Map<String, String> | Filter Params for Searching.  Equality Searchable Attributes: [id, name] Matching Searchable Attribute: [name]  Sortable Attributes: [name, updated_at, created_at, id] 
-String page = "{:number=>1,+:size=>20}"; // String | Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page
 String include = "include_example"; // String | Related objects that can be included in the response:  subscription, custom_signatures, external_accounts, sub_organizations, teams, users, compliance_standards, integrations See Including Objects for more information.
+Map<String, String> filter = new HashMap(); // Map<String, String> | Filter Params for Searching.  Equality Searchable Attributes: [id, name] Matching Searchable Attribute: [name]  Sortable Attributes: [name, updated_at, created_at, id] 
+String page = "{:number=>1,+:size=>20}"; // String | Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page.
 try {
-    PaginatedCollection result = apiInstance.list(filter, page, include);
+    PaginatedCollection result = apiInstance.list(include, filter, page);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#list");
@@ -42,9 +42,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | [**Map&lt;String, String&gt;**](String.md)| Filter Params for Searching.  Equality Searchable Attributes: [id, name] Matching Searchable Attribute: [name]  Sortable Attributes: [name, updated_at, created_at, id]  | [optional]
- **page** | **String**| Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page | [optional] [default to {:number&#x3D;&gt;1,+:size&#x3D;&gt;20}]
  **include** | **String**| Related objects that can be included in the response:  subscription, custom_signatures, external_accounts, sub_organizations, teams, users, compliance_standards, integrations See Including Objects for more information. | [optional]
+ **filter** | [**Map&lt;String, String&gt;**](String.md)| Filter Params for Searching.  Equality Searchable Attributes: [id, name] Matching Searchable Attribute: [name]  Sortable Attributes: [name, updated_at, created_at, id]  | [optional]
+ **page** | **String**| Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page. | [optional] [default to {:number&#x3D;&gt;1,+:size&#x3D;&gt;20}]
 
 ### Return type
 
@@ -61,7 +61,7 @@ No authorization required
 
 <a name="listComplianceStandards"></a>
 # **listComplianceStandards**
-> PaginatedCollection listComplianceStandards(organizationId, page, include)
+> PaginatedCollection listComplianceStandards(organizationId, include, page)
 
 Get a list of compliance standards for an organization
 
@@ -76,10 +76,10 @@ Get a list of compliance standards for an organization
 
 OrganizationsApi apiInstance = new OrganizationsApi();
 Integer organizationId = 56; // Integer | The ID of the organization this compliance standard belongs to
-String page = "{:number=>1,+:size=>20}"; // String | Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page
 String include = "include_example"; // String | Related objects that can be included in the response:  compliance_domains, compliance_controls See Including Objects for more information.
+String page = "{:number=>1,+:size=>20}"; // String | Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page.
 try {
-    PaginatedCollection result = apiInstance.listComplianceStandards(organizationId, page, include);
+    PaginatedCollection result = apiInstance.listComplianceStandards(organizationId, include, page);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#listComplianceStandards");
@@ -92,8 +92,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Integer**| The ID of the organization this compliance standard belongs to |
- **page** | **String**| Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page | [optional] [default to {:number&#x3D;&gt;1,+:size&#x3D;&gt;20}]
  **include** | **String**| Related objects that can be included in the response:  compliance_domains, compliance_controls See Including Objects for more information. | [optional]
+ **page** | **String**| Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page. | [optional] [default to {:number&#x3D;&gt;1,+:size&#x3D;&gt;20}]
 
 ### Return type
 
@@ -157,7 +157,7 @@ No authorization required
 
 <a name="update"></a>
 # **update**
-> Organization update(id, name, requireMfa, include)
+> Organization update(id, include, name, requireMfa)
 
 Update a(n) Organization
 
@@ -172,11 +172,11 @@ Update a(n) Organization
 
 OrganizationsApi apiInstance = new OrganizationsApi();
 Integer id = 56; // Integer | Organization ID
+String include = "include_example"; // String | Related objects that can be included in the response:  subscription, custom_signatures, external_accounts, sub_organizations, teams, users, compliance_standards, integrations See Including Objects for more information.
 String name = "name_example"; // String | Name of the organization
 Boolean requireMfa = true; // Boolean | Whether or not users for this organization are required to enable Multi Factor Authentication
-String include = "include_example"; // String | Related objects that can be included in the response:  subscription, custom_signatures, external_accounts, sub_organizations, teams, users, compliance_standards, integrations See Including Objects for more information.
 try {
-    Organization result = apiInstance.update(id, name, requireMfa, include);
+    Organization result = apiInstance.update(id, include, name, requireMfa);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#update");
@@ -189,9 +189,9 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| Organization ID |
+ **include** | **String**| Related objects that can be included in the response:  subscription, custom_signatures, external_accounts, sub_organizations, teams, users, compliance_standards, integrations See Including Objects for more information. | [optional]
  **name** | **String**| Name of the organization | [optional]
  **requireMfa** | **Boolean**| Whether or not users for this organization are required to enable Multi Factor Authentication | [optional]
- **include** | **String**| Related objects that can be included in the response:  subscription, custom_signatures, external_accounts, sub_organizations, teams, users, compliance_standards, integrations See Including Objects for more information. | [optional]
 
 ### Return type
 

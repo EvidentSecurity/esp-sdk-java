@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="create"></a>
 # **create**
-> CustomComplianceStandard create(name, description, include)
+> CustomComplianceStandard create(description, name, include)
 
 Create a(n) Custom Compliance Standard
 
@@ -26,11 +26,11 @@ Create a(n) Custom Compliance Standard
 
 
 CustomComplianceStandardsApi apiInstance = new CustomComplianceStandardsApi();
-String name = "name_example"; // String | Name
 String description = "description_example"; // String | The description for this Compliance Standard
+String name = "name_example"; // String | Name
 String include = "include_example"; // String | Related objects that can be included in the response:  custom_compliance_domains, custom_compliance_controls See Including Objects for more information.
 try {
-    CustomComplianceStandard result = apiInstance.create(name, description, include);
+    CustomComplianceStandard result = apiInstance.create(description, name, include);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CustomComplianceStandardsApi#create");
@@ -42,8 +42,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **String**| Name |
  **description** | **String**| The description for this Compliance Standard |
+ **name** | **String**| Name |
  **include** | **String**| Related objects that can be included in the response:  custom_compliance_domains, custom_compliance_controls See Including Objects for more information. | [optional]
 
 ### Return type
@@ -75,7 +75,7 @@ Delete a(n) Custom Compliance Standard
 
 
 CustomComplianceStandardsApi apiInstance = new CustomComplianceStandardsApi();
-Integer id = 56; // Integer |  ID
+Integer id = 56; // Integer | Custom Compliance Standard ID
 try {
     Meta result = apiInstance.delete(id);
     System.out.println(result);
@@ -89,7 +89,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  ID |
+ **id** | **Integer**| Custom Compliance Standard ID |
 
 ### Return type
 
@@ -153,7 +153,7 @@ No authorization required
 
 <a name="update"></a>
 # **update**
-> CustomComplianceStandard update(id, name, description, include)
+> CustomComplianceStandard update(id, include, description, name)
 
 Update a(n) Custom Compliance Standard
 
@@ -168,11 +168,11 @@ Update a(n) Custom Compliance Standard
 
 CustomComplianceStandardsApi apiInstance = new CustomComplianceStandardsApi();
 Integer id = 56; // Integer | Custom Compliance Standard ID
-String name = "name_example"; // String | Name
-String description = "description_example"; // String | The description for this Compliance Standard
 String include = "include_example"; // String | Related objects that can be included in the response:  custom_compliance_domains, custom_compliance_controls See Including Objects for more information.
+String description = "description_example"; // String | The description for this Compliance Standard
+String name = "name_example"; // String | Name
 try {
-    CustomComplianceStandard result = apiInstance.update(id, name, description, include);
+    CustomComplianceStandard result = apiInstance.update(id, include, description, name);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CustomComplianceStandardsApi#update");
@@ -185,9 +185,9 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| Custom Compliance Standard ID |
- **name** | **String**| Name | [optional]
- **description** | **String**| The description for this Compliance Standard | [optional]
  **include** | **String**| Related objects that can be included in the response:  custom_compliance_domains, custom_compliance_controls See Including Objects for more information. | [optional]
+ **description** | **String**| The description for this Compliance Standard | [optional]
+ **name** | **String**| Name | [optional]
 
 ### Return type
 

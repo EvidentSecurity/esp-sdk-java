@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="listForAlert"></a>
 # **listForAlert**
-> PaginatedCollection listForAlert(alertId, page, include)
+> PaginatedCollection listForAlert(alertId, page)
 
 Get a list of Tags
 
@@ -25,10 +25,9 @@ Get a list of Tags
 
 TagsApi apiInstance = new TagsApi();
 Integer alertId = 56; // Integer | The ID of the alert to list tags for
-String page = "{:number=>1,+:size=>20}"; // String | Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page
-String include = "include_example"; // String | Related objects that can be included in the response:   See Including Objects for more information.
+String page = "{:number=>1,+:size=>20}"; // String | Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page.
 try {
-    PaginatedCollection result = apiInstance.listForAlert(alertId, page, include);
+    PaginatedCollection result = apiInstance.listForAlert(alertId, page);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TagsApi#listForAlert");
@@ -41,8 +40,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **alertId** | **Integer**| The ID of the alert to list tags for |
- **page** | **String**| Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page | [optional] [default to {:number&#x3D;&gt;1,+:size&#x3D;&gt;20}]
- **include** | **String**| Related objects that can be included in the response:   See Including Objects for more information. | [optional]
+ **page** | **String**| Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page. | [optional] [default to {:number&#x3D;&gt;1,+:size&#x3D;&gt;20}]
 
 ### Return type
 
@@ -59,7 +57,7 @@ No authorization required
 
 <a name="show"></a>
 # **show**
-> Tag show(id, include)
+> Tag show(id)
 
 Show a single Tag
 
@@ -74,9 +72,8 @@ Show a single Tag
 
 TagsApi apiInstance = new TagsApi();
 Integer id = 56; // Integer | Tag ID
-String include = "include_example"; // String | Related objects that can be included in the response:   See Including Objects for more information.
 try {
-    Tag result = apiInstance.show(id, include);
+    Tag result = apiInstance.show(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TagsApi#show");
@@ -89,7 +86,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| Tag ID |
- **include** | **String**| Related objects that can be included in the response:   See Including Objects for more information. | [optional]
 
 ### Return type
 

@@ -25,19 +25,20 @@ public interface TeamsApi {
    * @param name Name of the team (required)
    * @param subOrganizationId The ID of the sub organization to attach this team to (required)
    * @param include Related objects that can be included in the response:  custom_signatures, external_accounts, organization, sub_organization See Including Objects for more information. (optional)
+   * @param reportInterval The interval period in hours for Evident.io to run reports (optional)
    * @return Call&lt;Team&gt;
    */
   
   @retrofit2.http.FormUrlEncoded
   @POST("api/v2/teams.json_api")
   Call<Team> create(
-    @retrofit2.http.Field("name") String name, @retrofit2.http.Field("sub_organization_id") Integer subOrganizationId, @retrofit2.http.Query("include") String include
+    @retrofit2.http.Field("name") String name, @retrofit2.http.Field("sub_organization_id") Integer subOrganizationId, @retrofit2.http.Query("include") String include, @retrofit2.http.Field("report_interval") Integer reportInterval
   );
 
   /**
    * Delete a(n) Team
    * 
-   * @param id  ID (required)
+   * @param id Team ID (required)
    * @return Call&lt;Meta&gt;
    */
   
@@ -52,16 +53,16 @@ public interface TeamsApi {
   /**
    * Get a list of Teams
    * 
-   * @param filter Filter Params for Searching.  Equality Searchable Attributes: [id, name] Matching Searchable Attribute: [name]  Sortable Attributes: [name, updated_at, created_at, id] Searchable Associations: [organization, sub_organization, custom_signatures, integrations] See Searching Lists for more information. See the filter parameter of the association&#39;s list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information. (optional)
-   * @param page Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page (optional, default to {:number=>1,+:size=>20})
    * @param include Related objects that can be included in the response:  custom_signatures, external_accounts, organization, sub_organization See Including Objects for more information. (optional)
+   * @param filter Filter Params for Searching.  Equality Searchable Attributes: [id, name] Matching Searchable Attribute: [name]  Sortable Attributes: [name, updated_at, created_at, id] Searchable Associations: [organization, sub_organization, custom_signatures, integrations] See Searching Lists for more information. See the filter parameter of the association&#39;s list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information. (optional)
+   * @param page Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page. (optional, default to {:number=>1,+:size=>20})
    * @return Call&lt;PaginatedCollection&gt;
    */
   
   @retrofit2.http.FormUrlEncoded
   @PUT("api/v2/teams.json_api")
   Call<PaginatedCollection> list(
-    @retrofit2.http.Field("filter") Map<String, String> filter, @retrofit2.http.Field("page") String page, @retrofit2.http.Query("include") String include
+    @retrofit2.http.Query("include") String include, @retrofit2.http.Field("filter") Map<String, String> filter, @retrofit2.http.Field("page") String page
   );
 
   /**
@@ -84,15 +85,16 @@ public interface TeamsApi {
    * Update a(n) Team
    * 
    * @param id Team ID (required)
-   * @param name Name of the team (optional)
    * @param include Related objects that can be included in the response:  custom_signatures, external_accounts, organization, sub_organization See Including Objects for more information. (optional)
+   * @param name Name of the team (optional)
+   * @param reportInterval The interval period in hours for Evident.io to run reports (optional)
    * @return Call&lt;Team&gt;
    */
   
   @retrofit2.http.FormUrlEncoded
   @PATCH("api/v2/teams/{id}.json_api")
   Call<Team> update(
-    @retrofit2.http.Path("id") Integer id, @retrofit2.http.Field("name") String name, @retrofit2.http.Query("include") String include
+    @retrofit2.http.Path("id") Integer id, @retrofit2.http.Query("include") String include, @retrofit2.http.Field("name") String name, @retrofit2.http.Field("report_interval") Integer reportInterval
   );
 
 }

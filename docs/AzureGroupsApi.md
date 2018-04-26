@@ -125,7 +125,7 @@ Delete a(n) Azure Group
 
 
 AzureGroupsApi apiInstance = new AzureGroupsApi();
-Integer id = 56; // Integer |  ID
+Integer id = 56; // Integer | Azure Group ID
 try {
     Meta result = apiInstance.delete(id);
     System.out.println(result);
@@ -139,7 +139,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  ID |
+ **id** | **Integer**| Azure Group ID |
 
 ### Return type
 
@@ -156,7 +156,7 @@ No authorization required
 
 <a name="list"></a>
 # **list**
-> PaginatedCollection list(filter, page, include)
+> PaginatedCollection list(include, filter, page)
 
 Get a list of Azure Groups
 
@@ -170,11 +170,11 @@ Get a list of Azure Groups
 
 
 AzureGroupsApi apiInstance = new AzureGroupsApi();
-Map<String, String> filter = new HashMap(); // Map<String, String> | Filter Params for Searching.  Equality Searchable Attributes: [id, name] Matching Searchable Attribute: [name]  Sortable Attributes: [id, name] Searchable Associations: [organization, external_accounts] See Searching Lists for more information. See the filter parameter of the association's list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information.
-String page = "{:number=>1,+:size=>20}"; // String | Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page
 String include = "include_example"; // String | Related objects that can be included in the response:  organization, external_accounts See Including Objects for more information.
+Map<String, String> filter = new HashMap(); // Map<String, String> | Filter Params for Searching.  Equality Searchable Attributes: [id, name] Matching Searchable Attribute: [name]  Sortable Attributes: [id, name] Searchable Associations: [organization, external_accounts] See Searching Lists for more information. See the filter parameter of the association's list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information.
+String page = "{:number=>1,+:size=>20}"; // String | Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page.
 try {
-    PaginatedCollection result = apiInstance.list(filter, page, include);
+    PaginatedCollection result = apiInstance.list(include, filter, page);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AzureGroupsApi#list");
@@ -186,9 +186,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | [**Map&lt;String, String&gt;**](String.md)| Filter Params for Searching.  Equality Searchable Attributes: [id, name] Matching Searchable Attribute: [name]  Sortable Attributes: [id, name] Searchable Associations: [organization, external_accounts] See Searching Lists for more information. See the filter parameter of the association&#39;s list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information. | [optional]
- **page** | **String**| Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page | [optional] [default to {:number&#x3D;&gt;1,+:size&#x3D;&gt;20}]
  **include** | **String**| Related objects that can be included in the response:  organization, external_accounts See Including Objects for more information. | [optional]
+ **filter** | [**Map&lt;String, String&gt;**](String.md)| Filter Params for Searching.  Equality Searchable Attributes: [id, name] Matching Searchable Attribute: [name]  Sortable Attributes: [id, name] Searchable Associations: [organization, external_accounts] See Searching Lists for more information. See the filter parameter of the association&#39;s list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information. | [optional]
+ **page** | **String**| Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page. | [optional] [default to {:number&#x3D;&gt;1,+:size&#x3D;&gt;20}]
 
 ### Return type
 
@@ -299,7 +299,7 @@ No authorization required
 
 <a name="update"></a>
 # **update**
-> AzureGroup update(id, name, include)
+> AzureGroup update(id, include, name)
 
 Update a(n) Azure Group
 
@@ -314,10 +314,10 @@ Update a(n) Azure Group
 
 AzureGroupsApi apiInstance = new AzureGroupsApi();
 Integer id = 56; // Integer | Azure Group ID
-String name = "name_example"; // String | Name
 String include = "include_example"; // String | Related objects that can be included in the response:  organization, external_accounts See Including Objects for more information.
+String name = "name_example"; // String | Name
 try {
-    AzureGroup result = apiInstance.update(id, name, include);
+    AzureGroup result = apiInstance.update(id, include, name);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AzureGroupsApi#update");
@@ -330,8 +330,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| Azure Group ID |
- **name** | **String**| Name | [optional]
  **include** | **String**| Related objects that can be included in the response:  organization, external_accounts See Including Objects for more information. | [optional]
+ **name** | **String**| Name | [optional]
 
 ### Return type
 

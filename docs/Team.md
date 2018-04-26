@@ -12,8 +12,6 @@ Name | Type | Description | Notes
 **customSignatureIds** | **List&lt;Integer&gt;** | Associated Custom Signatures IDs |  [optional]
 **externalAccounts** | [**List&lt;ExternalAccount&gt;**](ExternalAccount.md) | Associated External Accounts |  [optional]
 **externalAccountIds** | **List&lt;Integer&gt;** | Associated External Accounts IDs |  [optional]
-**organization** | [**Organization**](Organization.md) | Associated Organization |  [optional]
-**organizationId** | **Integer** | Associated Organization ID |  [optional]
 **subOrganization** | [**SubOrganization**](SubOrganization.md) | Associated Sub Organization |  [optional]
 **subOrganizationId** | **Integer** | Associated Sub Organization ID |  [optional]
 

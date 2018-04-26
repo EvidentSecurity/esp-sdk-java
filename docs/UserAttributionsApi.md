@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="addChannel"></a>
 # **addChannel**
-> ExternalAccountUserAttributionChannel addChannel(externalAccountId, include)
+> ExternalAccountUserAttributionChannel addChannel(externalAccountId)
 
 Create a User Attribution Channel for an external account
 
@@ -27,9 +27,8 @@ URL will only be returned in this response and will not be accessible again.
 
 UserAttributionsApi apiInstance = new UserAttributionsApi();
 Integer externalAccountId = 56; // Integer | The ID of the external account to create a User Attribution Channel for
-String include = "include_example"; // String | Related objects that can be included in the response:   See Including Objects for more information.
 try {
-    ExternalAccountUserAttributionChannel result = apiInstance.addChannel(externalAccountId, include);
+    ExternalAccountUserAttributionChannel result = apiInstance.addChannel(externalAccountId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UserAttributionsApi#addChannel");
@@ -42,7 +41,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **externalAccountId** | **Integer**| The ID of the external account to create a User Attribution Channel for |
- **include** | **String**| Related objects that can be included in the response:   See Including Objects for more information. | [optional]
 
 ### Return type
 
@@ -104,7 +102,7 @@ No authorization required
 
 <a name="showChannel"></a>
 # **showChannel**
-> ExternalAccountUserAttributionChannel showChannel(externalAccountId, include)
+> ExternalAccountUserAttributionChannel showChannel(externalAccountId)
 
 Show the User Attribution Channel of an external account
 
@@ -119,9 +117,8 @@ The channel url will not be returned.
 
 UserAttributionsApi apiInstance = new UserAttributionsApi();
 Integer externalAccountId = 56; // Integer | The ID of the external account to show the user attribution channel for
-String include = "include_example"; // String | Related objects that can be included in the response:   See Including Objects for more information.
 try {
-    ExternalAccountUserAttributionChannel result = apiInstance.showChannel(externalAccountId, include);
+    ExternalAccountUserAttributionChannel result = apiInstance.showChannel(externalAccountId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UserAttributionsApi#showChannel");
@@ -134,7 +131,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **externalAccountId** | **Integer**| The ID of the external account to show the user attribution channel for |
- **include** | **String**| Related objects that can be included in the response:   See Including Objects for more information. | [optional]
 
 ### Return type
 
@@ -151,7 +147,7 @@ No authorization required
 
 <a name="update"></a>
 # **update**
-> ExternalAccount update(externalAccountId, cloudtrailName, include)
+> ExternalAccount update(externalAccountId, include, cloudtrailName)
 
 Update the user attributions on an external account
 
@@ -166,10 +162,10 @@ Update the user attributions on an external account
 
 UserAttributionsApi apiInstance = new UserAttributionsApi();
 Integer externalAccountId = 56; // Integer | The ID of the external account to update the user attributions of
-String cloudtrailName = "cloudtrailName_example"; // String | The name of the cloudetrail associated with the user attribution.
 String include = "include_example"; // String | Related objects that can be included in the response:  organization, sub_organization, team, scan_intervals, disabled_signatures, suppressions, azure_group, credentials See Including Objects for more information.
+String cloudtrailName = "cloudtrailName_example"; // String | The name of the cloudetrail associated with the user attribution.
 try {
-    ExternalAccount result = apiInstance.update(externalAccountId, cloudtrailName, include);
+    ExternalAccount result = apiInstance.update(externalAccountId, include, cloudtrailName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UserAttributionsApi#update");
@@ -182,8 +178,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **externalAccountId** | **Integer**| The ID of the external account to update the user attributions of |
- **cloudtrailName** | **String**| The name of the cloudetrail associated with the user attribution. | [optional]
  **include** | **String**| Related objects that can be included in the response:  organization, sub_organization, team, scan_intervals, disabled_signatures, suppressions, azure_group, credentials See Including Objects for more information. | [optional]
+ **cloudtrailName** | **String**| The name of the cloudetrail associated with the user attribution. | [optional]
 
 ### Return type
 

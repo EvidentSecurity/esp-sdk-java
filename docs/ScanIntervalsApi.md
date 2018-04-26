@@ -78,7 +78,7 @@ Delete a(n) Scan Interval
 
 
 ScanIntervalsApi apiInstance = new ScanIntervalsApi();
-Integer id = 56; // Integer |  ID
+Integer id = 56; // Integer | Scan Interval ID
 try {
     Meta result = apiInstance.delete(id);
     System.out.println(result);
@@ -92,7 +92,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  ID |
+ **id** | **Integer**| Scan Interval ID |
 
 ### Return type
 
@@ -109,7 +109,7 @@ No authorization required
 
 <a name="listForExternalAccount"></a>
 # **listForExternalAccount**
-> PaginatedCollection listForExternalAccount(externalAccountId, page, include)
+> PaginatedCollection listForExternalAccount(externalAccountId, include, page)
 
 Get a list of Scan Intervals
 
@@ -124,10 +124,10 @@ Get a list of Scan Intervals
 
 ScanIntervalsApi apiInstance = new ScanIntervalsApi();
 Integer externalAccountId = 56; // Integer | The ID of the external account to retrieve
-String page = "{:number=>1,+:size=>20}"; // String | Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page
 String include = "include_example"; // String | Related objects that can be included in the response:  external_account, service See Including Objects for more information.
+String page = "{:number=>1,+:size=>20}"; // String | Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page.
 try {
-    PaginatedCollection result = apiInstance.listForExternalAccount(externalAccountId, page, include);
+    PaginatedCollection result = apiInstance.listForExternalAccount(externalAccountId, include, page);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ScanIntervalsApi#listForExternalAccount");
@@ -140,8 +140,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **externalAccountId** | **Integer**| The ID of the external account to retrieve |
- **page** | **String**| Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page | [optional] [default to {:number&#x3D;&gt;1,+:size&#x3D;&gt;20}]
  **include** | **String**| Related objects that can be included in the response:  external_account, service See Including Objects for more information. | [optional]
+ **page** | **String**| Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page. | [optional] [default to {:number&#x3D;&gt;1,+:size&#x3D;&gt;20}]
 
 ### Return type
 
@@ -205,7 +205,7 @@ No authorization required
 
 <a name="update"></a>
 # **update**
-> ScanInterval update(id, externalAccountId, interval, serviceId, include)
+> ScanInterval update(id, include, externalAccountId, interval, serviceId)
 
 Update a(n) Scan Interval
 
@@ -220,12 +220,12 @@ Update a(n) Scan Interval
 
 ScanIntervalsApi apiInstance = new ScanIntervalsApi();
 Integer id = 56; // Integer | Scan Interval ID
+String include = "include_example"; // String | Related objects that can be included in the response:  external_account, service See Including Objects for more information.
 Integer externalAccountId = 56; // Integer | The ID of the external account this scan interval is for
 Integer interval = 56; // Integer | The interval, in minutes, this service will be scanned
 Integer serviceId = 56; // Integer | The service ID for the scan interval
-String include = "include_example"; // String | Related objects that can be included in the response:  external_account, service See Including Objects for more information.
 try {
-    ScanInterval result = apiInstance.update(id, externalAccountId, interval, serviceId, include);
+    ScanInterval result = apiInstance.update(id, include, externalAccountId, interval, serviceId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ScanIntervalsApi#update");
@@ -238,10 +238,10 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| Scan Interval ID |
+ **include** | **String**| Related objects that can be included in the response:  external_account, service See Including Objects for more information. | [optional]
  **externalAccountId** | **Integer**| The ID of the external account this scan interval is for | [optional]
  **interval** | **Integer**| The interval, in minutes, this service will be scanned | [optional]
  **serviceId** | **Integer**| The service ID for the scan interval | [optional]
- **include** | **String**| Related objects that can be included in the response:  external_account, service See Including Objects for more information. | [optional]
 
 ### Return type
 

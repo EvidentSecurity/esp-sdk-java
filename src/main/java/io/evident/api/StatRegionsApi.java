@@ -19,18 +19,19 @@ import java.util.Map;
 
 public interface StatRegionsApi {
   /**
-   * Get a list of stats for regions
-   * A successful call to this API returns all the stats of all the regions for a report identified by the stat_id parameter. Said report contains all statistics for this alert triggered from signatures contained in all regions for the selected hour.
-   * @param statId The ID of the stat to retrieve region stats for (required)
-   * @param page Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page (optional, default to {:number=>1,+:size=>20})
+   * Get a list of statistics for regions
+   * A successful call to this API returns all the statistics of all the regions for a report identified by the stat_id parameter. Said report contains all statistics for this alert triggered from signatures contained in all regions for the selected hour.
+   * @param statId The ID of the stat to retrieve region statistics for (required)
    * @param include Related objects that can be included in the response:  region, stat See Including Objects for more information. (optional)
+   * @param filter Filter Params for Searching.  Equality Searchable Attributes: [stat_id, type_id]     (optional)
+   * @param page Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page. (optional, default to {:number=>1,+:size=>20})
    * @return Call&lt;PaginatedCollection&gt;
    */
   
   @retrofit2.http.FormUrlEncoded
   @GET("api/v2/stats/{stat_id}/regions.json_api")
   Call<PaginatedCollection> listForStat(
-    @retrofit2.http.Path("stat_id") Integer statId, @retrofit2.http.Field("page") String page, @retrofit2.http.Query("include") String include
+    @retrofit2.http.Path("stat_id") Integer statId, @retrofit2.http.Query("include") String include, @retrofit2.http.Field("filter") Map<String, String> filter, @retrofit2.http.Field("page") String page
   );
 
   /**

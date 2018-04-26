@@ -24,7 +24,7 @@ import org.joda.time.DateTime;
  * A(n) Attribution object
  */
 @ApiModel(description = "A(n) Attribution object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-13T15:00:39.690-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-25T13:00:36.864-05:00")
 public class Attribution {
   @SerializedName("id")
   private Integer id = null;

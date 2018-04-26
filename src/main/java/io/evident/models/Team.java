@@ -17,7 +17,6 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.evident.models.CustomSignature;
 import io.evident.models.ExternalAccount;
-import io.evident.models.Organization;
 import io.evident.models.SubOrganization;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -29,7 +28,7 @@ import org.joda.time.DateTime;
  * A(n) Team object
  */
 @ApiModel(description = "A(n) Team object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-13T15:00:39.690-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-25T13:00:36.864-05:00")
 public class Team {
   @SerializedName("id")
   private Integer id = null;
@@ -54,12 +53,6 @@ public class Team {
 
   @SerializedName("external_account_ids")
   private List<Integer> externalAccountIds = new ArrayList<Integer>();
-
-  @SerializedName("organization")
-  private Organization organization = null;
-
-  @SerializedName("organization_id")
-  private Integer organizationId = null;
 
   @SerializedName("sub_organization")
   private SubOrganization subOrganization = null;
@@ -231,42 +224,6 @@ public class Team {
     this.externalAccountIds = externalAccountIds;
   }
 
-  public Team organization(Organization organization) {
-    this.organization = organization;
-    return this;
-  }
-
-   /**
-   * Associated Organization
-   * @return organization
-  **/
-  @ApiModelProperty(example = "null", value = "Associated Organization")
-  public Organization getOrganization() {
-    return organization;
-  }
-
-  public void setOrganization(Organization organization) {
-    this.organization = organization;
-  }
-
-  public Team organizationId(Integer organizationId) {
-    this.organizationId = organizationId;
-    return this;
-  }
-
-   /**
-   * Associated Organization ID
-   * @return organizationId
-  **/
-  @ApiModelProperty(example = "null", value = "Associated Organization ID")
-  public Integer getOrganizationId() {
-    return organizationId;
-  }
-
-  public void setOrganizationId(Integer organizationId) {
-    this.organizationId = organizationId;
-  }
-
   public Team subOrganization(SubOrganization subOrganization) {
     this.subOrganization = subOrganization;
     return this;
@@ -321,15 +278,13 @@ public class Team {
         Objects.equals(this.customSignatureIds, team.customSignatureIds) &&
         Objects.equals(this.externalAccounts, team.externalAccounts) &&
         Objects.equals(this.externalAccountIds, team.externalAccountIds) &&
-        Objects.equals(this.organization, team.organization) &&
-        Objects.equals(this.organizationId, team.organizationId) &&
         Objects.equals(this.subOrganization, team.subOrganization) &&
         Objects.equals(this.subOrganizationId, team.subOrganizationId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, createdAt, updatedAt, customSignatures, customSignatureIds, externalAccounts, externalAccountIds, organization, organizationId, subOrganization, subOrganizationId);
+    return Objects.hash(id, name, createdAt, updatedAt, customSignatures, customSignatureIds, externalAccounts, externalAccountIds, subOrganization, subOrganizationId);
   }
 
 
@@ -346,8 +301,6 @@ public class Team {
     sb.append("    customSignatureIds: ").append(toIndentedString(customSignatureIds)).append("\n");
     sb.append("    externalAccounts: ").append(toIndentedString(externalAccounts)).append("\n");
     sb.append("    externalAccountIds: ").append(toIndentedString(externalAccountIds)).append("\n");
-    sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
-    sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    subOrganization: ").append(toIndentedString(subOrganization)).append("\n");
     sb.append("    subOrganizationId: ").append(toIndentedString(subOrganizationId)).append("\n");
     sb.append("}");

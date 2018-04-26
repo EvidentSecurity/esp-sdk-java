@@ -54,27 +54,27 @@ public interface CustomComplianceControlsApi {
   /**
    * Create a(n) Custom Compliance Control
    * 
-   * @param identifier The identifier of this custom control (required)
    * @param customComplianceDomainId The ID of the Custom Compliance Domain this custom control belongs to (required)
+   * @param identifier The identifier of this custom control (required)
    * @param name Name (required)
+   * @param include Related objects that can be included in the response:  custom_compliance_standard, custom_compliance_domain, signatures, custom_signatures See Including Objects for more information. (optional)
+   * @param customSignatureIds An array of custom signatures identified by custom_signature_id that belong to this custom control (optional)
    * @param description The description for this custom control (optional)
    * @param position The position of this custom control within the custom domain (optional)
    * @param signatureIds An array of signatures identified by signature_id that belong to this custom control (optional)
-   * @param customSignatureIds An array of custom signatures identified by custom_signature_id that belong to this custom control (optional)
-   * @param include Related objects that can be included in the response:  custom_compliance_standard, custom_compliance_domain, signatures, custom_signatures See Including Objects for more information. (optional)
    * @return Call&lt;CustomComplianceControl&gt;
    */
   
   @retrofit2.http.FormUrlEncoded
   @POST("api/v2/custom_compliance_controls.json_api")
   Call<CustomComplianceControl> create(
-    @retrofit2.http.Field("identifier") String identifier, @retrofit2.http.Field("custom_compliance_domain_id") Integer customComplianceDomainId, @retrofit2.http.Field("name") String name, @retrofit2.http.Field("description") String description, @retrofit2.http.Field("position") Integer position, @retrofit2.http.Field("signature_ids") List<Integer> signatureIds, @retrofit2.http.Field("custom_signature_ids") List<Integer> customSignatureIds, @retrofit2.http.Query("include") String include
+    @retrofit2.http.Field("custom_compliance_domain_id") Integer customComplianceDomainId, @retrofit2.http.Field("identifier") String identifier, @retrofit2.http.Field("name") String name, @retrofit2.http.Query("include") String include, @retrofit2.http.Field("custom_signature_ids") List<Integer> customSignatureIds, @retrofit2.http.Field("description") String description, @retrofit2.http.Field("position") Integer position, @retrofit2.http.Field("signature_ids") List<Integer> signatureIds
   );
 
   /**
    * Delete a(n) Custom Compliance Control
    * 
-   * @param id  ID (required)
+   * @param id Custom Compliance Control ID (required)
    * @return Call&lt;Meta&gt;
    */
   
@@ -90,30 +90,30 @@ public interface CustomComplianceControlsApi {
    * Get a list of Custom Signatures for a Custom Compliance Control
    * 
    * @param customComplianceControlId The ID of the Custom Compliance Control this custom signature belongs to (required)
-   * @param page Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page (optional, default to {:number=>1,+:size=>20})
    * @param include Related objects that can be included in the response:  organization, teams, external_accounts, definitions, suppressions See Including Objects for more information. (optional)
+   * @param page Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page. (optional, default to {:number=>1,+:size=>20})
    * @return Call&lt;PaginatedCollection&gt;
    */
   
   @retrofit2.http.FormUrlEncoded
   @GET("api/v2/custom_compliance_controls/{custom_compliance_control_id}/custom_signatures.json_api")
   Call<PaginatedCollection> listCustomSignatures(
-    @retrofit2.http.Path("custom_compliance_control_id") Integer customComplianceControlId, @retrofit2.http.Field("page") String page, @retrofit2.http.Query("include") String include
+    @retrofit2.http.Path("custom_compliance_control_id") Integer customComplianceControlId, @retrofit2.http.Query("include") String include, @retrofit2.http.Field("page") String page
   );
 
   /**
    * Get a list of Signatures for a Custom Compliance Control
    * 
    * @param customComplianceControlId The ID of the Custom Compliance Control this signature belongs to (required)
-   * @param page Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page (optional, default to {:number=>1,+:size=>20})
    * @param include Related objects that can be included in the response:  service, suppressions See Including Objects for more information. (optional)
+   * @param page Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page. (optional, default to {:number=>1,+:size=>20})
    * @return Call&lt;PaginatedCollection&gt;
    */
   
   @retrofit2.http.FormUrlEncoded
   @GET("api/v2/custom_compliance_controls/{custom_compliance_control_id}/signatures.json_api")
   Call<PaginatedCollection> listSignatures(
-    @retrofit2.http.Path("custom_compliance_control_id") Integer customComplianceControlId, @retrofit2.http.Field("page") String page, @retrofit2.http.Query("include") String include
+    @retrofit2.http.Path("custom_compliance_control_id") Integer customComplianceControlId, @retrofit2.http.Query("include") String include, @retrofit2.http.Field("page") String page
   );
 
   /**
@@ -168,21 +168,21 @@ public interface CustomComplianceControlsApi {
    * Update a(n) Custom Compliance Control
    * 
    * @param id Custom Compliance Control ID (required)
-   * @param identifier The identifier of this custom control (optional)
+   * @param include Related objects that can be included in the response:  custom_compliance_standard, custom_compliance_domain, signatures, custom_signatures See Including Objects for more information. (optional)
    * @param customComplianceDomainId The ID of the Custom Compliance Domain this custom control belongs to (optional)
+   * @param customSignatureIds An array of custom signatures identified by custom_signature_id that belong to this custom control (optional)
    * @param description The description for this custom control (optional)
+   * @param identifier The identifier of this custom control (optional)
    * @param name Name (optional)
    * @param position The position of this custom control within the custom domain (optional)
    * @param signatureIds An array of signatures identified by signature_id that belong to this custom control (optional)
-   * @param customSignatureIds An array of custom signatures identified by custom_signature_id that belong to this custom control (optional)
-   * @param include Related objects that can be included in the response:  custom_compliance_standard, custom_compliance_domain, signatures, custom_signatures See Including Objects for more information. (optional)
    * @return Call&lt;CustomComplianceControl&gt;
    */
   
   @retrofit2.http.FormUrlEncoded
   @PATCH("api/v2/custom_compliance_controls/{id}.json_api")
   Call<CustomComplianceControl> update(
-    @retrofit2.http.Path("id") Integer id, @retrofit2.http.Field("identifier") String identifier, @retrofit2.http.Field("custom_compliance_domain_id") Integer customComplianceDomainId, @retrofit2.http.Field("description") String description, @retrofit2.http.Field("name") String name, @retrofit2.http.Field("position") Integer position, @retrofit2.http.Field("signature_ids") List<Integer> signatureIds, @retrofit2.http.Field("custom_signature_ids") List<Integer> customSignatureIds, @retrofit2.http.Query("include") String include
+    @retrofit2.http.Path("id") Integer id, @retrofit2.http.Query("include") String include, @retrofit2.http.Field("custom_compliance_domain_id") Integer customComplianceDomainId, @retrofit2.http.Field("custom_signature_ids") List<Integer> customSignatureIds, @retrofit2.http.Field("description") String description, @retrofit2.http.Field("identifier") String identifier, @retrofit2.http.Field("name") String name, @retrofit2.http.Field("position") Integer position, @retrofit2.http.Field("signature_ids") List<Integer> signatureIds
   );
 
 }

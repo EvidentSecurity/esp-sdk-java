@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="list"></a>
 # **list**
-> PaginatedCollection list(page, include)
+> PaginatedCollection list(page)
 
 Get a list of Roles
 
@@ -24,10 +24,9 @@ Get a list of Roles
 
 
 RolesApi apiInstance = new RolesApi();
-String page = "{:number=>1,+:size=>20}"; // String | Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page
-String include = "include_example"; // String | Related objects that can be included in the response:   See Including Objects for more information.
+String page = "{:number=>1,+:size=>20}"; // String | Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page.
 try {
-    PaginatedCollection result = apiInstance.list(page, include);
+    PaginatedCollection result = apiInstance.list(page);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RolesApi#list");
@@ -39,8 +38,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **String**| Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page | [optional] [default to {:number&#x3D;&gt;1,+:size&#x3D;&gt;20}]
- **include** | **String**| Related objects that can be included in the response:   See Including Objects for more information. | [optional]
+ **page** | **String**| Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page. | [optional] [default to {:number&#x3D;&gt;1,+:size&#x3D;&gt;20}]
 
 ### Return type
 
@@ -57,7 +55,7 @@ No authorization required
 
 <a name="show"></a>
 # **show**
-> Role show(id, include)
+> Role show(id)
 
 Show a single Role
 
@@ -72,9 +70,8 @@ Show a single Role
 
 RolesApi apiInstance = new RolesApi();
 Integer id = 56; // Integer | Role ID
-String include = "include_example"; // String | Related objects that can be included in the response:   See Including Objects for more information.
 try {
-    Role result = apiInstance.show(id, include);
+    Role result = apiInstance.show(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RolesApi#show");
@@ -87,7 +84,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| Role ID |
- **include** | **String**| Related objects that can be included in the response:   See Including Objects for more information. | [optional]
 
 ### Return type
 

@@ -21,22 +21,20 @@ public interface RolesApi {
   /**
    * Get a list of Roles
    * 
-   * @param page Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page (optional, default to {:number=>1,+:size=>20})
-   * @param include Related objects that can be included in the response:   See Including Objects for more information. (optional)
+   * @param page Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page. (optional, default to {:number=>1,+:size=>20})
    * @return Call&lt;PaginatedCollection&gt;
    */
   
   @retrofit2.http.FormUrlEncoded
   @GET("api/v2/roles.json_api")
   Call<PaginatedCollection> list(
-    @retrofit2.http.Field("page") String page, @retrofit2.http.Query("include") String include
+    @retrofit2.http.Field("page") String page
   );
 
   /**
    * Show a single Role
    * 
    * @param id Role ID (required)
-   * @param include Related objects that can be included in the response:   See Including Objects for more information. (optional)
    * @return Call&lt;Role&gt;
    */
   
@@ -45,7 +43,7 @@ public interface RolesApi {
   })
   @GET("api/v2/roles/{id}.json_api")
   Call<Role> show(
-    @retrofit2.http.Path("id") Integer id, @retrofit2.http.Query("include") String include
+    @retrofit2.http.Path("id") Integer id
   );
 
 }

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="requestFile"></a>
 # **requestFile**
-> ExportedReport requestFile(requestedFormat, reportIds, filter, include)
+> ExportedReport requestFile(reportIds, requestedFormat, include, filter)
 
 Export all alerts for a set of reports to a file
 
@@ -25,12 +25,12 @@ Export all alerts for a set of reports to a file
 
 
 ReportExportApi apiInstance = new ReportExportApi();
-String requestedFormat = "requestedFormat_example"; // String | The file format of the export. Valid values are csv, json, pdf
 List<Integer> reportIds = Arrays.asList(56); // List<Integer> | An array of report IDs to export alerts for
-Map<String, String> filter = new HashMap(); // Map<String, String> | Params used to filter the alerts that will be exported
+String requestedFormat = "requestedFormat_example"; // String | The file format of the export. Valid values are csv, json, pdf
 String include = "include_example"; // String | Related objects that can be included in the response:  user See Including Objects for more information.
+Map<String, String> filter = new HashMap(); // Map<String, String> | Params used to filter the alerts that will be exported
 try {
-    ExportedReport result = apiInstance.requestFile(requestedFormat, reportIds, filter, include);
+    ExportedReport result = apiInstance.requestFile(reportIds, requestedFormat, include, filter);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ReportExportApi#requestFile");
@@ -42,10 +42,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestedFormat** | **String**| The file format of the export. Valid values are csv, json, pdf | [enum: csv, json, pdf]
  **reportIds** | [**List&lt;Integer&gt;**](Integer.md)| An array of report IDs to export alerts for |
- **filter** | [**Map&lt;String, String&gt;**](String.md)| Params used to filter the alerts that will be exported | [optional]
+ **requestedFormat** | **String**| The file format of the export. Valid values are csv, json, pdf | [enum: csv, json, pdf]
  **include** | **String**| Related objects that can be included in the response:  user See Including Objects for more information. | [optional]
+ **filter** | [**Map&lt;String, String&gt;**](String.md)| Params used to filter the alerts that will be exported | [optional]
 
 ### Return type
 
@@ -62,7 +62,7 @@ No authorization required
 
 <a name="sendToIntegration"></a>
 # **sendToIntegration**
-> Meta sendToIntegration(reportIds, integrationId, filter)
+> Meta sendToIntegration(integrationId, reportIds, filter)
 
 Export all alerts on reports to an integration
 
@@ -76,11 +76,11 @@ Export all alerts on reports to an integration
 
 
 ReportExportApi apiInstance = new ReportExportApi();
-List<Integer> reportIds = Arrays.asList(56); // List<Integer> | An array of report IDs
 Integer integrationId = 56; // Integer | The ID of the integration to send the alerts to
+List<Integer> reportIds = Arrays.asList(56); // List<Integer> | An array of report IDs
 Map<String, String> filter = new HashMap(); // Map<String, String> | Params used to filter the alerts that will be exported
 try {
-    Meta result = apiInstance.sendToIntegration(reportIds, integrationId, filter);
+    Meta result = apiInstance.sendToIntegration(integrationId, reportIds, filter);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ReportExportApi#sendToIntegration");
@@ -92,8 +92,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **reportIds** | [**List&lt;Integer&gt;**](Integer.md)| An array of report IDs |
  **integrationId** | **Integer**| The ID of the integration to send the alerts to |
+ **reportIds** | [**List&lt;Integer&gt;**](Integer.md)| An array of report IDs |
  **filter** | [**Map&lt;String, String&gt;**](String.md)| Params used to filter the alerts that will be exported | [optional]
 
 ### Return type

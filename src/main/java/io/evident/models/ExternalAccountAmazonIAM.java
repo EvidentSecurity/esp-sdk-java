@@ -24,7 +24,7 @@ import org.joda.time.DateTime;
  * A(n) ExternalAccountAmazonIAM object
  */
 @ApiModel(description = "A(n) ExternalAccountAmazonIAM object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-13T15:00:39.690-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-25T13:00:36.864-05:00")
 public class ExternalAccountAmazonIAM {
   @SerializedName("id")
   private Integer id = null;
@@ -34,9 +34,6 @@ public class ExternalAccountAmazonIAM {
 
   @SerializedName("arn")
   private String arn = null;
-
-  @SerializedName("cloudtrail_name")
-  private String cloudtrailName = null;
 
   @SerializedName("external_id")
   private String externalId = null;
@@ -105,24 +102,6 @@ public class ExternalAccountAmazonIAM {
 
   public void setArn(String arn) {
     this.arn = arn;
-  }
-
-  public ExternalAccountAmazonIAM cloudtrailName(String cloudtrailName) {
-    this.cloudtrailName = cloudtrailName;
-    return this;
-  }
-
-   /**
-   * Cloudtrail Name
-   * @return cloudtrailName
-  **/
-  @ApiModelProperty(example = "null", value = "Cloudtrail Name")
-  public String getCloudtrailName() {
-    return cloudtrailName;
-  }
-
-  public void setCloudtrailName(String cloudtrailName) {
-    this.cloudtrailName = cloudtrailName;
   }
 
   public ExternalAccountAmazonIAM externalId(String externalId) {
@@ -228,7 +207,6 @@ public class ExternalAccountAmazonIAM {
     return Objects.equals(this.id, externalAccountAmazonIAM.id) &&
         Objects.equals(this.account, externalAccountAmazonIAM.account) &&
         Objects.equals(this.arn, externalAccountAmazonIAM.arn) &&
-        Objects.equals(this.cloudtrailName, externalAccountAmazonIAM.cloudtrailName) &&
         Objects.equals(this.externalId, externalAccountAmazonIAM.externalId) &&
         Objects.equals(this.createdAt, externalAccountAmazonIAM.createdAt) &&
         Objects.equals(this.updatedAt, externalAccountAmazonIAM.updatedAt) &&
@@ -238,7 +216,7 @@ public class ExternalAccountAmazonIAM {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, account, arn, cloudtrailName, externalId, createdAt, updatedAt, externalAccount, externalAccountId);
+    return Objects.hash(id, account, arn, externalId, createdAt, updatedAt, externalAccount, externalAccountId);
   }
 
 
@@ -250,7 +228,6 @@ public class ExternalAccountAmazonIAM {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    account: ").append(toIndentedString(account)).append("\n");
     sb.append("    arn: ").append(toIndentedString(arn)).append("\n");
-    sb.append("    cloudtrailName: ").append(toIndentedString(cloudtrailName)).append("\n");
     sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");

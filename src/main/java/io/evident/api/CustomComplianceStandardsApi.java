@@ -21,8 +21,8 @@ public interface CustomComplianceStandardsApi {
   /**
    * Create a(n) Custom Compliance Standard
    * 
-   * @param name Name (required)
    * @param description The description for this Compliance Standard (required)
+   * @param name Name (required)
    * @param include Related objects that can be included in the response:  custom_compliance_domains, custom_compliance_controls See Including Objects for more information. (optional)
    * @return Call&lt;CustomComplianceStandard&gt;
    */
@@ -30,13 +30,13 @@ public interface CustomComplianceStandardsApi {
   @retrofit2.http.FormUrlEncoded
   @POST("api/v2/custom_compliance_standards.json_api")
   Call<CustomComplianceStandard> create(
-    @retrofit2.http.Field("name") String name, @retrofit2.http.Field("description") String description, @retrofit2.http.Query("include") String include
+    @retrofit2.http.Field("description") String description, @retrofit2.http.Field("name") String name, @retrofit2.http.Query("include") String include
   );
 
   /**
    * Delete a(n) Custom Compliance Standard
    * 
-   * @param id  ID (required)
+   * @param id Custom Compliance Standard ID (required)
    * @return Call&lt;Meta&gt;
    */
   
@@ -68,16 +68,16 @@ public interface CustomComplianceStandardsApi {
    * Update a(n) Custom Compliance Standard
    * 
    * @param id Custom Compliance Standard ID (required)
-   * @param name Name (optional)
-   * @param description The description for this Compliance Standard (optional)
    * @param include Related objects that can be included in the response:  custom_compliance_domains, custom_compliance_controls See Including Objects for more information. (optional)
+   * @param description The description for this Compliance Standard (optional)
+   * @param name Name (optional)
    * @return Call&lt;CustomComplianceStandard&gt;
    */
   
   @retrofit2.http.FormUrlEncoded
   @PATCH("api/v2/custom_compliance_standards/{id}.json_api")
   Call<CustomComplianceStandard> update(
-    @retrofit2.http.Path("id") Integer id, @retrofit2.http.Field("name") String name, @retrofit2.http.Field("description") String description, @retrofit2.http.Query("include") String include
+    @retrofit2.http.Path("id") Integer id, @retrofit2.http.Query("include") String include, @retrofit2.http.Field("description") String description, @retrofit2.http.Field("name") String name
   );
 
 }

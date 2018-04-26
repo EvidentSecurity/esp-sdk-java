@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="list"></a>
 # **list**
-> PaginatedCollection list(page, include)
+> PaginatedCollection list(page)
 
 Get a list of Plans
 
@@ -24,10 +24,9 @@ Get a list of Plans
 
 
 PlansApi apiInstance = new PlansApi();
-String page = "{:number=>1,+:size=>20}"; // String | Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page
-String include = "include_example"; // String | Related objects that can be included in the response:   See Including Objects for more information.
+String page = "{:number=>1,+:size=>20}"; // String | Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page.
 try {
-    PaginatedCollection result = apiInstance.list(page, include);
+    PaginatedCollection result = apiInstance.list(page);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PlansApi#list");
@@ -39,8 +38,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **String**| Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page | [optional] [default to {:number&#x3D;&gt;1,+:size&#x3D;&gt;20}]
- **include** | **String**| Related objects that can be included in the response:   See Including Objects for more information. | [optional]
+ **page** | **String**| Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page. | [optional] [default to {:number&#x3D;&gt;1,+:size&#x3D;&gt;20}]
 
 ### Return type
 
@@ -57,7 +55,7 @@ No authorization required
 
 <a name="show"></a>
 # **show**
-> Plan show(id, include)
+> Plan show(id)
 
 Show a single Plan
 
@@ -72,9 +70,8 @@ Show a single Plan
 
 PlansApi apiInstance = new PlansApi();
 Integer id = 56; // Integer | Plan ID
-String include = "include_example"; // String | Related objects that can be included in the response:   See Including Objects for more information.
 try {
-    Plan result = apiInstance.show(id, include);
+    Plan result = apiInstance.show(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PlansApi#show");
@@ -87,7 +84,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| Plan ID |
- **include** | **String**| Related objects that can be included in the response:   See Including Objects for more information. | [optional]
 
 ### Return type
 

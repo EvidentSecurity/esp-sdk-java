@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="create"></a>
 # **create**
-> ExternalAccountAzure create(subscriptionId, clientId, tenantId, appKey, name, teamId)
+> ExternalAccountAzure create(appKey, clientId, name, subscriptionId, teamId, tenantId)
 
 Create an Azure External Account
 
@@ -26,14 +26,14 @@ The channel_url will only be returned in this response and will not be accessibl
 
 
 ExternalAccountsAzureApi apiInstance = new ExternalAccountsAzureApi();
-String subscriptionId = "subscriptionId_example"; // String | Azure subscription ID
-String clientId = "clientId_example"; // String | Azure client ID
-String tenantId = "tenantId_example"; // String | Azure tenant ID
 String appKey = "appKey_example"; // String | Azure app key
+String clientId = "clientId_example"; // String | Azure client ID
 String name = "name_example"; // String | Name
+String subscriptionId = "subscriptionId_example"; // String | Azure subscription ID
 Integer teamId = 56; // Integer | The ID of the team the external account belongs to
+String tenantId = "tenantId_example"; // String | Azure tenant ID
 try {
-    ExternalAccountAzure result = apiInstance.create(subscriptionId, clientId, tenantId, appKey, name, teamId);
+    ExternalAccountAzure result = apiInstance.create(appKey, clientId, name, subscriptionId, teamId, tenantId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExternalAccountsAzureApi#create");
@@ -45,12 +45,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **subscriptionId** | **String**| Azure subscription ID |
- **clientId** | **String**| Azure client ID |
- **tenantId** | **String**| Azure tenant ID |
  **appKey** | **String**| Azure app key |
+ **clientId** | **String**| Azure client ID |
  **name** | **String**| Name |
+ **subscriptionId** | **String**| Azure subscription ID |
  **teamId** | **Integer**| The ID of the team the external account belongs to |
+ **tenantId** | **String**| Azure tenant ID |
 
 ### Return type
 
@@ -159,7 +159,7 @@ No authorization required
 
 <a name="update"></a>
 # **update**
-> ExternalAccountAzure update(externalAccountId, subscriptionId, clientId, tenantId, appKey, name, teamId)
+> ExternalAccountAzure update(externalAccountId, appKey, clientId, name, subscriptionId, teamId, tenantId)
 
 Update an Azure External Account
 
@@ -174,14 +174,14 @@ Update an Azure External Account
 
 ExternalAccountsAzureApi apiInstance = new ExternalAccountsAzureApi();
 Integer externalAccountId = 56; // Integer | The ID of the external account to update an Azure credential for
-String subscriptionId = "subscriptionId_example"; // String | Azure subscription ID
-String clientId = "clientId_example"; // String | Azure client ID
-String tenantId = "tenantId_example"; // String | Azure tenant ID
 String appKey = "appKey_example"; // String | Azure app key
+String clientId = "clientId_example"; // String | Azure client ID
 String name = "name_example"; // String | Name
+String subscriptionId = "subscriptionId_example"; // String | Azure subscription ID
 Integer teamId = 56; // Integer | The ID of the team the external account belongs to
+String tenantId = "tenantId_example"; // String | Azure tenant ID
 try {
-    ExternalAccountAzure result = apiInstance.update(externalAccountId, subscriptionId, clientId, tenantId, appKey, name, teamId);
+    ExternalAccountAzure result = apiInstance.update(externalAccountId, appKey, clientId, name, subscriptionId, teamId, tenantId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExternalAccountsAzureApi#update");
@@ -194,12 +194,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **externalAccountId** | **Integer**| The ID of the external account to update an Azure credential for |
- **subscriptionId** | **String**| Azure subscription ID | [optional]
- **clientId** | **String**| Azure client ID | [optional]
- **tenantId** | **String**| Azure tenant ID | [optional]
  **appKey** | **String**| Azure app key | [optional]
+ **clientId** | **String**| Azure client ID | [optional]
  **name** | **String**| Name | [optional]
+ **subscriptionId** | **String**| Azure subscription ID | [optional]
  **teamId** | **Integer**| The ID of the team the external account belongs to | [optional]
+ **tenantId** | **String**| Azure tenant ID | [optional]
 
 ### Return type
 

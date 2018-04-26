@@ -22,47 +22,48 @@ public interface SignaturesApi {
   /**
    * Get a list of Signatures
    * 
-   * @param filter Filter Params for Searching.  Equality Searchable Attributes: [id, risk_level, service_id, disabled, supports_user_attribution, name, identifier, description, resolution] Matching Searchable Attributes: [name, identifier, description, resolution] Limited Searchable Attribute: [service_provider_eq] Sortable Attributes: [name, identifier, updated_at, created_at, id] Searchable Associations: [signature_copy, disabled_external_accounts, integrations, suppressions] See Searching Lists for more information. See the filter parameter of the association&#39;s list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information. (optional)
-   * @param page Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page (optional, default to {:number=>1,+:size=>20})
    * @param include Related objects that can be included in the response:  service, suppressions See Including Objects for more information. (optional)
+   * @param filter Filter Params for Searching.  Equality Searchable Attributes: [id, risk_level, service_id, disabled, supports_user_attribution, name, identifier, description, resolution] Matching Searchable Attributes: [name, identifier, description, resolution] Limited Searchable Attribute: [service_provider_eq] Sortable Attributes: [name, identifier, updated_at, created_at, id] Searchable Associations: [signature_copy, disabled_external_accounts, integrations, suppressions] See Searching Lists for more information. See the filter parameter of the association&#39;s list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information. (optional)
+   * @param page Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page. (optional, default to {:number=>1,+:size=>20})
    * @return Call&lt;PaginatedCollection&gt;
    */
   
   @retrofit2.http.FormUrlEncoded
   @PUT("api/v2/signatures.json_api")
   Call<PaginatedCollection> list(
-    @retrofit2.http.Field("filter") Map<String, String> filter, @retrofit2.http.Field("page") String page, @retrofit2.http.Query("include") String include
+    @retrofit2.http.Query("include") String include, @retrofit2.http.Field("filter") Map<String, String> filter, @retrofit2.http.Field("page") String page
   );
 
   /**
    * Get a list of disabled External Accounts for a signature
    * 
-   * @param filter Filter Params for Searching.  Equality Searchable Attributes: [id, nickname, name] Matching Searchable Attributes: [nickname, name] Limited Searchable Attributes: [account_eq, arn_eq, provider_eq, subscription_id_eq] Sortable Attributes: [name, updated_at, created_at, id] Searchable Associations: [organization, sub_organization, team, compliance_standards, azure_group, disabled_signatures, suppressions] See Searching Lists for more information. See the filter parameter of the association&#39;s list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information. (optional)
-   * @param page Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page (optional, default to {:number=>1,+:size=>20})
+   * @param signatureId The ID of the signature to get the list of disabled external accounts for (required)
    * @param include Related objects that can be included in the response:  organization, sub_organization, team, scan_intervals, disabled_signatures, suppressions, azure_group, credentials See Including Objects for more information. (optional)
+   * @param filter Filter Params for Searching.  Equality Searchable Attributes: [id, nickname, name] Matching Searchable Attributes: [nickname, name] Limited Searchable Attributes: [account_eq, arn_eq, provider_eq, subscription_id_eq] Sortable Attributes: [name, updated_at, created_at, id] Searchable Associations: [organization, sub_organization, team, compliance_standards, azure_group, disabled_signatures, suppressions] See Searching Lists for more information. See the filter parameter of the association&#39;s list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information. (optional)
+   * @param page Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page. (optional, default to {:number=>1,+:size=>20})
    * @return Call&lt;PaginatedCollection&gt;
    */
   
   @retrofit2.http.FormUrlEncoded
   @GET("api/v2/signatures/{signature_id}/disabled_external_accounts.json_api")
   Call<PaginatedCollection> listDisabledExternalAccounts(
-    @retrofit2.http.Field("filter") Map<String, String> filter, @retrofit2.http.Field("page") String page, @retrofit2.http.Query("include") String include
+    @retrofit2.http.Path("signature_id") Integer signatureId, @retrofit2.http.Query("include") String include, @retrofit2.http.Field("filter") Map<String, String> filter, @retrofit2.http.Field("page") String page
   );
 
   /**
    * Get A list of Signatures with default and custom risk levels for an External Account
    * Return only signatures that have a custom risk level set by searching with &#x60;filter:{custom_risk_level_present: 1}&#x60;
    * @param externalAccountId The ID of the external account to retrieve (required)
-   * @param page Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page (optional, default to {:number=>1,+:size=>20})
    * @param include Related objects that can be included in the response:  service, suppressions See Including Objects for more information. (optional)
    * @param filter Filter Params for Searching.  Equality Searchable Attributes: [id, risk_level, service_id, disabled, supports_user_attribution, name, identifier, description, resolution] Matching Searchable Attributes: [name, identifier, description, resolution] Limited Searchable Attributes: [custom_risk_level_present, service_provider_eq] Sortable Attributes: [name, identifier, updated_at, created_at, id] Searchable Associations: [signature_copy, disabled_external_accounts, integrations, suppressions] See Searching Lists for more information. See the filter parameter of the association&#39;s list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information. (optional)
+   * @param page Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page. (optional, default to {:number=>1,+:size=>20})
    * @return Call&lt;PaginatedCollection&gt;
    */
   
   @retrofit2.http.FormUrlEncoded
   @PUT("api/v2/external_accounts/{external_account_id}/signature_custom_risk_levels.json_api")
   Call<PaginatedCollection> listWithCustomRiskLevelForExternalAccount(
-    @retrofit2.http.Path("external_account_id") Integer externalAccountId, @retrofit2.http.Field("page") String page, @retrofit2.http.Query("include") String include, @retrofit2.http.Field("filter") Map<String, String> filter
+    @retrofit2.http.Path("external_account_id") Integer externalAccountId, @retrofit2.http.Query("include") String include, @retrofit2.http.Field("filter") Map<String, String> filter, @retrofit2.http.Field("page") String page
   );
 
   /**
@@ -85,8 +86,8 @@ public interface SignaturesApi {
    * Add a custom risk level to a Signature for an External Account
    * 
    * @param externalAccountId The ID of the external account this signature custom risk level is for (required)
-   * @param signatureId The signature ID this signature custom risk level is for (required)
    * @param riskLevel The custom risk-level of the problem identified by the signature for this external_account. Valid values are low, medium, high (required)
+   * @param signatureId The signature ID this signature custom risk level is for (required)
    * @param include Related objects that can be included in the response:  service, suppressions See Including Objects for more information. (optional)
    * @return Call&lt;Signature&gt;
    */
@@ -94,7 +95,7 @@ public interface SignaturesApi {
   @retrofit2.http.FormUrlEncoded
   @POST("api/v2/external_accounts/{external_account_id}/signature_custom_risk_levels.json_api")
   Call<Signature> setCustomRiskLevelForExternalAccount(
-    @retrofit2.http.Path("external_account_id") Integer externalAccountId, @retrofit2.http.Field("signature_id") Integer signatureId, @retrofit2.http.Field("risk_level") String riskLevel, @retrofit2.http.Query("include") String include
+    @retrofit2.http.Path("external_account_id") Integer externalAccountId, @retrofit2.http.Field("risk_level") String riskLevel, @retrofit2.http.Field("signature_id") Integer signatureId, @retrofit2.http.Query("include") String include
   );
 
   /**
@@ -118,15 +119,15 @@ public interface SignaturesApi {
    * 
    * @param externalAccountId The ID of the external account this signature custom risk level is for (required)
    * @param signatureId The signature ID this signature custom risk level is for (required)
-   * @param riskLevel The custom risk-level of the problem identified by the signature for this external_account. Valid values are low, medium, high (optional)
    * @param include Related objects that can be included in the response:  service, suppressions See Including Objects for more information. (optional)
+   * @param riskLevel The custom risk-level of the problem identified by the signature for this external_account. Valid values are low, medium, high (optional)
    * @return Call&lt;Signature&gt;
    */
   
   @retrofit2.http.FormUrlEncoded
   @PATCH("api/v2/external_accounts/{external_account_id}/signature_custom_risk_levels/{signature_id}.json_api")
   Call<Signature> updateCustomRiskLevelForExternalAccount(
-    @retrofit2.http.Path("external_account_id") Integer externalAccountId, @retrofit2.http.Path("signature_id") Integer signatureId, @retrofit2.http.Field("risk_level") String riskLevel, @retrofit2.http.Query("include") String include
+    @retrofit2.http.Path("external_account_id") Integer externalAccountId, @retrofit2.http.Path("signature_id") Integer signatureId, @retrofit2.http.Query("include") String include, @retrofit2.http.Field("risk_level") String riskLevel
   );
 
 }

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="create"></a>
 # **create**
-> APIKey create(name, include)
+> APIKey create(include, name)
 
 Create a(n) API Key
 
@@ -27,10 +27,10 @@ The secret key will only be returned once when the key is first created
 
 
 APIKeysApi apiInstance = new APIKeysApi();
-String name = "name_example"; // String | The name of the API Key
 String include = "include_example"; // String | Related objects that can be included in the response:  user See Including Objects for more information.
+String name = "name_example"; // String | The name of the API Key
 try {
-    APIKey result = apiInstance.create(name, include);
+    APIKey result = apiInstance.create(include, name);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling APIKeysApi#create");
@@ -42,8 +42,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **String**| The name of the API Key | [optional]
  **include** | **String**| Related objects that can be included in the response:  user See Including Objects for more information. | [optional]
+ **name** | **String**| The name of the API Key | [optional]
 
 ### Return type
 
@@ -74,7 +74,7 @@ Delete a(n) API Key
 
 
 APIKeysApi apiInstance = new APIKeysApi();
-Integer id = 56; // Integer |  ID
+Integer id = 56; // Integer | API Key ID
 try {
     Meta result = apiInstance.delete(id);
     System.out.println(result);
@@ -88,7 +88,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  ID |
+ **id** | **Integer**| API Key ID |
 
 ### Return type
 
@@ -105,7 +105,7 @@ No authorization required
 
 <a name="list"></a>
 # **list**
-> PaginatedCollection list(page, include)
+> PaginatedCollection list(include, page)
 
 Get a list of API Keys
 
@@ -119,10 +119,10 @@ Get a list of API Keys
 
 
 APIKeysApi apiInstance = new APIKeysApi();
-String page = "{:number=>1,+:size=>20}"; // String | Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page
 String include = "include_example"; // String | Related objects that can be included in the response:  user See Including Objects for more information.
+String page = "{:number=>1,+:size=>20}"; // String | Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page.
 try {
-    PaginatedCollection result = apiInstance.list(page, include);
+    PaginatedCollection result = apiInstance.list(include, page);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling APIKeysApi#list");
@@ -134,8 +134,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **String**| Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page | [optional] [default to {:number&#x3D;&gt;1,+:size&#x3D;&gt;20}]
  **include** | **String**| Related objects that can be included in the response:  user See Including Objects for more information. | [optional]
+ **page** | **String**| Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page. | [optional] [default to {:number&#x3D;&gt;1,+:size&#x3D;&gt;20}]
 
 ### Return type
 
@@ -199,7 +199,7 @@ No authorization required
 
 <a name="update"></a>
 # **update**
-> APIKey update(id, name, include)
+> APIKey update(id, include, name)
 
 Update a(n) API Key
 
@@ -214,10 +214,10 @@ Update a(n) API Key
 
 APIKeysApi apiInstance = new APIKeysApi();
 Integer id = 56; // Integer | API Key ID
-String name = "name_example"; // String | The name of the API Key
 String include = "include_example"; // String | Related objects that can be included in the response:  user See Including Objects for more information.
+String name = "name_example"; // String | The name of the API Key
 try {
-    APIKey result = apiInstance.update(id, name, include);
+    APIKey result = apiInstance.update(id, include, name);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling APIKeysApi#update");
@@ -230,8 +230,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| API Key ID |
- **name** | **String**| The name of the API Key | [optional]
  **include** | **String**| Related objects that can be included in the response:  user See Including Objects for more information. | [optional]
+ **name** | **String**| The name of the API Key | [optional]
 
 ### Return type
 

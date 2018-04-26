@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="forAlert"></a>
 # **forAlert**
-> Metadata forAlert(alertId, include)
+> Metadata forAlert(alertId)
 
 Show the metadata for an alert
 
@@ -25,9 +25,8 @@ Show the metadata for an alert
 
 MetadataApi apiInstance = new MetadataApi();
 Integer alertId = 56; // Integer | Alert Id
-String include = "include_example"; // String | Related objects that can be included in the response:   See Including Objects for more information.
 try {
-    Metadata result = apiInstance.forAlert(alertId, include);
+    Metadata result = apiInstance.forAlert(alertId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MetadataApi#forAlert");
@@ -40,7 +39,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **alertId** | **Integer**| Alert Id |
- **include** | **String**| Related objects that can be included in the response:   See Including Objects for more information. | [optional]
 
 ### Return type
 
@@ -57,7 +55,7 @@ No authorization required
 
 <a name="show"></a>
 # **show**
-> Metadata show(id, include)
+> Metadata show(id)
 
 Show a single Metadata
 
@@ -72,9 +70,8 @@ Show a single Metadata
 
 MetadataApi apiInstance = new MetadataApi();
 Integer id = 56; // Integer | Metadata ID
-String include = "include_example"; // String | Related objects that can be included in the response:   See Including Objects for more information.
 try {
-    Metadata result = apiInstance.show(id, include);
+    Metadata result = apiInstance.show(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MetadataApi#show");
@@ -87,7 +84,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| Metadata ID |
- **include** | **String**| Related objects that can be included in the response:   See Including Objects for more information. | [optional]
 
 ### Return type
 

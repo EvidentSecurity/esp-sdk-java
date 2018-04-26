@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="create"></a>
 # **create**
-> Suppression create(reason, regions, externalAccountIds, resource, signatureIds, customSignatureIds, include)
+> Suppression create(externalAccountIds, reason, regions, include, customSignatureIds, resource, signatureIds)
 
 Create a suppression
 
@@ -27,15 +27,15 @@ Create a suppression
 
 
 SuppressionsApi apiInstance = new SuppressionsApi();
+List<Integer> externalAccountIds = Arrays.asList(56); // List<Integer> | IDs of external accounts to be suppressed
 String reason = "reason_example"; // String | The reason for the suppresion
 List<String> regions = Arrays.asList("regions_example"); // List<String> | Codes of regions to be suppressed
-List<Integer> externalAccountIds = Arrays.asList(56); // List<Integer> | IDs of external accounts to be suppressed
+String include = "include_example"; // String | Related objects that can be included in the response:  organization, created_by, regions, external_accounts, signatures, custom_signatures See Including Objects for more information.
+List<Integer> customSignatureIds = Arrays.asList(56); // List<Integer> | IDs of custom signatures to be suppressed
 String resource = "resource_example"; // String | The resource string this suppression will suppress alerts for
 List<Integer> signatureIds = Arrays.asList(56); // List<Integer> | IDs of signatures to be suppressed
-List<Integer> customSignatureIds = Arrays.asList(56); // List<Integer> | IDs of custom signatures to be suppressed
-String include = "include_example"; // String | Related objects that can be included in the response:  organization, created_by, regions, external_accounts, signatures, custom_signatures See Including Objects for more information.
 try {
-    Suppression result = apiInstance.create(reason, regions, externalAccountIds, resource, signatureIds, customSignatureIds, include);
+    Suppression result = apiInstance.create(externalAccountIds, reason, regions, include, customSignatureIds, resource, signatureIds);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SuppressionsApi#create");
@@ -47,13 +47,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **externalAccountIds** | [**List&lt;Integer&gt;**](Integer.md)| IDs of external accounts to be suppressed |
  **reason** | **String**| The reason for the suppresion |
  **regions** | [**List&lt;String&gt;**](String.md)| Codes of regions to be suppressed |
- **externalAccountIds** | [**List&lt;Integer&gt;**](Integer.md)| IDs of external accounts to be suppressed |
+ **include** | **String**| Related objects that can be included in the response:  organization, created_by, regions, external_accounts, signatures, custom_signatures See Including Objects for more information. | [optional]
+ **customSignatureIds** | [**List&lt;Integer&gt;**](Integer.md)| IDs of custom signatures to be suppressed | [optional]
  **resource** | **String**| The resource string this suppression will suppress alerts for | [optional]
  **signatureIds** | [**List&lt;Integer&gt;**](Integer.md)| IDs of signatures to be suppressed | [optional]
- **customSignatureIds** | [**List&lt;Integer&gt;**](Integer.md)| IDs of custom signatures to be suppressed | [optional]
- **include** | **String**| Related objects that can be included in the response:  organization, created_by, regions, external_accounts, signatures, custom_signatures See Including Objects for more information. | [optional]
 
 ### Return type
 
@@ -70,7 +70,7 @@ No authorization required
 
 <a name="createFromAlert"></a>
 # **createFromAlert**
-> Suppression createFromAlert(alertId, reason, include)
+> Suppression createFromAlert(reason, include)
 
 Creates a suppression from an alert
 
@@ -84,11 +84,10 @@ A successful call to this API creates a new suppression based on the supplied al
 
 
 SuppressionsApi apiInstance = new SuppressionsApi();
-Integer alertId = 56; // Integer | The ID for the alert you want to create a suppression for
 String reason = "reason_example"; // String | The reason for creating the suppression
 String include = "include_example"; // String | Related objects that can be included in the response:  organization, created_by, regions, external_accounts, signatures, custom_signatures See Including Objects for more information.
 try {
-    Suppression result = apiInstance.createFromAlert(alertId, reason, include);
+    Suppression result = apiInstance.createFromAlert(reason, include);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SuppressionsApi#createFromAlert");
@@ -100,7 +99,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **alertId** | **Integer**| The ID for the alert you want to create a suppression for |
  **reason** | **String**| The reason for creating the suppression |
  **include** | **String**| Related objects that can be included in the response:  organization, created_by, regions, external_accounts, signatures, custom_signatures See Including Objects for more information. | [optional]
 
@@ -166,7 +164,7 @@ No authorization required
 
 <a name="list"></a>
 # **list**
-> PaginatedCollection list(filter, page, include)
+> PaginatedCollection list(include, filter, page)
 
 Get a list of Suppressions
 
@@ -180,11 +178,11 @@ Get a list of Suppressions
 
 
 SuppressionsApi apiInstance = new SuppressionsApi();
-Map<String, String> filter = new HashMap(); // Map<String, String> | Filter Params for Searching.  Equality Searchable Attributes: [id, aasm_state, status, suppression_type, resource, reason] Matching Searchable Attributes: [resource, reason]  Sortable Attributes: [updated_at, created_at, id, status] Searchable Associations: [regions, external_accounts, created_by, user, signatures, custom_signatures] See Searching Lists for more information. See the filter parameter of the association's list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information.
-String page = "{:number=>1,+:size=>20}"; // String | Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page
 String include = "include_example"; // String | Related objects that can be included in the response:  organization, created_by, regions, external_accounts, signatures, custom_signatures See Including Objects for more information.
+Map<String, String> filter = new HashMap(); // Map<String, String> | Filter Params for Searching.  Equality Searchable Attributes: [id, aasm_state, status, suppression_type, resource, reason] Matching Searchable Attributes: [resource, reason]  Sortable Attributes: [updated_at, created_at, id, status] Searchable Associations: [regions, external_accounts, created_by, user, signatures, custom_signatures] See Searching Lists for more information. See the filter parameter of the association's list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information.
+String page = "{:number=>1,+:size=>20}"; // String | Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page.
 try {
-    PaginatedCollection result = apiInstance.list(filter, page, include);
+    PaginatedCollection result = apiInstance.list(include, filter, page);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SuppressionsApi#list");
@@ -196,9 +194,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | [**Map&lt;String, String&gt;**](String.md)| Filter Params for Searching.  Equality Searchable Attributes: [id, aasm_state, status, suppression_type, resource, reason] Matching Searchable Attributes: [resource, reason]  Sortable Attributes: [updated_at, created_at, id, status] Searchable Associations: [regions, external_accounts, created_by, user, signatures, custom_signatures] See Searching Lists for more information. See the filter parameter of the association&#39;s list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information. | [optional]
- **page** | **String**| Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page | [optional] [default to {:number&#x3D;&gt;1,+:size&#x3D;&gt;20}]
  **include** | **String**| Related objects that can be included in the response:  organization, created_by, regions, external_accounts, signatures, custom_signatures See Including Objects for more information. | [optional]
+ **filter** | [**Map&lt;String, String&gt;**](String.md)| Filter Params for Searching.  Equality Searchable Attributes: [id, aasm_state, status, suppression_type, resource, reason] Matching Searchable Attributes: [resource, reason]  Sortable Attributes: [updated_at, created_at, id, status] Searchable Associations: [regions, external_accounts, created_by, user, signatures, custom_signatures] See Searching Lists for more information. See the filter parameter of the association&#39;s list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information. | [optional]
+ **page** | **String**| Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page. | [optional] [default to {:number&#x3D;&gt;1,+:size&#x3D;&gt;20}]
 
 ### Return type
 

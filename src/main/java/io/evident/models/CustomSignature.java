@@ -19,7 +19,6 @@ import io.evident.models.CustomSignatureDefinition;
 import io.evident.models.ExternalAccount;
 import io.evident.models.Organization;
 import io.evident.models.Suppression;
-import io.evident.models.Team;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -30,7 +29,7 @@ import org.joda.time.DateTime;
  * A(n) CustomSignature object
  */
 @ApiModel(description = "A(n) CustomSignature object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-13T15:00:39.690-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-25T13:00:36.864-05:00")
 public class CustomSignature {
   @SerializedName("id")
   private Integer id = null;
@@ -61,12 +60,6 @@ public class CustomSignature {
 
   @SerializedName("organization_id")
   private Integer organizationId = null;
-
-  @SerializedName("teams")
-  private List<Team> teams = new ArrayList<Team>();
-
-  @SerializedName("team_ids")
-  private List<Integer> teamIds = new ArrayList<Integer>();
 
   @SerializedName("external_accounts")
   private List<ExternalAccount> externalAccounts = new ArrayList<ExternalAccount>();
@@ -266,52 +259,6 @@ public class CustomSignature {
     this.organizationId = organizationId;
   }
 
-  public CustomSignature teams(List<Team> teams) {
-    this.teams = teams;
-    return this;
-  }
-
-  public CustomSignature addTeamsItem(Team teamsItem) {
-    this.teams.add(teamsItem);
-    return this;
-  }
-
-   /**
-   * Associated Teams
-   * @return teams
-  **/
-  @ApiModelProperty(example = "null", value = "Associated Teams")
-  public List<Team> getTeams() {
-    return teams;
-  }
-
-  public void setTeams(List<Team> teams) {
-    this.teams = teams;
-  }
-
-  public CustomSignature teamIds(List<Integer> teamIds) {
-    this.teamIds = teamIds;
-    return this;
-  }
-
-  public CustomSignature addTeamIdsItem(Integer teamIdsItem) {
-    this.teamIds.add(teamIdsItem);
-    return this;
-  }
-
-   /**
-   * Associated Teams IDs
-   * @return teamIds
-  **/
-  @ApiModelProperty(example = "null", value = "Associated Teams IDs")
-  public List<Integer> getTeamIds() {
-    return teamIds;
-  }
-
-  public void setTeamIds(List<Integer> teamIds) {
-    this.teamIds = teamIds;
-  }
-
   public CustomSignature externalAccounts(List<ExternalAccount> externalAccounts) {
     this.externalAccounts = externalAccounts;
     return this;
@@ -470,8 +417,6 @@ public class CustomSignature {
         Objects.equals(this.updatedAt, customSignature.updatedAt) &&
         Objects.equals(this.organization, customSignature.organization) &&
         Objects.equals(this.organizationId, customSignature.organizationId) &&
-        Objects.equals(this.teams, customSignature.teams) &&
-        Objects.equals(this.teamIds, customSignature.teamIds) &&
         Objects.equals(this.externalAccounts, customSignature.externalAccounts) &&
         Objects.equals(this.externalAccountIds, customSignature.externalAccountIds) &&
         Objects.equals(this.definitions, customSignature.definitions) &&
@@ -482,7 +427,7 @@ public class CustomSignature {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, description, identifier, name, resolution, riskLevel, updatedAt, organization, organizationId, teams, teamIds, externalAccounts, externalAccountIds, definitions, definitionIds, suppressions, suppressionIds);
+    return Objects.hash(id, createdAt, description, identifier, name, resolution, riskLevel, updatedAt, organization, organizationId, externalAccounts, externalAccountIds, definitions, definitionIds, suppressions, suppressionIds);
   }
 
 
@@ -501,8 +446,6 @@ public class CustomSignature {
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
-    sb.append("    teams: ").append(toIndentedString(teams)).append("\n");
-    sb.append("    teamIds: ").append(toIndentedString(teamIds)).append("\n");
     sb.append("    externalAccounts: ").append(toIndentedString(externalAccounts)).append("\n");
     sb.append("    externalAccountIds: ").append(toIndentedString(externalAccountIds)).append("\n");
     sb.append("    definitions: ").append(toIndentedString(definitions)).append("\n");

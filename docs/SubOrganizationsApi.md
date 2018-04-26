@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="create"></a>
 # **create**
-> SubOrganization create(organizationId, name, include)
+> SubOrganization create(name, organizationId, include)
 
 Create a(n) Sub Organization
 
@@ -27,11 +27,11 @@ Create a(n) Sub Organization
 
 
 SubOrganizationsApi apiInstance = new SubOrganizationsApi();
-Integer organizationId = 56; // Integer | The ID of the organization this sub organization should belong to
 String name = "name_example"; // String | Name of the sub organization
+Integer organizationId = 56; // Integer | The ID of the organization this sub organization should belong to
 String include = "include_example"; // String | Related objects that can be included in the response:  external_accounts, organization, teams See Including Objects for more information.
 try {
-    SubOrganization result = apiInstance.create(organizationId, name, include);
+    SubOrganization result = apiInstance.create(name, organizationId, include);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SubOrganizationsApi#create");
@@ -43,8 +43,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Integer**| The ID of the organization this sub organization should belong to |
  **name** | **String**| Name of the sub organization |
+ **organizationId** | **Integer**| The ID of the organization this sub organization should belong to |
  **include** | **String**| Related objects that can be included in the response:  external_accounts, organization, teams See Including Objects for more information. | [optional]
 
 ### Return type
@@ -76,7 +76,7 @@ Delete a(n) Sub Organization
 
 
 SubOrganizationsApi apiInstance = new SubOrganizationsApi();
-Integer id = 56; // Integer |  ID
+Integer id = 56; // Integer | Sub Organization ID
 try {
     Meta result = apiInstance.delete(id);
     System.out.println(result);
@@ -90,7 +90,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  ID |
+ **id** | **Integer**| Sub Organization ID |
 
 ### Return type
 
@@ -107,7 +107,7 @@ No authorization required
 
 <a name="list"></a>
 # **list**
-> PaginatedCollection list(filter, page, include)
+> PaginatedCollection list(include, filter, page)
 
 Get a list of Sub Organizations
 
@@ -121,11 +121,11 @@ Get a list of Sub Organizations
 
 
 SubOrganizationsApi apiInstance = new SubOrganizationsApi();
-Map<String, String> filter = new HashMap(); // Map<String, String> | Filter Params for Searching.  Equality Searchable Attributes: [id, name] Matching Searchable Attribute: [name]  Sortable Attributes: [name, updated_at, created_at, id] Searchable Association: [organization] See Searching Lists for more information. See the filter parameter of the association's list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information.
-String page = "{:number=>1,+:size=>20}"; // String | Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page
 String include = "include_example"; // String | Related objects that can be included in the response:  external_accounts, organization, teams See Including Objects for more information.
+Map<String, String> filter = new HashMap(); // Map<String, String> | Filter Params for Searching.  Equality Searchable Attributes: [id, name] Matching Searchable Attribute: [name]  Sortable Attributes: [name, updated_at, created_at, id] Searchable Association: [organization] See Searching Lists for more information. See the filter parameter of the association's list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information.
+String page = "{:number=>1,+:size=>20}"; // String | Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page.
 try {
-    PaginatedCollection result = apiInstance.list(filter, page, include);
+    PaginatedCollection result = apiInstance.list(include, filter, page);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SubOrganizationsApi#list");
@@ -137,9 +137,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | [**Map&lt;String, String&gt;**](String.md)| Filter Params for Searching.  Equality Searchable Attributes: [id, name] Matching Searchable Attribute: [name]  Sortable Attributes: [name, updated_at, created_at, id] Searchable Association: [organization] See Searching Lists for more information. See the filter parameter of the association&#39;s list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information. | [optional]
- **page** | **String**| Page Number and Page Size.  number is the page number of the collection to return, size is the number of items to return per page | [optional] [default to {:number&#x3D;&gt;1,+:size&#x3D;&gt;20}]
  **include** | **String**| Related objects that can be included in the response:  external_accounts, organization, teams See Including Objects for more information. | [optional]
+ **filter** | [**Map&lt;String, String&gt;**](String.md)| Filter Params for Searching.  Equality Searchable Attributes: [id, name] Matching Searchable Attribute: [name]  Sortable Attributes: [name, updated_at, created_at, id] Searchable Association: [organization] See Searching Lists for more information. See the filter parameter of the association&#39;s list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information. | [optional]
+ **page** | **String**| Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page. | [optional] [default to {:number&#x3D;&gt;1,+:size&#x3D;&gt;20}]
 
 ### Return type
 
@@ -203,7 +203,7 @@ No authorization required
 
 <a name="update"></a>
 # **update**
-> SubOrganization update(id, name, include)
+> SubOrganization update(id, include, name)
 
 Update a(n) Sub Organization
 
@@ -218,10 +218,10 @@ Update a(n) Sub Organization
 
 SubOrganizationsApi apiInstance = new SubOrganizationsApi();
 Integer id = 56; // Integer | Sub Organization ID
-String name = "name_example"; // String | Name of the sub organization
 String include = "include_example"; // String | Related objects that can be included in the response:  external_accounts, organization, teams See Including Objects for more information.
+String name = "name_example"; // String | Name of the sub organization
 try {
-    SubOrganization result = apiInstance.update(id, name, include);
+    SubOrganization result = apiInstance.update(id, include, name);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SubOrganizationsApi#update");
@@ -234,8 +234,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| Sub Organization ID |
- **name** | **String**| Name of the sub organization | [optional]
  **include** | **String**| Related objects that can be included in the response:  external_accounts, organization, teams See Including Objects for more information. | [optional]
+ **name** | **String**| Name of the sub organization | [optional]
 
 ### Return type
 
