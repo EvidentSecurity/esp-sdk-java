@@ -31,11 +31,11 @@ public class ReportExportApiTest {
      */
     @Test
     public void requestFileTest() {
-        String requestedFormat = null;
         List<Integer> reportIds = null;
-        Map<String, String> filter = null;
+        String requestedFormat = null;
         String include = null;
-        // ExportedReport response = api.requestFile(requestedFormat, reportIds, filter, include);
+        Map<String, String> filter = null;
+        // ExportedReport response = api.requestFile(reportIds, requestedFormat, include, filter);
 
         // TODO: test validations
     }
@@ -47,10 +47,10 @@ public class ReportExportApiTest {
      */
     @Test
     public void sendToIntegrationTest() {
-        List<Integer> reportIds = null;
         Integer integrationId = null;
+        List<Integer> reportIds = null;
         Map<String, String> filter = null;
-        // Meta response = api.sendToIntegration(reportIds, integrationId, filter);
+        // Meta response = api.sendToIntegration(integrationId, reportIds, filter);
 
         // TODO: test validations
     }

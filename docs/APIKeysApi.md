@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="create"></a>
 # **create**
-> APIKey create(include, name)
+> ApiKey create(include, name)
 
 Create a(n) API Key
 
@@ -30,7 +30,7 @@ APIKeysApi apiInstance = new APIKeysApi();
 String include = "include_example"; // String | Related objects that can be included in the response:  user See Including Objects for more information.
 String name = "name_example"; // String | The name of the API Key
 try {
-    APIKey result = apiInstance.create(include, name);
+    ApiKey result = apiInstance.create(include, name);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling APIKeysApi#create");
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**APIKey**](APIKey.md)
+[**ApiKey**](ApiKey.md)
 
 ### Authorization
 
@@ -152,7 +152,7 @@ No authorization required
 
 <a name="show"></a>
 # **show**
-> APIKey show(id, include)
+> ApiKey show(id, include)
 
 Show a single API Key
 
@@ -169,7 +169,7 @@ APIKeysApi apiInstance = new APIKeysApi();
 Integer id = 56; // Integer | API Key ID
 String include = "include_example"; // String | Related objects that can be included in the response:  user See Including Objects for more information.
 try {
-    APIKey result = apiInstance.show(id, include);
+    ApiKey result = apiInstance.show(id, include);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling APIKeysApi#show");
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**APIKey**](APIKey.md)
+[**ApiKey**](ApiKey.md)
 
 ### Authorization
 
@@ -199,7 +199,7 @@ No authorization required
 
 <a name="update"></a>
 # **update**
-> APIKey update(id, include, name)
+> ApiKey update(id, include, name)
 
 Update a(n) API Key
 
@@ -217,7 +217,7 @@ Integer id = 56; // Integer | API Key ID
 String include = "include_example"; // String | Related objects that can be included in the response:  user See Including Objects for more information.
 String name = "name_example"; // String | The name of the API Key
 try {
-    APIKey result = apiInstance.update(id, include, name);
+    ApiKey result = apiInstance.update(id, include, name);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling APIKeysApi#update");
@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**APIKey**](APIKey.md)
+[**ApiKey**](ApiKey.md)
 
 ### Authorization
 

@@ -26,15 +26,10 @@ Name | Type | Description | Notes
 **suppression** | [**Suppression**](Suppression.md) | Associated Suppression |  [optional]
 **suppressionId** | **Integer** | Associated Suppression ID |  [optional]
 **metadata** | [**Metadata**](Metadata.md) | Associated Metadata |  [optional]
-**metadataId** | **Integer** | Associated Metadata ID |  [optional]
 **attribution** | [**Attribution**](Attribution.md) | Associated Attribution |  [optional]
-**attributionId** | **Integer** | Associated Attribution ID |  [optional]
 **tags** | [**List&lt;Tag&gt;**](Tag.md) | Associated Tags |  [optional]
-**tagIds** | **List&lt;Integer&gt;** | Associated Tags IDs |  [optional]
 **complianceControls** | [**List&lt;ComplianceControl&gt;**](ComplianceControl.md) | Associated Compliance Controls |  [optional]
-**complianceControlIds** | **List&lt;Integer&gt;** | Associated Compliance Controls IDs |  [optional]
 **customComplianceControls** | [**List&lt;CustomComplianceControl&gt;**](CustomComplianceControl.md) | Associated Custom Compliance Controls |  [optional]
-**customComplianceControlIds** | **List&lt;Integer&gt;** | Associated Custom Compliance Controls IDs |  [optional]
 
 
 

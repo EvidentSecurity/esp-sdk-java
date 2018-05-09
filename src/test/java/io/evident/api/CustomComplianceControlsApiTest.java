@@ -64,15 +64,15 @@ public class CustomComplianceControlsApiTest {
      */
     @Test
     public void createTest() {
-        String identifier = null;
         Integer customComplianceDomainId = null;
+        String identifier = null;
         String name = null;
+        String include = null;
+        List<Integer> customSignatureIds = null;
         String description = null;
         Integer position = null;
         List<Integer> signatureIds = null;
-        List<Integer> customSignatureIds = null;
-        String include = null;
-        // CustomComplianceControl response = api.create(identifier, customComplianceDomainId, name, description, position, signatureIds, customSignatureIds, include);
+        // CustomComplianceControl response = api.create(customComplianceDomainId, identifier, name, include, customSignatureIds, description, position, signatureIds);
 
         // TODO: test validations
     }
@@ -98,9 +98,9 @@ public class CustomComplianceControlsApiTest {
     @Test
     public void listCustomSignaturesTest() {
         Integer customComplianceControlId = null;
-        String page = null;
         String include = null;
-        // PaginatedCollection response = api.listCustomSignatures(customComplianceControlId, page, include);
+        String page = null;
+        // PaginatedCollection response = api.listCustomSignatures(customComplianceControlId, include, page);
 
         // TODO: test validations
     }
@@ -113,9 +113,9 @@ public class CustomComplianceControlsApiTest {
     @Test
     public void listSignaturesTest() {
         Integer customComplianceControlId = null;
-        String page = null;
         String include = null;
-        // PaginatedCollection response = api.listSignatures(customComplianceControlId, page, include);
+        String page = null;
+        // PaginatedCollection response = api.listSignatures(customComplianceControlId, include, page);
 
         // TODO: test validations
     }
@@ -170,15 +170,15 @@ public class CustomComplianceControlsApiTest {
     @Test
     public void updateTest() {
         Integer id = null;
-        String identifier = null;
+        String include = null;
         Integer customComplianceDomainId = null;
+        List<Integer> customSignatureIds = null;
         String description = null;
+        String identifier = null;
         String name = null;
         Integer position = null;
         List<Integer> signatureIds = null;
-        List<Integer> customSignatureIds = null;
-        String include = null;
-        // CustomComplianceControl response = api.update(id, identifier, customComplianceDomainId, description, name, position, signatureIds, customSignatureIds, include);
+        // CustomComplianceControl response = api.update(id, include, customComplianceDomainId, customSignatureIds, description, identifier, name, position, signatureIds);
 
         // TODO: test validations
     }

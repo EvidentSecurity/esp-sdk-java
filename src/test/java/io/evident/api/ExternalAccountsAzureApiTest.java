@@ -30,13 +30,13 @@ public class ExternalAccountsAzureApiTest {
      */
     @Test
     public void createTest() {
-        String subscriptionId = null;
-        String clientId = null;
-        String tenantId = null;
         String appKey = null;
+        String clientId = null;
         String name = null;
+        String subscriptionId = null;
         Integer teamId = null;
-        // ExternalAccountAzure response = api.create(subscriptionId, clientId, tenantId, appKey, name, teamId);
+        String tenantId = null;
+        // ExternalAccountAzure response = api.create(appKey, clientId, name, subscriptionId, teamId, tenantId);
 
         // TODO: test validations
     }
@@ -76,13 +76,13 @@ public class ExternalAccountsAzureApiTest {
     @Test
     public void updateTest() {
         Integer externalAccountId = null;
-        String subscriptionId = null;
-        String clientId = null;
-        String tenantId = null;
         String appKey = null;
+        String clientId = null;
         String name = null;
+        String subscriptionId = null;
         Integer teamId = null;
-        // ExternalAccountAzure response = api.update(externalAccountId, subscriptionId, clientId, tenantId, appKey, name, teamId);
+        String tenantId = null;
+        // ExternalAccountAzure response = api.update(externalAccountId, appKey, clientId, name, subscriptionId, teamId, tenantId);
 
         // TODO: test validations
     }

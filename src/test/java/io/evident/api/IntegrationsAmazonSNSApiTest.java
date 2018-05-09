@@ -31,20 +31,20 @@ public class IntegrationsAmazonSNSApiTest {
     @Test
     public void createTest() {
         String arn = null;
-        String externalId = null;
-        String topic = null;
-        String name = null;
         List<Integer> externalAccountIds = null;
+        String externalId = null;
+        String name = null;
+        String topic = null;
+        String include = null;
         Boolean allHighRisk = null;
-        Boolean allMediumRisk = null;
         Boolean allLowRisk = null;
+        Boolean allMediumRisk = null;
+        List<Integer> customSignatureIds = null;
         Boolean sendUpdates = null;
         Boolean sendWhenSuppressed = null;
         List<Integer> signatureIds = null;
         List<String> statuses = null;
-        List<Integer> customSignatureIds = null;
-        String include = null;
-        // IntegrationAmazonSns response = api.create(arn, externalId, topic, name, externalAccountIds, allHighRisk, allMediumRisk, allLowRisk, sendUpdates, sendWhenSuppressed, signatureIds, statuses, customSignatureIds, include);
+        // IntegrationAmazonSns response = api.create(arn, externalAccountIds, externalId, name, topic, include, allHighRisk, allLowRisk, allMediumRisk, customSignatureIds, sendUpdates, sendWhenSuppressed, signatureIds, statuses);
 
         // TODO: test validations
     }
@@ -71,21 +71,21 @@ public class IntegrationsAmazonSNSApiTest {
     @Test
     public void updateTest() {
         Integer integrationId = null;
-        String arn = null;
-        String externalId = null;
-        String topic = null;
-        String name = null;
+        String include = null;
         Boolean allHighRisk = null;
-        Boolean allMediumRisk = null;
         Boolean allLowRisk = null;
+        Boolean allMediumRisk = null;
+        String arn = null;
+        List<Integer> customSignatureIds = null;
+        List<Integer> externalAccountIds = null;
+        String externalId = null;
+        String name = null;
         Boolean sendUpdates = null;
         Boolean sendWhenSuppressed = null;
         List<Integer> signatureIds = null;
         List<String> statuses = null;
-        List<Integer> externalAccountIds = null;
-        List<Integer> customSignatureIds = null;
-        String include = null;
-        // IntegrationAmazonSns response = api.update(integrationId, arn, externalId, topic, name, allHighRisk, allMediumRisk, allLowRisk, sendUpdates, sendWhenSuppressed, signatureIds, statuses, externalAccountIds, customSignatureIds, include);
+        String topic = null;
+        // IntegrationAmazonSns response = api.update(integrationId, include, allHighRisk, allLowRisk, allMediumRisk, arn, customSignatureIds, externalAccountIds, externalId, name, sendUpdates, sendWhenSuppressed, signatureIds, statuses, topic);
 
         // TODO: test validations
     }

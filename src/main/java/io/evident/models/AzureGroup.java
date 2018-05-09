@@ -27,7 +27,7 @@ import org.joda.time.DateTime;
  * A(n) AzureGroup object
  */
 @ApiModel(description = "A(n) AzureGroup object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-25T13:00:36.864-05:00")
+
 public class AzureGroup {
   @SerializedName("id")
   private Integer id = null;
@@ -52,9 +52,6 @@ public class AzureGroup {
 
   @SerializedName("external_accounts")
   private List<ExternalAccount> externalAccounts = new ArrayList<ExternalAccount>();
-
-  @SerializedName("external_account_ids")
-  private List<Integer> externalAccountIds = new ArrayList<Integer>();
 
   public AzureGroup id(Integer id) {
     this.id = id;
@@ -205,29 +202,6 @@ public class AzureGroup {
     this.externalAccounts = externalAccounts;
   }
 
-  public AzureGroup externalAccountIds(List<Integer> externalAccountIds) {
-    this.externalAccountIds = externalAccountIds;
-    return this;
-  }
-
-  public AzureGroup addExternalAccountIdsItem(Integer externalAccountIdsItem) {
-    this.externalAccountIds.add(externalAccountIdsItem);
-    return this;
-  }
-
-   /**
-   * Associated External Accounts IDs
-   * @return externalAccountIds
-  **/
-  @ApiModelProperty(example = "null", value = "Associated External Accounts IDs")
-  public List<Integer> getExternalAccountIds() {
-    return externalAccountIds;
-  }
-
-  public void setExternalAccountIds(List<Integer> externalAccountIds) {
-    this.externalAccountIds = externalAccountIds;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -245,13 +219,12 @@ public class AzureGroup {
         Objects.equals(this.url, azureGroup.url) &&
         Objects.equals(this.organization, azureGroup.organization) &&
         Objects.equals(this.organizationId, azureGroup.organizationId) &&
-        Objects.equals(this.externalAccounts, azureGroup.externalAccounts) &&
-        Objects.equals(this.externalAccountIds, azureGroup.externalAccountIds);
+        Objects.equals(this.externalAccounts, azureGroup.externalAccounts);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, createdAt, updatedAt, url, organization, organizationId, externalAccounts, externalAccountIds);
+    return Objects.hash(id, name, createdAt, updatedAt, url, organization, organizationId, externalAccounts);
   }
 
 
@@ -268,7 +241,6 @@ public class AzureGroup {
     sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    externalAccounts: ").append(toIndentedString(externalAccounts)).append("\n");
-    sb.append("    externalAccountIds: ").append(toIndentedString(externalAccountIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

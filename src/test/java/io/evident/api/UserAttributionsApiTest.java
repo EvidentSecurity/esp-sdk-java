@@ -33,8 +33,7 @@ public class UserAttributionsApiTest {
     @Test
     public void addChannelTest() {
         Integer externalAccountId = null;
-        String include = null;
-        // ExternalAccountUserAttributionChannel response = api.addChannel(externalAccountId, include);
+        // ExternalAccountUserAttributionChannel response = api.addChannel(externalAccountId);
 
         // TODO: test validations
     }
@@ -60,8 +59,7 @@ public class UserAttributionsApiTest {
     @Test
     public void showChannelTest() {
         Integer externalAccountId = null;
-        String include = null;
-        // ExternalAccountUserAttributionChannel response = api.showChannel(externalAccountId, include);
+        // ExternalAccountUserAttributionChannel response = api.showChannel(externalAccountId);
 
         // TODO: test validations
     }
@@ -74,9 +72,9 @@ public class UserAttributionsApiTest {
     @Test
     public void updateTest() {
         Integer externalAccountId = null;
-        String cloudtrailName = null;
         String include = null;
-        // ExternalAccount response = api.update(externalAccountId, cloudtrailName, include);
+        String cloudtrailName = null;
+        // ExternalAccount response = api.update(externalAccountId, include, cloudtrailName);
 
         // TODO: test validations
     }

@@ -91,10 +91,10 @@ public class ExternalAccountsApiTest {
      */
     @Test
     public void listTest() {
+        String include = null;
         Map<String, String> filter = null;
         String page = null;
-        String include = null;
-        // PaginatedCollection response = api.list(filter, page, include);
+        // PaginatedCollection response = api.list(include, filter, page);
 
         // TODO: test validations
     }
@@ -107,9 +107,9 @@ public class ExternalAccountsApiTest {
     @Test
     public void listComplianceStandardsTest() {
         Integer externalAccountId = null;
-        String page = null;
         String include = null;
-        // PaginatedCollection response = api.listComplianceStandards(externalAccountId, page, include);
+        String page = null;
+        // PaginatedCollection response = api.listComplianceStandards(externalAccountId, include, page);
 
         // TODO: test validations
     }
@@ -122,9 +122,9 @@ public class ExternalAccountsApiTest {
     @Test
     public void listCustomComplianceStandardsTest() {
         Integer externalAccountId = null;
-        String page = null;
         String include = null;
-        // PaginatedCollection response = api.listCustomComplianceStandards(externalAccountId, page, include);
+        String page = null;
+        // PaginatedCollection response = api.listCustomComplianceStandards(externalAccountId, include, page);
 
         // TODO: test validations
     }
@@ -137,10 +137,10 @@ public class ExternalAccountsApiTest {
     @Test
     public void listDisabledSignaturesTest() {
         Integer externalAccountId = null;
+        String include = null;
         Map<String, String> filter = null;
         String page = null;
-        String include = null;
-        // PaginatedCollection response = api.listDisabledSignatures(externalAccountId, filter, page, include);
+        // PaginatedCollection response = api.listDisabledSignatures(externalAccountId, include, filter, page);
 
         // TODO: test validations
     }

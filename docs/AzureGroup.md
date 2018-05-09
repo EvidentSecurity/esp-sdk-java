@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **organization** | [**Organization**](Organization.md) | Associated Organization |  [optional]
 **organizationId** | **Integer** | Associated Organization ID |  [optional]
 **externalAccounts** | [**List&lt;ExternalAccount&gt;**](ExternalAccount.md) | Associated External Accounts |  [optional]
-**externalAccountIds** | **List&lt;Integer&gt;** | Associated External Accounts IDs |  [optional]
 
 
 

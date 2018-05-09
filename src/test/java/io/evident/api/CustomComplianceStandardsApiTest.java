@@ -31,10 +31,10 @@ public class CustomComplianceStandardsApiTest {
      */
     @Test
     public void createTest() {
-        String name = null;
         String description = null;
+        String name = null;
         String include = null;
-        // CustomComplianceStandard response = api.create(name, description, include);
+        // CustomComplianceStandard response = api.create(description, name, include);
 
         // TODO: test validations
     }
@@ -74,10 +74,10 @@ public class CustomComplianceStandardsApiTest {
     @Test
     public void updateTest() {
         Integer id = null;
-        String name = null;
-        String description = null;
         String include = null;
-        // CustomComplianceStandard response = api.update(id, name, description, include);
+        String description = null;
+        String name = null;
+        // CustomComplianceStandard response = api.update(id, include, description, name);
 
         // TODO: test validations
     }

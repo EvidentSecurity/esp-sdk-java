@@ -30,23 +30,23 @@ public class IntegrationsJiraApiTest {
      */
     @Test
     public void createTest() {
-        String url = null;
-        String projectKey = null;
-        String issueType = null;
-        String username = null;
-        String password = null;
-        String name = null;
         List<Integer> externalAccountIds = null;
+        String issueType = null;
+        String name = null;
+        String password = null;
+        String projectKey = null;
+        String url = null;
+        String username = null;
+        String include = null;
         Boolean allHighRisk = null;
-        Boolean allMediumRisk = null;
         Boolean allLowRisk = null;
+        Boolean allMediumRisk = null;
+        List<Integer> customSignatureIds = null;
         Boolean sendUpdates = null;
         Boolean sendWhenSuppressed = null;
         List<Integer> signatureIds = null;
         List<String> statuses = null;
-        List<Integer> customSignatureIds = null;
-        String include = null;
-        // IntegrationJira response = api.create(url, projectKey, issueType, username, password, name, externalAccountIds, allHighRisk, allMediumRisk, allLowRisk, sendUpdates, sendWhenSuppressed, signatureIds, statuses, customSignatureIds, include);
+        // IntegrationJira response = api.create(externalAccountIds, issueType, name, password, projectKey, url, username, include, allHighRisk, allLowRisk, allMediumRisk, customSignatureIds, sendUpdates, sendWhenSuppressed, signatureIds, statuses);
 
         // TODO: test validations
     }
@@ -73,23 +73,23 @@ public class IntegrationsJiraApiTest {
     @Test
     public void updateTest() {
         Integer integrationId = null;
-        String url = null;
-        String projectKey = null;
-        String issueType = null;
-        String username = null;
-        String password = null;
-        String name = null;
+        String include = null;
         Boolean allHighRisk = null;
-        Boolean allMediumRisk = null;
         Boolean allLowRisk = null;
+        Boolean allMediumRisk = null;
+        List<Integer> customSignatureIds = null;
+        List<Integer> externalAccountIds = null;
+        String issueType = null;
+        String name = null;
+        String password = null;
+        String projectKey = null;
         Boolean sendUpdates = null;
         Boolean sendWhenSuppressed = null;
         List<Integer> signatureIds = null;
         List<String> statuses = null;
-        List<Integer> externalAccountIds = null;
-        List<Integer> customSignatureIds = null;
-        String include = null;
-        // IntegrationJira response = api.update(integrationId, url, projectKey, issueType, username, password, name, allHighRisk, allMediumRisk, allLowRisk, sendUpdates, sendWhenSuppressed, signatureIds, statuses, externalAccountIds, customSignatureIds, include);
+        String url = null;
+        String username = null;
+        // IntegrationJira response = api.update(integrationId, include, allHighRisk, allLowRisk, allMediumRisk, customSignatureIds, externalAccountIds, issueType, name, password, projectKey, sendUpdates, sendWhenSuppressed, signatureIds, statuses, url, username);
 
         // TODO: test validations
     }

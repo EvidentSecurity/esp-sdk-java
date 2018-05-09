@@ -32,14 +32,14 @@ public class CustomSignaturesApiTest {
      */
     @Test
     public void createTest() {
+        List<Integer> externalAccountIds = null;
         String identifier = null;
         String name = null;
         String riskLevel = null;
-        List<Integer> externalAccountIds = null;
+        String include = null;
         String description = null;
         String resolution = null;
-        String include = null;
-        // CustomSignature response = api.create(identifier, name, riskLevel, externalAccountIds, description, resolution, include);
+        // CustomSignature response = api.create(externalAccountIds, identifier, name, riskLevel, include, description, resolution);
 
         // TODO: test validations
     }
@@ -64,10 +64,10 @@ public class CustomSignaturesApiTest {
      */
     @Test
     public void listTest() {
+        String include = null;
         Map<String, String> filter = null;
         String page = null;
-        String include = null;
-        // PaginatedCollection response = api.list(filter, page, include);
+        // PaginatedCollection response = api.list(include, filter, page);
 
         // TODO: test validations
     }
@@ -94,14 +94,14 @@ public class CustomSignaturesApiTest {
     @Test
     public void updateTest() {
         Integer id = null;
+        String include = null;
         String description = null;
+        List<Integer> externalAccountIds = null;
         String identifier = null;
         String name = null;
         String resolution = null;
         String riskLevel = null;
-        List<Integer> externalAccountIds = null;
-        String include = null;
-        // CustomSignature response = api.update(id, description, identifier, name, resolution, riskLevel, externalAccountIds, include);
+        // CustomSignature response = api.update(id, include, description, externalAccountIds, identifier, name, resolution, riskLevel);
 
         // TODO: test validations
     }

@@ -31,8 +31,7 @@ public class MetadataApiTest {
     @Test
     public void forAlertTest() {
         Integer alertId = null;
-        String include = null;
-        // Metadata response = api.forAlert(alertId, include);
+        // Metadata response = api.forAlert(alertId);
 
         // TODO: test validations
     }
@@ -45,8 +44,7 @@ public class MetadataApiTest {
     @Test
     public void showTest() {
         Integer id = null;
-        String include = null;
-        // Metadata response = api.show(id, include);
+        // Metadata response = api.show(id);
 
         // TODO: test validations
     }

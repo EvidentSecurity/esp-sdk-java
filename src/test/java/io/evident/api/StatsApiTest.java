@@ -39,16 +39,16 @@ public class StatsApiTest {
     }
     
     /**
-     * Stats for teams
+     * Statistics for teams
      *
-     * A successful call to this API returns all the stats for the most recent report of each team accessible by the given API key
+     * A successful call to this API returns all the statistics for the most recent report of each team accessible by the given API key
      */
     @Test
     public void latestForTeamsTest() {
+        String include = null;
         Map<String, String> filter = null;
         String page = null;
-        String include = null;
-        // PaginatedCollection response = api.latestForTeams(filter, page, include);
+        // PaginatedCollection response = api.latestForTeams(include, filter, page);
 
         // TODO: test validations
     }

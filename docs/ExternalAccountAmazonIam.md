@@ -1,5 +1,5 @@
 
-# ExternalAccountAmazonIAM
+# ExternalAccountAmazonIam
 
 ## Properties
 Name | Type | Description | Notes
@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **createdAt** | [**DateTime**](DateTime.md) | ISO 8601 timestamp when the resource was created |  [optional]
 **updatedAt** | [**DateTime**](DateTime.md) | ISO 8601 timestamp when the resource was updated |  [optional]
 **externalAccount** | [**ExternalAccount**](ExternalAccount.md) | Associated External Account |  [optional]
-**externalAccountId** | **Integer** | Associated External Account ID |  [optional]
 
 
 

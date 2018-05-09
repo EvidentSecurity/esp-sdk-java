@@ -24,8 +24,8 @@ import org.joda.time.DateTime;
  * A(n) ExternalAccountAmazonIAM object
  */
 @ApiModel(description = "A(n) ExternalAccountAmazonIAM object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-25T13:00:36.864-05:00")
-public class ExternalAccountAmazonIAM {
+
+public class ExternalAccountAmazonIam {
   @SerializedName("id")
   private Integer id = null;
 
@@ -47,10 +47,7 @@ public class ExternalAccountAmazonIAM {
   @SerializedName("external_account")
   private ExternalAccount externalAccount = null;
 
-  @SerializedName("external_account_id")
-  private Integer externalAccountId = null;
-
-  public ExternalAccountAmazonIAM id(Integer id) {
+  public ExternalAccountAmazonIam id(Integer id) {
     this.id = id;
     return this;
   }
@@ -68,7 +65,7 @@ public class ExternalAccountAmazonIAM {
     this.id = id;
   }
 
-  public ExternalAccountAmazonIAM account(String account) {
+  public ExternalAccountAmazonIam account(String account) {
     this.account = account;
     return this;
   }
@@ -86,7 +83,7 @@ public class ExternalAccountAmazonIAM {
     this.account = account;
   }
 
-  public ExternalAccountAmazonIAM arn(String arn) {
+  public ExternalAccountAmazonIam arn(String arn) {
     this.arn = arn;
     return this;
   }
@@ -104,7 +101,7 @@ public class ExternalAccountAmazonIAM {
     this.arn = arn;
   }
 
-  public ExternalAccountAmazonIAM externalId(String externalId) {
+  public ExternalAccountAmazonIam externalId(String externalId) {
     this.externalId = externalId;
     return this;
   }
@@ -122,7 +119,7 @@ public class ExternalAccountAmazonIAM {
     this.externalId = externalId;
   }
 
-  public ExternalAccountAmazonIAM createdAt(DateTime createdAt) {
+  public ExternalAccountAmazonIam createdAt(DateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -140,7 +137,7 @@ public class ExternalAccountAmazonIAM {
     this.createdAt = createdAt;
   }
 
-  public ExternalAccountAmazonIAM updatedAt(DateTime updatedAt) {
+  public ExternalAccountAmazonIam updatedAt(DateTime updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -158,7 +155,7 @@ public class ExternalAccountAmazonIAM {
     this.updatedAt = updatedAt;
   }
 
-  public ExternalAccountAmazonIAM externalAccount(ExternalAccount externalAccount) {
+  public ExternalAccountAmazonIam externalAccount(ExternalAccount externalAccount) {
     this.externalAccount = externalAccount;
     return this;
   }
@@ -176,24 +173,6 @@ public class ExternalAccountAmazonIAM {
     this.externalAccount = externalAccount;
   }
 
-  public ExternalAccountAmazonIAM externalAccountId(Integer externalAccountId) {
-    this.externalAccountId = externalAccountId;
-    return this;
-  }
-
-   /**
-   * Associated External Account ID
-   * @return externalAccountId
-  **/
-  @ApiModelProperty(example = "null", value = "Associated External Account ID")
-  public Integer getExternalAccountId() {
-    return externalAccountId;
-  }
-
-  public void setExternalAccountId(Integer externalAccountId) {
-    this.externalAccountId = externalAccountId;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -203,27 +182,26 @@ public class ExternalAccountAmazonIAM {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ExternalAccountAmazonIAM externalAccountAmazonIAM = (ExternalAccountAmazonIAM) o;
-    return Objects.equals(this.id, externalAccountAmazonIAM.id) &&
-        Objects.equals(this.account, externalAccountAmazonIAM.account) &&
-        Objects.equals(this.arn, externalAccountAmazonIAM.arn) &&
-        Objects.equals(this.externalId, externalAccountAmazonIAM.externalId) &&
-        Objects.equals(this.createdAt, externalAccountAmazonIAM.createdAt) &&
-        Objects.equals(this.updatedAt, externalAccountAmazonIAM.updatedAt) &&
-        Objects.equals(this.externalAccount, externalAccountAmazonIAM.externalAccount) &&
-        Objects.equals(this.externalAccountId, externalAccountAmazonIAM.externalAccountId);
+    ExternalAccountAmazonIam externalAccountAmazonIam = (ExternalAccountAmazonIam) o;
+    return Objects.equals(this.id, externalAccountAmazonIam.id) &&
+        Objects.equals(this.account, externalAccountAmazonIam.account) &&
+        Objects.equals(this.arn, externalAccountAmazonIam.arn) &&
+        Objects.equals(this.externalId, externalAccountAmazonIam.externalId) &&
+        Objects.equals(this.createdAt, externalAccountAmazonIam.createdAt) &&
+        Objects.equals(this.updatedAt, externalAccountAmazonIam.updatedAt) &&
+        Objects.equals(this.externalAccount, externalAccountAmazonIam.externalAccount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, account, arn, externalId, createdAt, updatedAt, externalAccount, externalAccountId);
+    return Objects.hash(id, account, arn, externalId, createdAt, updatedAt, externalAccount);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ExternalAccountAmazonIAM {\n");
+    sb.append("class ExternalAccountAmazonIam {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    account: ").append(toIndentedString(account)).append("\n");
@@ -232,7 +210,6 @@ public class ExternalAccountAmazonIAM {
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    externalAccount: ").append(toIndentedString(externalAccount)).append("\n");
-    sb.append("    externalAccountId: ").append(toIndentedString(externalAccountId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -33,8 +33,7 @@ public class RegionsApiTest {
     public void listTest() {
         Map<String, String> filter = null;
         String page = null;
-        String include = null;
-        // PaginatedCollection response = api.list(filter, page, include);
+        // PaginatedCollection response = api.list(filter, page);
 
         // TODO: test validations
     }
@@ -47,8 +46,7 @@ public class RegionsApiTest {
     @Test
     public void showTest() {
         Integer id = null;
-        String include = null;
-        // Region response = api.show(id, include);
+        // Region response = api.show(id);
 
         // TODO: test validations
     }

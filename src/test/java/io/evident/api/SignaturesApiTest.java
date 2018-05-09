@@ -32,10 +32,10 @@ public class SignaturesApiTest {
      */
     @Test
     public void listTest() {
+        String include = null;
         Map<String, String> filter = null;
         String page = null;
-        String include = null;
-        // PaginatedCollection response = api.list(filter, page, include);
+        // PaginatedCollection response = api.list(include, filter, page);
 
         // TODO: test validations
     }
@@ -47,10 +47,11 @@ public class SignaturesApiTest {
      */
     @Test
     public void listDisabledExternalAccountsTest() {
+        Integer signatureId = null;
+        String include = null;
         Map<String, String> filter = null;
         String page = null;
-        String include = null;
-        // PaginatedCollection response = api.listDisabledExternalAccounts(filter, page, include);
+        // PaginatedCollection response = api.listDisabledExternalAccounts(signatureId, include, filter, page);
 
         // TODO: test validations
     }
@@ -63,10 +64,10 @@ public class SignaturesApiTest {
     @Test
     public void listWithCustomRiskLevelForExternalAccountTest() {
         Integer externalAccountId = null;
-        String page = null;
         String include = null;
         Map<String, String> filter = null;
-        // PaginatedCollection response = api.listWithCustomRiskLevelForExternalAccount(externalAccountId, page, include, filter);
+        String page = null;
+        // PaginatedCollection response = api.listWithCustomRiskLevelForExternalAccount(externalAccountId, include, filter, page);
 
         // TODO: test validations
     }
@@ -93,10 +94,10 @@ public class SignaturesApiTest {
     @Test
     public void setCustomRiskLevelForExternalAccountTest() {
         Integer externalAccountId = null;
-        Integer signatureId = null;
         String riskLevel = null;
+        Integer signatureId = null;
         String include = null;
-        // Signature response = api.setCustomRiskLevelForExternalAccount(externalAccountId, signatureId, riskLevel, include);
+        // Signature response = api.setCustomRiskLevelForExternalAccount(externalAccountId, riskLevel, signatureId, include);
 
         // TODO: test validations
     }
@@ -124,9 +125,9 @@ public class SignaturesApiTest {
     public void updateCustomRiskLevelForExternalAccountTest() {
         Integer externalAccountId = null;
         Integer signatureId = null;
-        String riskLevel = null;
         String include = null;
-        // Signature response = api.updateCustomRiskLevelForExternalAccount(externalAccountId, signatureId, riskLevel, include);
+        String riskLevel = null;
+        // Signature response = api.updateCustomRiskLevelForExternalAccount(externalAccountId, signatureId, include, riskLevel);
 
         // TODO: test validations
     }

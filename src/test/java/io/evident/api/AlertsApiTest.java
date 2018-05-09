@@ -32,9 +32,9 @@ public class AlertsApiTest {
     @Test
     public void listComplianceControlsTest() {
         Integer alertId = null;
-        String page = null;
         String include = null;
-        // PaginatedCollection response = api.listComplianceControls(alertId, page, include);
+        String page = null;
+        // PaginatedCollection response = api.listComplianceControls(alertId, include, page);
 
         // TODO: test validations
     }
@@ -47,9 +47,9 @@ public class AlertsApiTest {
     @Test
     public void listCustomComplianceControlsTest() {
         Integer alertId = null;
-        String page = null;
         String include = null;
-        // PaginatedCollection response = api.listCustomComplianceControls(alertId, page, include);
+        String page = null;
+        // PaginatedCollection response = api.listCustomComplianceControls(alertId, include, page);
 
         // TODO: test validations
     }
@@ -62,10 +62,10 @@ public class AlertsApiTest {
     @Test
     public void listForReportTest() {
         Integer reportId = null;
+        String include = null;
         Map<String, String> filter = null;
         String page = null;
-        String include = null;
-        // PaginatedCollection response = api.listForReport(reportId, filter, page, include);
+        // PaginatedCollection response = api.listForReport(reportId, include, filter, page);
 
         // TODO: test validations
     }

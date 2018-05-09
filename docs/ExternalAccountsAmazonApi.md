@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="create"></a>
 # **create**
-> ExternalAccountAmazonIAM create(arn, externalId, name, teamId)
+> ExternalAccountAmazonIam create(arn, externalId, name, teamId)
 
 Create an Amazon External Account
 
@@ -30,7 +30,7 @@ String externalId = "externalId_example"; // String | External Identifier set on
 String name = "name_example"; // String | Name
 Integer teamId = 56; // Integer | The ID of the team the external account belongs to
 try {
-    ExternalAccountAmazonIAM result = apiInstance.create(arn, externalId, name, teamId);
+    ExternalAccountAmazonIam result = apiInstance.create(arn, externalId, name, teamId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExternalAccountsAmazonApi#create");
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExternalAccountAmazonIAM**](ExternalAccountAmazonIAM.md)
+[**ExternalAccountAmazonIam**](ExternalAccountAmazonIam.md)
 
 ### Authorization
 
@@ -62,7 +62,7 @@ No authorization required
 
 <a name="show"></a>
 # **show**
-> ExternalAccountAmazonIAM show(externalAccountId, include)
+> ExternalAccountAmazonIam show(externalAccountId, include)
 
 Show an Amazon External Account
 
@@ -79,7 +79,7 @@ ExternalAccountsAmazonApi apiInstance = new ExternalAccountsAmazonApi();
 Integer externalAccountId = 56; // Integer | The ID of the external account to show an Amazon IAM credential for
 String include = "include_example"; // String | Related objects that can be included in the response:  external_account See Including Objects for more information.
 try {
-    ExternalAccountAmazonIAM result = apiInstance.show(externalAccountId, include);
+    ExternalAccountAmazonIam result = apiInstance.show(externalAccountId, include);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExternalAccountsAmazonApi#show");
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExternalAccountAmazonIAM**](ExternalAccountAmazonIAM.md)
+[**ExternalAccountAmazonIam**](ExternalAccountAmazonIam.md)
 
 ### Authorization
 
@@ -109,7 +109,7 @@ No authorization required
 
 <a name="update"></a>
 # **update**
-> ExternalAccountAmazonIAM update(externalAccountId, arn, externalId, name, teamId)
+> ExternalAccountAmazonIam update(externalAccountId, arn, externalId, name, teamId)
 
 Update an Amazon External Account
 
@@ -129,7 +129,7 @@ String externalId = "externalId_example"; // String | External Identifier set on
 String name = "name_example"; // String | Name
 Integer teamId = 56; // Integer | The ID of the team the external account belongs to
 try {
-    ExternalAccountAmazonIAM result = apiInstance.update(externalAccountId, arn, externalId, name, teamId);
+    ExternalAccountAmazonIam result = apiInstance.update(externalAccountId, arn, externalId, name, teamId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExternalAccountsAmazonApi#update");
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExternalAccountAmazonIAM**](ExternalAccountAmazonIAM.md)
+[**ExternalAccountAmazonIam**](ExternalAccountAmazonIam.md)
 
 ### Authorization
 

@@ -29,7 +29,7 @@ import org.joda.time.DateTime;
  * A(n) CustomSignature object
  */
 @ApiModel(description = "A(n) CustomSignature object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-25T13:00:36.864-05:00")
+
 public class CustomSignature {
   @SerializedName("id")
   private Integer id = null;

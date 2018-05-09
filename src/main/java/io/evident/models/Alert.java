@@ -35,7 +35,7 @@ import org.joda.time.DateTime;
  * A(n) Alert object
  */
 @ApiModel(description = "A(n) Alert object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-25T13:00:36.864-05:00")
+
 public class Alert {
   @SerializedName("id")
   private Integer id = null;
@@ -103,32 +103,17 @@ public class Alert {
   @SerializedName("metadata")
   private Metadata metadata = null;
 
-  @SerializedName("metadata_id")
-  private Integer metadataId = null;
-
   @SerializedName("attribution")
   private Attribution attribution = null;
-
-  @SerializedName("attribution_id")
-  private Integer attributionId = null;
 
   @SerializedName("tags")
   private List<Tag> tags = new ArrayList<Tag>();
 
-  @SerializedName("tag_ids")
-  private List<Integer> tagIds = new ArrayList<Integer>();
-
   @SerializedName("compliance_controls")
   private List<ComplianceControl> complianceControls = new ArrayList<ComplianceControl>();
 
-  @SerializedName("compliance_control_ids")
-  private List<Integer> complianceControlIds = new ArrayList<Integer>();
-
   @SerializedName("custom_compliance_controls")
   private List<CustomComplianceControl> customComplianceControls = new ArrayList<CustomComplianceControl>();
-
-  @SerializedName("custom_compliance_control_ids")
-  private List<Integer> customComplianceControlIds = new ArrayList<Integer>();
 
   public Alert id(Integer id) {
     this.id = id;
@@ -526,24 +511,6 @@ public class Alert {
     this.metadata = metadata;
   }
 
-  public Alert metadataId(Integer metadataId) {
-    this.metadataId = metadataId;
-    return this;
-  }
-
-   /**
-   * Associated Metadata ID
-   * @return metadataId
-  **/
-  @ApiModelProperty(example = "null", value = "Associated Metadata ID")
-  public Integer getMetadataId() {
-    return metadataId;
-  }
-
-  public void setMetadataId(Integer metadataId) {
-    this.metadataId = metadataId;
-  }
-
   public Alert attribution(Attribution attribution) {
     this.attribution = attribution;
     return this;
@@ -560,24 +527,6 @@ public class Alert {
 
   public void setAttribution(Attribution attribution) {
     this.attribution = attribution;
-  }
-
-  public Alert attributionId(Integer attributionId) {
-    this.attributionId = attributionId;
-    return this;
-  }
-
-   /**
-   * Associated Attribution ID
-   * @return attributionId
-  **/
-  @ApiModelProperty(example = "null", value = "Associated Attribution ID")
-  public Integer getAttributionId() {
-    return attributionId;
-  }
-
-  public void setAttributionId(Integer attributionId) {
-    this.attributionId = attributionId;
   }
 
   public Alert tags(List<Tag> tags) {
@@ -603,29 +552,6 @@ public class Alert {
     this.tags = tags;
   }
 
-  public Alert tagIds(List<Integer> tagIds) {
-    this.tagIds = tagIds;
-    return this;
-  }
-
-  public Alert addTagIdsItem(Integer tagIdsItem) {
-    this.tagIds.add(tagIdsItem);
-    return this;
-  }
-
-   /**
-   * Associated Tags IDs
-   * @return tagIds
-  **/
-  @ApiModelProperty(example = "null", value = "Associated Tags IDs")
-  public List<Integer> getTagIds() {
-    return tagIds;
-  }
-
-  public void setTagIds(List<Integer> tagIds) {
-    this.tagIds = tagIds;
-  }
-
   public Alert complianceControls(List<ComplianceControl> complianceControls) {
     this.complianceControls = complianceControls;
     return this;
@@ -649,29 +575,6 @@ public class Alert {
     this.complianceControls = complianceControls;
   }
 
-  public Alert complianceControlIds(List<Integer> complianceControlIds) {
-    this.complianceControlIds = complianceControlIds;
-    return this;
-  }
-
-  public Alert addComplianceControlIdsItem(Integer complianceControlIdsItem) {
-    this.complianceControlIds.add(complianceControlIdsItem);
-    return this;
-  }
-
-   /**
-   * Associated Compliance Controls IDs
-   * @return complianceControlIds
-  **/
-  @ApiModelProperty(example = "null", value = "Associated Compliance Controls IDs")
-  public List<Integer> getComplianceControlIds() {
-    return complianceControlIds;
-  }
-
-  public void setComplianceControlIds(List<Integer> complianceControlIds) {
-    this.complianceControlIds = complianceControlIds;
-  }
-
   public Alert customComplianceControls(List<CustomComplianceControl> customComplianceControls) {
     this.customComplianceControls = customComplianceControls;
     return this;
@@ -693,29 +596,6 @@ public class Alert {
 
   public void setCustomComplianceControls(List<CustomComplianceControl> customComplianceControls) {
     this.customComplianceControls = customComplianceControls;
-  }
-
-  public Alert customComplianceControlIds(List<Integer> customComplianceControlIds) {
-    this.customComplianceControlIds = customComplianceControlIds;
-    return this;
-  }
-
-  public Alert addCustomComplianceControlIdsItem(Integer customComplianceControlIdsItem) {
-    this.customComplianceControlIds.add(customComplianceControlIdsItem);
-    return this;
-  }
-
-   /**
-   * Associated Custom Compliance Controls IDs
-   * @return customComplianceControlIds
-  **/
-  @ApiModelProperty(example = "null", value = "Associated Custom Compliance Controls IDs")
-  public List<Integer> getCustomComplianceControlIds() {
-    return customComplianceControlIds;
-  }
-
-  public void setCustomComplianceControlIds(List<Integer> customComplianceControlIds) {
-    this.customComplianceControlIds = customComplianceControlIds;
   }
 
 
@@ -750,20 +630,15 @@ public class Alert {
         Objects.equals(this.suppression, alert.suppression) &&
         Objects.equals(this.suppressionId, alert.suppressionId) &&
         Objects.equals(this.metadata, alert.metadata) &&
-        Objects.equals(this.metadataId, alert.metadataId) &&
         Objects.equals(this.attribution, alert.attribution) &&
-        Objects.equals(this.attributionId, alert.attributionId) &&
         Objects.equals(this.tags, alert.tags) &&
-        Objects.equals(this.tagIds, alert.tagIds) &&
         Objects.equals(this.complianceControls, alert.complianceControls) &&
-        Objects.equals(this.complianceControlIds, alert.complianceControlIds) &&
-        Objects.equals(this.customComplianceControls, alert.customComplianceControls) &&
-        Objects.equals(this.customComplianceControlIds, alert.customComplianceControlIds);
+        Objects.equals(this.customComplianceControls, alert.customComplianceControls);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, status, riskLevel, resource, endedReason, replacedById, replacedByStatus, updatedAt, startedAt, endedAt, externalAccount, externalAccountId, region, regionId, signature, signatureId, customSignature, customSignatureId, suppression, suppressionId, metadata, metadataId, attribution, attributionId, tags, tagIds, complianceControls, complianceControlIds, customComplianceControls, customComplianceControlIds);
+    return Objects.hash(id, createdAt, status, riskLevel, resource, endedReason, replacedById, replacedByStatus, updatedAt, startedAt, endedAt, externalAccount, externalAccountId, region, regionId, signature, signatureId, customSignature, customSignatureId, suppression, suppressionId, metadata, attribution, tags, complianceControls, customComplianceControls);
   }
 
 
@@ -794,15 +669,10 @@ public class Alert {
     sb.append("    suppression: ").append(toIndentedString(suppression)).append("\n");
     sb.append("    suppressionId: ").append(toIndentedString(suppressionId)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
-    sb.append("    metadataId: ").append(toIndentedString(metadataId)).append("\n");
     sb.append("    attribution: ").append(toIndentedString(attribution)).append("\n");
-    sb.append("    attributionId: ").append(toIndentedString(attributionId)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-    sb.append("    tagIds: ").append(toIndentedString(tagIds)).append("\n");
     sb.append("    complianceControls: ").append(toIndentedString(complianceControls)).append("\n");
-    sb.append("    complianceControlIds: ").append(toIndentedString(complianceControlIds)).append("\n");
     sb.append("    customComplianceControls: ").append(toIndentedString(customComplianceControls)).append("\n");
-    sb.append("    customComplianceControlIds: ").append(toIndentedString(customComplianceControlIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

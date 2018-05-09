@@ -16,7 +16,7 @@ package io.evident.models;
 import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.evident.models.AzureGroup;
-import io.evident.models.ExternalAccountAmazonIAM;
+import io.evident.models.ExternalAccountAmazonIam;
 import io.evident.models.ScanInterval;
 import io.evident.models.Signature;
 import io.evident.models.Suppression;
@@ -31,7 +31,7 @@ import org.joda.time.DateTime;
  * A(n) ExternalAccount object
  */
 @ApiModel(description = "A(n) ExternalAccount object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-25T13:00:36.864-05:00")
+
 public class ExternalAccount {
   @SerializedName("id")
   private Integer id = null;
@@ -57,14 +57,8 @@ public class ExternalAccount {
   @SerializedName("scan_intervals")
   private List<ScanInterval> scanIntervals = new ArrayList<ScanInterval>();
 
-  @SerializedName("scan_interval_ids")
-  private List<Integer> scanIntervalIds = new ArrayList<Integer>();
-
   @SerializedName("disabled_signatures")
   private List<Signature> disabledSignatures = new ArrayList<Signature>();
-
-  @SerializedName("disabled_signature_ids")
-  private List<Integer> disabledSignatureIds = new ArrayList<Integer>();
 
   @SerializedName("suppressions")
   private List<Suppression> suppressions = new ArrayList<Suppression>();
@@ -75,14 +69,8 @@ public class ExternalAccount {
   @SerializedName("azure_group")
   private AzureGroup azureGroup = null;
 
-  @SerializedName("azure_group_id")
-  private Integer azureGroupId = null;
-
   @SerializedName("credentials")
-  private ExternalAccountAmazonIAM credentials = null;
-
-  @SerializedName("credentials_id")
-  private Integer credentialsId = null;
+  private ExternalAccountAmazonIam credentials = null;
 
   public ExternalAccount id(Integer id) {
     this.id = id;
@@ -233,29 +221,6 @@ public class ExternalAccount {
     this.scanIntervals = scanIntervals;
   }
 
-  public ExternalAccount scanIntervalIds(List<Integer> scanIntervalIds) {
-    this.scanIntervalIds = scanIntervalIds;
-    return this;
-  }
-
-  public ExternalAccount addScanIntervalIdsItem(Integer scanIntervalIdsItem) {
-    this.scanIntervalIds.add(scanIntervalIdsItem);
-    return this;
-  }
-
-   /**
-   * Associated Scan Intervals IDs
-   * @return scanIntervalIds
-  **/
-  @ApiModelProperty(example = "null", value = "Associated Scan Intervals IDs")
-  public List<Integer> getScanIntervalIds() {
-    return scanIntervalIds;
-  }
-
-  public void setScanIntervalIds(List<Integer> scanIntervalIds) {
-    this.scanIntervalIds = scanIntervalIds;
-  }
-
   public ExternalAccount disabledSignatures(List<Signature> disabledSignatures) {
     this.disabledSignatures = disabledSignatures;
     return this;
@@ -277,29 +242,6 @@ public class ExternalAccount {
 
   public void setDisabledSignatures(List<Signature> disabledSignatures) {
     this.disabledSignatures = disabledSignatures;
-  }
-
-  public ExternalAccount disabledSignatureIds(List<Integer> disabledSignatureIds) {
-    this.disabledSignatureIds = disabledSignatureIds;
-    return this;
-  }
-
-  public ExternalAccount addDisabledSignatureIdsItem(Integer disabledSignatureIdsItem) {
-    this.disabledSignatureIds.add(disabledSignatureIdsItem);
-    return this;
-  }
-
-   /**
-   * Associated Disabled Signatures IDs
-   * @return disabledSignatureIds
-  **/
-  @ApiModelProperty(example = "null", value = "Associated Disabled Signatures IDs")
-  public List<Integer> getDisabledSignatureIds() {
-    return disabledSignatureIds;
-  }
-
-  public void setDisabledSignatureIds(List<Integer> disabledSignatureIds) {
-    this.disabledSignatureIds = disabledSignatureIds;
   }
 
   public ExternalAccount suppressions(List<Suppression> suppressions) {
@@ -366,25 +308,7 @@ public class ExternalAccount {
     this.azureGroup = azureGroup;
   }
 
-  public ExternalAccount azureGroupId(Integer azureGroupId) {
-    this.azureGroupId = azureGroupId;
-    return this;
-  }
-
-   /**
-   * Associated Azure Group ID
-   * @return azureGroupId
-  **/
-  @ApiModelProperty(example = "null", value = "Associated Azure Group ID")
-  public Integer getAzureGroupId() {
-    return azureGroupId;
-  }
-
-  public void setAzureGroupId(Integer azureGroupId) {
-    this.azureGroupId = azureGroupId;
-  }
-
-  public ExternalAccount credentials(ExternalAccountAmazonIAM credentials) {
+  public ExternalAccount credentials(ExternalAccountAmazonIam credentials) {
     this.credentials = credentials;
     return this;
   }
@@ -394,30 +318,12 @@ public class ExternalAccount {
    * @return credentials
   **/
   @ApiModelProperty(example = "null", value = "Associated Credentials")
-  public ExternalAccountAmazonIAM getCredentials() {
+  public ExternalAccountAmazonIam getCredentials() {
     return credentials;
   }
 
-  public void setCredentials(ExternalAccountAmazonIAM credentials) {
+  public void setCredentials(ExternalAccountAmazonIam credentials) {
     this.credentials = credentials;
-  }
-
-  public ExternalAccount credentialsId(Integer credentialsId) {
-    this.credentialsId = credentialsId;
-    return this;
-  }
-
-   /**
-   * Associated Credentials ID
-   * @return credentialsId
-  **/
-  @ApiModelProperty(example = "null", value = "Associated Credentials ID")
-  public Integer getCredentialsId() {
-    return credentialsId;
-  }
-
-  public void setCredentialsId(Integer credentialsId) {
-    this.credentialsId = credentialsId;
   }
 
 
@@ -438,20 +344,16 @@ public class ExternalAccount {
         Objects.equals(this.team, externalAccount.team) &&
         Objects.equals(this.teamId, externalAccount.teamId) &&
         Objects.equals(this.scanIntervals, externalAccount.scanIntervals) &&
-        Objects.equals(this.scanIntervalIds, externalAccount.scanIntervalIds) &&
         Objects.equals(this.disabledSignatures, externalAccount.disabledSignatures) &&
-        Objects.equals(this.disabledSignatureIds, externalAccount.disabledSignatureIds) &&
         Objects.equals(this.suppressions, externalAccount.suppressions) &&
         Objects.equals(this.suppressionIds, externalAccount.suppressionIds) &&
         Objects.equals(this.azureGroup, externalAccount.azureGroup) &&
-        Objects.equals(this.azureGroupId, externalAccount.azureGroupId) &&
-        Objects.equals(this.credentials, externalAccount.credentials) &&
-        Objects.equals(this.credentialsId, externalAccount.credentialsId);
+        Objects.equals(this.credentials, externalAccount.credentials);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, name, updatedAt, provider, team, teamId, scanIntervals, scanIntervalIds, disabledSignatures, disabledSignatureIds, suppressions, suppressionIds, azureGroup, azureGroupId, credentials, credentialsId);
+    return Objects.hash(id, createdAt, name, updatedAt, provider, team, teamId, scanIntervals, disabledSignatures, suppressions, suppressionIds, azureGroup, credentials);
   }
 
 
@@ -468,15 +370,11 @@ public class ExternalAccount {
     sb.append("    team: ").append(toIndentedString(team)).append("\n");
     sb.append("    teamId: ").append(toIndentedString(teamId)).append("\n");
     sb.append("    scanIntervals: ").append(toIndentedString(scanIntervals)).append("\n");
-    sb.append("    scanIntervalIds: ").append(toIndentedString(scanIntervalIds)).append("\n");
     sb.append("    disabledSignatures: ").append(toIndentedString(disabledSignatures)).append("\n");
-    sb.append("    disabledSignatureIds: ").append(toIndentedString(disabledSignatureIds)).append("\n");
     sb.append("    suppressions: ").append(toIndentedString(suppressions)).append("\n");
     sb.append("    suppressionIds: ").append(toIndentedString(suppressionIds)).append("\n");
     sb.append("    azureGroup: ").append(toIndentedString(azureGroup)).append("\n");
-    sb.append("    azureGroupId: ").append(toIndentedString(azureGroupId)).append("\n");
     sb.append("    credentials: ").append(toIndentedString(credentials)).append("\n");
-    sb.append("    credentialsId: ").append(toIndentedString(credentialsId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

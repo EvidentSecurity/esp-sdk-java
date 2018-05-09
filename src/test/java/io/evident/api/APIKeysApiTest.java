@@ -1,7 +1,7 @@
 package io.evident.api;
 
 import io.evident.EspSdk.ApiClient;
-import io.evident.models.APIKey;
+import io.evident.models.ApiKey;
 import io.evident.models.Meta;
 import io.evident.models.PaginatedCollection;
 import org.junit.Before;
@@ -32,9 +32,9 @@ public class APIKeysApiTest {
      */
     @Test
     public void createTest() {
-        String name = null;
         String include = null;
-        // APIKey response = api.create(name, include);
+        String name = null;
+        // ApiKey response = api.create(include, name);
 
         // TODO: test validations
     }
@@ -59,9 +59,9 @@ public class APIKeysApiTest {
      */
     @Test
     public void listTest() {
-        String page = null;
         String include = null;
-        // PaginatedCollection response = api.list(page, include);
+        String page = null;
+        // PaginatedCollection response = api.list(include, page);
 
         // TODO: test validations
     }
@@ -75,7 +75,7 @@ public class APIKeysApiTest {
     public void showTest() {
         Integer id = null;
         String include = null;
-        // APIKey response = api.show(id, include);
+        // ApiKey response = api.show(id, include);
 
         // TODO: test validations
     }
@@ -88,9 +88,9 @@ public class APIKeysApiTest {
     @Test
     public void updateTest() {
         Integer id = null;
-        String name = null;
         String include = null;
-        // APIKey response = api.update(id, name, include);
+        String name = null;
+        // ApiKey response = api.update(id, include, name);
 
         // TODO: test validations
     }

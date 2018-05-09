@@ -92,17 +92,11 @@ Name | Type | Description | Notes
 **report** | [**Report**](Report.md) | Associated Report |  [optional]
 **reportId** | **Integer** | Associated Report ID |  [optional]
 **regions** | [**List&lt;StatRegion&gt;**](StatRegion.md) | Associated Regions |  [optional]
-**regionIds** | **List&lt;Integer&gt;** | Associated Regions IDs |  [optional]
 **services** | [**List&lt;StatService&gt;**](StatService.md) | Associated Services |  [optional]
-**serviceIds** | **List&lt;Integer&gt;** | Associated Services IDs |  [optional]
 **signatures** | [**List&lt;StatSignature&gt;**](StatSignature.md) | Associated Signatures |  [optional]
-**signatureIds** | **List&lt;Integer&gt;** | Associated Signatures IDs |  [optional]
 **customSignatures** | [**List&lt;StatCustomSignature&gt;**](StatCustomSignature.md) | Associated Custom Signatures |  [optional]
-**customSignatureIds** | **List&lt;Integer&gt;** | Associated Custom Signatures IDs |  [optional]
 **customComplianceControls** | [**List&lt;StatCustomComplianceControl&gt;**](StatCustomComplianceControl.md) | Associated Custom Compliance Controls |  [optional]
-**customComplianceControlIds** | **List&lt;Integer&gt;** | Associated Custom Compliance Controls IDs |  [optional]
 **complianceControls** | [**List&lt;StatComplianceControl&gt;**](StatComplianceControl.md) | Associated Compliance Controls |  [optional]
-**complianceControlIds** | **List&lt;Integer&gt;** | Associated Compliance Controls IDs |  [optional]
 
 
 
