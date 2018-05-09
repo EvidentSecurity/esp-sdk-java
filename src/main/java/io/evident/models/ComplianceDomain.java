@@ -27,7 +27,7 @@ import org.joda.time.DateTime;
  * A(n) ComplianceDomain object
  */
 @ApiModel(description = "A(n) ComplianceDomain object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-25T13:00:36.864-05:00")
+
 public class ComplianceDomain {
   @SerializedName("id")
   private Integer id = null;

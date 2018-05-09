@@ -30,20 +30,20 @@ public class IntegrationsHipchatApiTest {
      */
     @Test
     public void createTest() {
-        String token = null;
-        String room = null;
-        String name = null;
         List<Integer> externalAccountIds = null;
+        String name = null;
+        String room = null;
+        String token = null;
+        String include = null;
         Boolean allHighRisk = null;
-        Boolean allMediumRisk = null;
         Boolean allLowRisk = null;
+        Boolean allMediumRisk = null;
+        List<Integer> customSignatureIds = null;
         Boolean sendUpdates = null;
         Boolean sendWhenSuppressed = null;
         List<Integer> signatureIds = null;
         List<String> statuses = null;
-        List<Integer> customSignatureIds = null;
-        String include = null;
-        // IntegrationHipchat response = api.create(token, room, name, externalAccountIds, allHighRisk, allMediumRisk, allLowRisk, sendUpdates, sendWhenSuppressed, signatureIds, statuses, customSignatureIds, include);
+        // IntegrationHipchat response = api.create(externalAccountIds, name, room, token, include, allHighRisk, allLowRisk, allMediumRisk, customSignatureIds, sendUpdates, sendWhenSuppressed, signatureIds, statuses);
 
         // TODO: test validations
     }
@@ -70,20 +70,20 @@ public class IntegrationsHipchatApiTest {
     @Test
     public void updateTest() {
         Integer integrationId = null;
-        String token = null;
-        String room = null;
-        String name = null;
+        String include = null;
         Boolean allHighRisk = null;
-        Boolean allMediumRisk = null;
         Boolean allLowRisk = null;
+        Boolean allMediumRisk = null;
+        List<Integer> customSignatureIds = null;
+        List<Integer> externalAccountIds = null;
+        String name = null;
+        String room = null;
         Boolean sendUpdates = null;
         Boolean sendWhenSuppressed = null;
         List<Integer> signatureIds = null;
         List<String> statuses = null;
-        List<Integer> externalAccountIds = null;
-        List<Integer> customSignatureIds = null;
-        String include = null;
-        // IntegrationHipchat response = api.update(integrationId, token, room, name, allHighRisk, allMediumRisk, allLowRisk, sendUpdates, sendWhenSuppressed, signatureIds, statuses, externalAccountIds, customSignatureIds, include);
+        String token = null;
+        // IntegrationHipchat response = api.update(integrationId, include, allHighRisk, allLowRisk, allMediumRisk, customSignatureIds, externalAccountIds, name, room, sendUpdates, sendWhenSuppressed, signatureIds, statuses, token);
 
         // TODO: test validations
     }

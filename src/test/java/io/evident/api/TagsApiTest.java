@@ -33,8 +33,7 @@ public class TagsApiTest {
     public void listForAlertTest() {
         Integer alertId = null;
         String page = null;
-        String include = null;
-        // PaginatedCollection response = api.listForAlert(alertId, page, include);
+        // PaginatedCollection response = api.listForAlert(alertId, page);
 
         // TODO: test validations
     }
@@ -47,8 +46,7 @@ public class TagsApiTest {
     @Test
     public void showTest() {
         Integer id = null;
-        String include = null;
-        // Tag response = api.show(id, include);
+        // Tag response = api.show(id);
 
         // TODO: test validations
     }

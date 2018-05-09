@@ -32,17 +32,17 @@ public class UsersApiTest {
      */
     @Test
     public void createTest() {
+        String email = null;
         String firstName = null;
         String lastName = null;
-        String email = null;
+        String include = null;
+        Boolean disableDailyEmails = null;
+        String phone = null;
         Integer roleId = null;
         List<Integer> subOrganizationIds = null;
         List<Integer> teamIds = null;
-        Boolean disableDailyEmails = null;
-        String phone = null;
         String timeZone = null;
-        String include = null;
-        // User response = api.create(firstName, lastName, email, roleId, subOrganizationIds, teamIds, disableDailyEmails, phone, timeZone, include);
+        // User response = api.create(email, firstName, lastName, include, disableDailyEmails, phone, roleId, subOrganizationIds, teamIds, timeZone);
 
         // TODO: test validations
     }
@@ -68,10 +68,10 @@ public class UsersApiTest {
      */
     @Test
     public void listTest() {
+        String include = null;
         Map<String, String> filter = null;
         String page = null;
-        String include = null;
-        // PaginatedCollection response = api.list(filter, page, include);
+        // PaginatedCollection response = api.list(include, filter, page);
 
         // TODO: test validations
     }
@@ -98,17 +98,16 @@ public class UsersApiTest {
     @Test
     public void updateTest() {
         Integer id = null;
+        String include = null;
+        Boolean disableDailyEmails = null;
         String firstName = null;
         String lastName = null;
-        String email = null;
+        String phone = null;
         Integer roleId = null;
         List<Integer> subOrganizationIds = null;
         List<Integer> teamIds = null;
-        Boolean disableDailyEmails = null;
-        String phone = null;
         String timeZone = null;
-        String include = null;
-        // User response = api.update(id, firstName, lastName, email, roleId, subOrganizationIds, teamIds, disableDailyEmails, phone, timeZone, include);
+        // User response = api.update(id, include, disableDailyEmails, firstName, lastName, phone, roleId, subOrganizationIds, teamIds, timeZone);
 
         // TODO: test validations
     }

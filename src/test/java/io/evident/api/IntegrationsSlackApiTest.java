@@ -30,19 +30,19 @@ public class IntegrationsSlackApiTest {
      */
     @Test
     public void createTest() {
-        String url = null;
-        String name = null;
         List<Integer> externalAccountIds = null;
+        String name = null;
+        String url = null;
+        String include = null;
         Boolean allHighRisk = null;
-        Boolean allMediumRisk = null;
         Boolean allLowRisk = null;
+        Boolean allMediumRisk = null;
+        List<Integer> customSignatureIds = null;
         Boolean sendUpdates = null;
         Boolean sendWhenSuppressed = null;
         List<Integer> signatureIds = null;
         List<String> statuses = null;
-        List<Integer> customSignatureIds = null;
-        String include = null;
-        // IntegrationSlack response = api.create(url, name, externalAccountIds, allHighRisk, allMediumRisk, allLowRisk, sendUpdates, sendWhenSuppressed, signatureIds, statuses, customSignatureIds, include);
+        // IntegrationSlack response = api.create(externalAccountIds, name, url, include, allHighRisk, allLowRisk, allMediumRisk, customSignatureIds, sendUpdates, sendWhenSuppressed, signatureIds, statuses);
 
         // TODO: test validations
     }
@@ -69,19 +69,19 @@ public class IntegrationsSlackApiTest {
     @Test
     public void updateTest() {
         Integer integrationId = null;
-        String url = null;
-        String name = null;
+        String include = null;
         Boolean allHighRisk = null;
-        Boolean allMediumRisk = null;
         Boolean allLowRisk = null;
+        Boolean allMediumRisk = null;
+        List<Integer> customSignatureIds = null;
+        List<Integer> externalAccountIds = null;
+        String name = null;
         Boolean sendUpdates = null;
         Boolean sendWhenSuppressed = null;
         List<Integer> signatureIds = null;
         List<String> statuses = null;
-        List<Integer> externalAccountIds = null;
-        List<Integer> customSignatureIds = null;
-        String include = null;
-        // IntegrationSlack response = api.update(integrationId, url, name, allHighRisk, allMediumRisk, allLowRisk, sendUpdates, sendWhenSuppressed, signatureIds, statuses, externalAccountIds, customSignatureIds, include);
+        String url = null;
+        // IntegrationSlack response = api.update(integrationId, include, allHighRisk, allLowRisk, allMediumRisk, customSignatureIds, externalAccountIds, name, sendUpdates, sendWhenSuppressed, signatureIds, statuses, url);
 
         // TODO: test validations
     }

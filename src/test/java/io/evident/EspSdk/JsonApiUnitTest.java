@@ -79,6 +79,5 @@ public class JsonApiUnitTest {
         assertEquals(1015, (int) alert.getExternalAccountId());
         assertEquals(1014, (int) alert.getRegionId());
         assertEquals(1013, (int) alert.getSignatureId());
-        assertEquals(1, (int) alert.getTagIds().get(0));
     }
 }

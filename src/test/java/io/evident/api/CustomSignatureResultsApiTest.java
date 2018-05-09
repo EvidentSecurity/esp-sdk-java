@@ -35,10 +35,10 @@ public class CustomSignatureResultsApiTest {
         Integer customSignatureDefinitionId = null;
         Integer externalAccountId = null;
         String language = null;
-        Integer regionId = null;
-        String region = null;
         String include = null;
-        // CustomSignatureResult response = api.create(code, customSignatureDefinitionId, externalAccountId, language, regionId, region, include);
+        String region = null;
+        Integer regionId = null;
+        // CustomSignatureResult response = api.create(code, customSignatureDefinitionId, externalAccountId, language, include, region, regionId);
 
         // TODO: test validations
     }
@@ -50,10 +50,10 @@ public class CustomSignatureResultsApiTest {
      */
     @Test
     public void listTest() {
+        String include = null;
         Map<String, String> filter = null;
         String page = null;
-        String include = null;
-        // PaginatedCollection response = api.list(filter, page, include);
+        // PaginatedCollection response = api.list(include, filter, page);
 
         // TODO: test validations
     }
@@ -66,9 +66,9 @@ public class CustomSignatureResultsApiTest {
     @Test
     public void listAlertsTest() {
         Integer customSignatureResultId = null;
-        String page = null;
         String include = null;
-        // PaginatedCollection response = api.listAlerts(customSignatureResultId, page, include);
+        String page = null;
+        // PaginatedCollection response = api.listAlerts(customSignatureResultId, include, page);
 
         // TODO: test validations
     }

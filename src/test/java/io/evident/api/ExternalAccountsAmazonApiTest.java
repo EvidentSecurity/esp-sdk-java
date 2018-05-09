@@ -1,7 +1,7 @@
 package io.evident.api;
 
 import io.evident.EspSdk.ApiClient;
-import io.evident.models.ExternalAccountAmazonIAM;
+import io.evident.models.ExternalAccountAmazonIam;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -34,7 +34,7 @@ public class ExternalAccountsAmazonApiTest {
         String externalId = null;
         String name = null;
         Integer teamId = null;
-        // ExternalAccountAmazonIAM response = api.create(arn, externalId, name, teamId);
+        // ExternalAccountAmazonIam response = api.create(arn, externalId, name, teamId);
 
         // TODO: test validations
     }
@@ -48,7 +48,7 @@ public class ExternalAccountsAmazonApiTest {
     public void showTest() {
         Integer externalAccountId = null;
         String include = null;
-        // ExternalAccountAmazonIAM response = api.show(externalAccountId, include);
+        // ExternalAccountAmazonIam response = api.show(externalAccountId, include);
 
         // TODO: test validations
     }
@@ -65,7 +65,7 @@ public class ExternalAccountsAmazonApiTest {
         String externalId = null;
         String name = null;
         Integer teamId = null;
-        // ExternalAccountAmazonIAM response = api.update(externalAccountId, arn, externalId, name, teamId);
+        // ExternalAccountAmazonIam response = api.update(externalAccountId, arn, externalId, name, teamId);
 
         // TODO: test validations
     }

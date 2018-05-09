@@ -28,7 +28,7 @@ import org.joda.time.DateTime;
  * A(n) ComplianceControl object
  */
 @ApiModel(description = "A(n) ComplianceControl object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-25T13:00:36.864-05:00")
+
 public class ComplianceControl {
   @SerializedName("id")
   private Integer id = null;
@@ -65,9 +65,6 @@ public class ComplianceControl {
 
   @SerializedName("signatures")
   private List<Signature> signatures = new ArrayList<Signature>();
-
-  @SerializedName("signature_ids")
-  private List<Integer> signatureIds = new ArrayList<Integer>();
 
   public ComplianceControl id(Integer id) {
     this.id = id;
@@ -290,29 +287,6 @@ public class ComplianceControl {
     this.signatures = signatures;
   }
 
-  public ComplianceControl signatureIds(List<Integer> signatureIds) {
-    this.signatureIds = signatureIds;
-    return this;
-  }
-
-  public ComplianceControl addSignatureIdsItem(Integer signatureIdsItem) {
-    this.signatureIds.add(signatureIdsItem);
-    return this;
-  }
-
-   /**
-   * Associated Signatures IDs
-   * @return signatureIds
-  **/
-  @ApiModelProperty(example = "null", value = "Associated Signatures IDs")
-  public List<Integer> getSignatureIds() {
-    return signatureIds;
-  }
-
-  public void setSignatureIds(List<Integer> signatureIds) {
-    this.signatureIds = signatureIds;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -334,13 +308,12 @@ public class ComplianceControl {
         Objects.equals(this.complianceStandardId, complianceControl.complianceStandardId) &&
         Objects.equals(this.complianceDomain, complianceControl.complianceDomain) &&
         Objects.equals(this.complianceDomainId, complianceControl.complianceDomainId) &&
-        Objects.equals(this.signatures, complianceControl.signatures) &&
-        Objects.equals(this.signatureIds, complianceControl.signatureIds);
+        Objects.equals(this.signatures, complianceControl.signatures);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, name, identifier, description, updatedAt, position, complianceStandard, complianceStandardId, complianceDomain, complianceDomainId, signatures, signatureIds);
+    return Objects.hash(id, createdAt, name, identifier, description, updatedAt, position, complianceStandard, complianceStandardId, complianceDomain, complianceDomainId, signatures);
   }
 
 
@@ -361,7 +334,6 @@ public class ComplianceControl {
     sb.append("    complianceDomain: ").append(toIndentedString(complianceDomain)).append("\n");
     sb.append("    complianceDomainId: ").append(toIndentedString(complianceDomainId)).append("\n");
     sb.append("    signatures: ").append(toIndentedString(signatures)).append("\n");
-    sb.append("    signatureIds: ").append(toIndentedString(signatureIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

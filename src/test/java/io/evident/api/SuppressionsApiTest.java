@@ -31,14 +31,14 @@ public class SuppressionsApiTest {
      */
     @Test
     public void createTest() {
+        List<Integer> externalAccountIds = null;
         String reason = null;
         List<String> regions = null;
-        List<Integer> externalAccountIds = null;
+        String include = null;
+        List<Integer> customSignatureIds = null;
         String resource = null;
         List<Integer> signatureIds = null;
-        List<Integer> customSignatureIds = null;
-        String include = null;
-        // Suppression response = api.create(reason, regions, externalAccountIds, resource, signatureIds, customSignatureIds, include);
+        // Suppression response = api.create(externalAccountIds, reason, regions, include, customSignatureIds, resource, signatureIds);
 
         // TODO: test validations
     }
@@ -50,10 +50,9 @@ public class SuppressionsApiTest {
      */
     @Test
     public void createFromAlertTest() {
-        Integer alertId = null;
         String reason = null;
         String include = null;
-        // Suppression response = api.createFromAlert(alertId, reason, include);
+        // Suppression response = api.createFromAlert(reason, include);
 
         // TODO: test validations
     }
@@ -79,10 +78,10 @@ public class SuppressionsApiTest {
      */
     @Test
     public void listTest() {
+        String include = null;
         Map<String, String> filter = null;
         String page = null;
-        String include = null;
-        // PaginatedCollection response = api.list(filter, page, include);
+        // PaginatedCollection response = api.list(include, filter, page);
 
         // TODO: test validations
     }

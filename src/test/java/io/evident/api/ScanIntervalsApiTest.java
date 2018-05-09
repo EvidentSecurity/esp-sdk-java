@@ -62,9 +62,9 @@ public class ScanIntervalsApiTest {
     @Test
     public void listForExternalAccountTest() {
         Integer externalAccountId = null;
-        String page = null;
         String include = null;
-        // PaginatedCollection response = api.listForExternalAccount(externalAccountId, page, include);
+        String page = null;
+        // PaginatedCollection response = api.listForExternalAccount(externalAccountId, include, page);
 
         // TODO: test validations
     }
@@ -91,11 +91,11 @@ public class ScanIntervalsApiTest {
     @Test
     public void updateTest() {
         Integer id = null;
+        String include = null;
         Integer externalAccountId = null;
         Integer interval = null;
         Integer serviceId = null;
-        String include = null;
-        // ScanInterval response = api.update(id, externalAccountId, interval, serviceId, include);
+        // ScanInterval response = api.update(id, include, externalAccountId, interval, serviceId);
 
         // TODO: test validations
     }

@@ -32,7 +32,7 @@ import org.joda.time.DateTime;
  * A(n) Stat object
  */
 @ApiModel(description = "A(n) Stat object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-25T13:00:36.864-05:00")
+
 public class Stat {
   @SerializedName("id")
   private Integer id = null;
@@ -298,38 +298,20 @@ public class Stat {
   @SerializedName("regions")
   private List<StatRegion> regions = new ArrayList<StatRegion>();
 
-  @SerializedName("region_ids")
-  private List<Integer> regionIds = new ArrayList<Integer>();
-
   @SerializedName("services")
   private List<StatService> services = new ArrayList<StatService>();
-
-  @SerializedName("service_ids")
-  private List<Integer> serviceIds = new ArrayList<Integer>();
 
   @SerializedName("signatures")
   private List<StatSignature> signatures = new ArrayList<StatSignature>();
 
-  @SerializedName("signature_ids")
-  private List<Integer> signatureIds = new ArrayList<Integer>();
-
   @SerializedName("custom_signatures")
   private List<StatCustomSignature> customSignatures = new ArrayList<StatCustomSignature>();
-
-  @SerializedName("custom_signature_ids")
-  private List<Integer> customSignatureIds = new ArrayList<Integer>();
 
   @SerializedName("custom_compliance_controls")
   private List<StatCustomComplianceControl> customComplianceControls = new ArrayList<StatCustomComplianceControl>();
 
-  @SerializedName("custom_compliance_control_ids")
-  private List<Integer> customComplianceControlIds = new ArrayList<Integer>();
-
   @SerializedName("compliance_controls")
   private List<StatComplianceControl> complianceControls = new ArrayList<StatComplianceControl>();
-
-  @SerializedName("compliance_control_ids")
-  private List<Integer> complianceControlIds = new ArrayList<Integer>();
 
   public Stat id(Integer id) {
     this.id = id;
@@ -1920,29 +1902,6 @@ public class Stat {
     this.regions = regions;
   }
 
-  public Stat regionIds(List<Integer> regionIds) {
-    this.regionIds = regionIds;
-    return this;
-  }
-
-  public Stat addRegionIdsItem(Integer regionIdsItem) {
-    this.regionIds.add(regionIdsItem);
-    return this;
-  }
-
-   /**
-   * Associated Regions IDs
-   * @return regionIds
-  **/
-  @ApiModelProperty(example = "null", value = "Associated Regions IDs")
-  public List<Integer> getRegionIds() {
-    return regionIds;
-  }
-
-  public void setRegionIds(List<Integer> regionIds) {
-    this.regionIds = regionIds;
-  }
-
   public Stat services(List<StatService> services) {
     this.services = services;
     return this;
@@ -1964,29 +1923,6 @@ public class Stat {
 
   public void setServices(List<StatService> services) {
     this.services = services;
-  }
-
-  public Stat serviceIds(List<Integer> serviceIds) {
-    this.serviceIds = serviceIds;
-    return this;
-  }
-
-  public Stat addServiceIdsItem(Integer serviceIdsItem) {
-    this.serviceIds.add(serviceIdsItem);
-    return this;
-  }
-
-   /**
-   * Associated Services IDs
-   * @return serviceIds
-  **/
-  @ApiModelProperty(example = "null", value = "Associated Services IDs")
-  public List<Integer> getServiceIds() {
-    return serviceIds;
-  }
-
-  public void setServiceIds(List<Integer> serviceIds) {
-    this.serviceIds = serviceIds;
   }
 
   public Stat signatures(List<StatSignature> signatures) {
@@ -2012,29 +1948,6 @@ public class Stat {
     this.signatures = signatures;
   }
 
-  public Stat signatureIds(List<Integer> signatureIds) {
-    this.signatureIds = signatureIds;
-    return this;
-  }
-
-  public Stat addSignatureIdsItem(Integer signatureIdsItem) {
-    this.signatureIds.add(signatureIdsItem);
-    return this;
-  }
-
-   /**
-   * Associated Signatures IDs
-   * @return signatureIds
-  **/
-  @ApiModelProperty(example = "null", value = "Associated Signatures IDs")
-  public List<Integer> getSignatureIds() {
-    return signatureIds;
-  }
-
-  public void setSignatureIds(List<Integer> signatureIds) {
-    this.signatureIds = signatureIds;
-  }
-
   public Stat customSignatures(List<StatCustomSignature> customSignatures) {
     this.customSignatures = customSignatures;
     return this;
@@ -2056,29 +1969,6 @@ public class Stat {
 
   public void setCustomSignatures(List<StatCustomSignature> customSignatures) {
     this.customSignatures = customSignatures;
-  }
-
-  public Stat customSignatureIds(List<Integer> customSignatureIds) {
-    this.customSignatureIds = customSignatureIds;
-    return this;
-  }
-
-  public Stat addCustomSignatureIdsItem(Integer customSignatureIdsItem) {
-    this.customSignatureIds.add(customSignatureIdsItem);
-    return this;
-  }
-
-   /**
-   * Associated Custom Signatures IDs
-   * @return customSignatureIds
-  **/
-  @ApiModelProperty(example = "null", value = "Associated Custom Signatures IDs")
-  public List<Integer> getCustomSignatureIds() {
-    return customSignatureIds;
-  }
-
-  public void setCustomSignatureIds(List<Integer> customSignatureIds) {
-    this.customSignatureIds = customSignatureIds;
   }
 
   public Stat customComplianceControls(List<StatCustomComplianceControl> customComplianceControls) {
@@ -2104,29 +1994,6 @@ public class Stat {
     this.customComplianceControls = customComplianceControls;
   }
 
-  public Stat customComplianceControlIds(List<Integer> customComplianceControlIds) {
-    this.customComplianceControlIds = customComplianceControlIds;
-    return this;
-  }
-
-  public Stat addCustomComplianceControlIdsItem(Integer customComplianceControlIdsItem) {
-    this.customComplianceControlIds.add(customComplianceControlIdsItem);
-    return this;
-  }
-
-   /**
-   * Associated Custom Compliance Controls IDs
-   * @return customComplianceControlIds
-  **/
-  @ApiModelProperty(example = "null", value = "Associated Custom Compliance Controls IDs")
-  public List<Integer> getCustomComplianceControlIds() {
-    return customComplianceControlIds;
-  }
-
-  public void setCustomComplianceControlIds(List<Integer> customComplianceControlIds) {
-    this.customComplianceControlIds = customComplianceControlIds;
-  }
-
   public Stat complianceControls(List<StatComplianceControl> complianceControls) {
     this.complianceControls = complianceControls;
     return this;
@@ -2148,29 +2015,6 @@ public class Stat {
 
   public void setComplianceControls(List<StatComplianceControl> complianceControls) {
     this.complianceControls = complianceControls;
-  }
-
-  public Stat complianceControlIds(List<Integer> complianceControlIds) {
-    this.complianceControlIds = complianceControlIds;
-    return this;
-  }
-
-  public Stat addComplianceControlIdsItem(Integer complianceControlIdsItem) {
-    this.complianceControlIds.add(complianceControlIdsItem);
-    return this;
-  }
-
-   /**
-   * Associated Compliance Controls IDs
-   * @return complianceControlIds
-  **/
-  @ApiModelProperty(example = "null", value = "Associated Compliance Controls IDs")
-  public List<Integer> getComplianceControlIds() {
-    return complianceControlIds;
-  }
-
-  public void setComplianceControlIds(List<Integer> complianceControlIds) {
-    this.complianceControlIds = complianceControlIds;
   }
 
 
@@ -2271,22 +2115,16 @@ public class Stat {
         Objects.equals(this.report, stat.report) &&
         Objects.equals(this.reportId, stat.reportId) &&
         Objects.equals(this.regions, stat.regions) &&
-        Objects.equals(this.regionIds, stat.regionIds) &&
         Objects.equals(this.services, stat.services) &&
-        Objects.equals(this.serviceIds, stat.serviceIds) &&
         Objects.equals(this.signatures, stat.signatures) &&
-        Objects.equals(this.signatureIds, stat.signatureIds) &&
         Objects.equals(this.customSignatures, stat.customSignatures) &&
-        Objects.equals(this.customSignatureIds, stat.customSignatureIds) &&
         Objects.equals(this.customComplianceControls, stat.customComplianceControls) &&
-        Objects.equals(this.customComplianceControlIds, stat.customComplianceControlIds) &&
-        Objects.equals(this.complianceControls, stat.complianceControls) &&
-        Objects.equals(this.complianceControlIds, stat.complianceControlIds);
+        Objects.equals(this.complianceControls, stat.complianceControls);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, new1hHighPass, new1dHighPass, new1wHighPass, oldHighPass, new1hHighFail, new1dHighFail, new1wHighFail, oldHighFail, new1hHighWarn, new1dHighWarn, new1wHighWarn, oldHighWarn, new1hHighError, new1dHighError, new1wHighError, oldHighError, new1hMediumPass, new1dMediumPass, new1wMediumPass, oldMediumPass, new1hMediumFail, new1dMediumFail, new1wMediumFail, oldMediumFail, new1hMediumWarn, new1dMediumWarn, new1wMediumWarn, oldMediumWarn, new1hMediumError, new1dMediumError, new1wMediumError, oldMediumError, new1hLowPass, new1dLowPass, new1wLowPass, oldLowPass, new1hLowFail, new1dLowFail, new1wLowFail, oldLowFail, new1hLowWarn, new1dLowWarn, new1wLowWarn, oldLowWarn, new1hLowError, new1dLowError, new1wLowError, oldLowError, suppressedHighPass, suppressedHighFail, suppressedHighWarn, suppressedHighError, suppressedMediumPass, suppressedMediumFail, suppressedMediumWarn, suppressedMediumError, suppressedLowPass, suppressedLowFail, suppressedLowWarn, suppressedLowError, new1hHighInfo, new1dHighInfo, new1wHighInfo, oldHighInfo, new1hMediumInfo, new1dMediumInfo, new1wMediumInfo, oldMediumInfo, new1hLowInfo, new1dLowInfo, new1wLowInfo, oldLowInfo, suppressedHighInfo, suppressedMediumInfo, suppressedLowInfo, totalFail, totalWarn, totalError, totalPass, totalInfo, totalLow, totalMedium, totalHigh, createdAt, report, reportId, regions, regionIds, services, serviceIds, signatures, signatureIds, customSignatures, customSignatureIds, customComplianceControls, customComplianceControlIds, complianceControls, complianceControlIds);
+    return Objects.hash(id, new1hHighPass, new1dHighPass, new1wHighPass, oldHighPass, new1hHighFail, new1dHighFail, new1wHighFail, oldHighFail, new1hHighWarn, new1dHighWarn, new1wHighWarn, oldHighWarn, new1hHighError, new1dHighError, new1wHighError, oldHighError, new1hMediumPass, new1dMediumPass, new1wMediumPass, oldMediumPass, new1hMediumFail, new1dMediumFail, new1wMediumFail, oldMediumFail, new1hMediumWarn, new1dMediumWarn, new1wMediumWarn, oldMediumWarn, new1hMediumError, new1dMediumError, new1wMediumError, oldMediumError, new1hLowPass, new1dLowPass, new1wLowPass, oldLowPass, new1hLowFail, new1dLowFail, new1wLowFail, oldLowFail, new1hLowWarn, new1dLowWarn, new1wLowWarn, oldLowWarn, new1hLowError, new1dLowError, new1wLowError, oldLowError, suppressedHighPass, suppressedHighFail, suppressedHighWarn, suppressedHighError, suppressedMediumPass, suppressedMediumFail, suppressedMediumWarn, suppressedMediumError, suppressedLowPass, suppressedLowFail, suppressedLowWarn, suppressedLowError, new1hHighInfo, new1dHighInfo, new1wHighInfo, oldHighInfo, new1hMediumInfo, new1dMediumInfo, new1wMediumInfo, oldMediumInfo, new1hLowInfo, new1dLowInfo, new1wLowInfo, oldLowInfo, suppressedHighInfo, suppressedMediumInfo, suppressedLowInfo, totalFail, totalWarn, totalError, totalPass, totalInfo, totalLow, totalMedium, totalHigh, createdAt, report, reportId, regions, services, signatures, customSignatures, customComplianceControls, complianceControls);
   }
 
 
@@ -2383,17 +2221,11 @@ public class Stat {
     sb.append("    report: ").append(toIndentedString(report)).append("\n");
     sb.append("    reportId: ").append(toIndentedString(reportId)).append("\n");
     sb.append("    regions: ").append(toIndentedString(regions)).append("\n");
-    sb.append("    regionIds: ").append(toIndentedString(regionIds)).append("\n");
     sb.append("    services: ").append(toIndentedString(services)).append("\n");
-    sb.append("    serviceIds: ").append(toIndentedString(serviceIds)).append("\n");
     sb.append("    signatures: ").append(toIndentedString(signatures)).append("\n");
-    sb.append("    signatureIds: ").append(toIndentedString(signatureIds)).append("\n");
     sb.append("    customSignatures: ").append(toIndentedString(customSignatures)).append("\n");
-    sb.append("    customSignatureIds: ").append(toIndentedString(customSignatureIds)).append("\n");
     sb.append("    customComplianceControls: ").append(toIndentedString(customComplianceControls)).append("\n");
-    sb.append("    customComplianceControlIds: ").append(toIndentedString(customComplianceControlIds)).append("\n");
     sb.append("    complianceControls: ").append(toIndentedString(complianceControls)).append("\n");
-    sb.append("    complianceControlIds: ").append(toIndentedString(complianceControlIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -12,15 +12,11 @@ Name | Type | Description | Notes
 **team** | [**Team**](Team.md) | Associated Team |  [optional]
 **teamId** | **Integer** | Associated Team ID |  [optional]
 **scanIntervals** | [**List&lt;ScanInterval&gt;**](ScanInterval.md) | Associated Scan Intervals |  [optional]
-**scanIntervalIds** | **List&lt;Integer&gt;** | Associated Scan Intervals IDs |  [optional]
 **disabledSignatures** | [**List&lt;Signature&gt;**](Signature.md) | Associated Disabled Signatures |  [optional]
-**disabledSignatureIds** | **List&lt;Integer&gt;** | Associated Disabled Signatures IDs |  [optional]
 **suppressions** | [**List&lt;Suppression&gt;**](Suppression.md) | Associated Suppressions |  [optional]
 **suppressionIds** | **List&lt;Integer&gt;** | Associated Suppressions IDs |  [optional]
 **azureGroup** | [**AzureGroup**](AzureGroup.md) | Associated Azure Group |  [optional]
-**azureGroupId** | **Integer** | Associated Azure Group ID |  [optional]
-**credentials** | [**ExternalAccountAmazonIAM**](ExternalAccountAmazonIAM.md) | Associated Credentials |  [optional]
-**credentialsId** | **Integer** | Associated Credentials ID |  [optional]
+**credentials** | [**ExternalAccountAmazonIam**](ExternalAccountAmazonIam.md) | Associated Credentials |  [optional]
 
 
 

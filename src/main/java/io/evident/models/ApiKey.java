@@ -24,8 +24,8 @@ import org.joda.time.DateTime;
  * A(n) APIKey object
  */
 @ApiModel(description = "A(n) APIKey object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-25T13:00:36.864-05:00")
-public class APIKey {
+
+public class ApiKey {
   @SerializedName("id")
   private Integer id = null;
 
@@ -53,7 +53,7 @@ public class APIKey {
   @SerializedName("user_id")
   private Integer userId = null;
 
-  public APIKey id(Integer id) {
+  public ApiKey id(Integer id) {
     this.id = id;
     return this;
   }
@@ -71,7 +71,7 @@ public class APIKey {
     this.id = id;
   }
 
-  public APIKey accessId(String accessId) {
+  public ApiKey accessId(String accessId) {
     this.accessId = accessId;
     return this;
   }
@@ -89,7 +89,7 @@ public class APIKey {
     this.accessId = accessId;
   }
 
-  public APIKey name(String name) {
+  public ApiKey name(String name) {
     this.name = name;
     return this;
   }
@@ -107,7 +107,7 @@ public class APIKey {
     this.name = name;
   }
 
-  public APIKey lastUsedAt(DateTime lastUsedAt) {
+  public ApiKey lastUsedAt(DateTime lastUsedAt) {
     this.lastUsedAt = lastUsedAt;
     return this;
   }
@@ -125,7 +125,7 @@ public class APIKey {
     this.lastUsedAt = lastUsedAt;
   }
 
-  public APIKey createdAt(DateTime createdAt) {
+  public ApiKey createdAt(DateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -143,7 +143,7 @@ public class APIKey {
     this.createdAt = createdAt;
   }
 
-  public APIKey updatedAt(DateTime updatedAt) {
+  public ApiKey updatedAt(DateTime updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -161,7 +161,7 @@ public class APIKey {
     this.updatedAt = updatedAt;
   }
 
-  public APIKey secretKey(String secretKey) {
+  public ApiKey secretKey(String secretKey) {
     this.secretKey = secretKey;
     return this;
   }
@@ -179,7 +179,7 @@ public class APIKey {
     this.secretKey = secretKey;
   }
 
-  public APIKey user(User user) {
+  public ApiKey user(User user) {
     this.user = user;
     return this;
   }
@@ -197,7 +197,7 @@ public class APIKey {
     this.user = user;
   }
 
-  public APIKey userId(Integer userId) {
+  public ApiKey userId(Integer userId) {
     this.userId = userId;
     return this;
   }
@@ -224,16 +224,16 @@ public class APIKey {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    APIKey apIKey = (APIKey) o;
-    return Objects.equals(this.id, apIKey.id) &&
-        Objects.equals(this.accessId, apIKey.accessId) &&
-        Objects.equals(this.name, apIKey.name) &&
-        Objects.equals(this.lastUsedAt, apIKey.lastUsedAt) &&
-        Objects.equals(this.createdAt, apIKey.createdAt) &&
-        Objects.equals(this.updatedAt, apIKey.updatedAt) &&
-        Objects.equals(this.secretKey, apIKey.secretKey) &&
-        Objects.equals(this.user, apIKey.user) &&
-        Objects.equals(this.userId, apIKey.userId);
+    ApiKey apiKey = (ApiKey) o;
+    return Objects.equals(this.id, apiKey.id) &&
+        Objects.equals(this.accessId, apiKey.accessId) &&
+        Objects.equals(this.name, apiKey.name) &&
+        Objects.equals(this.lastUsedAt, apiKey.lastUsedAt) &&
+        Objects.equals(this.createdAt, apiKey.createdAt) &&
+        Objects.equals(this.updatedAt, apiKey.updatedAt) &&
+        Objects.equals(this.secretKey, apiKey.secretKey) &&
+        Objects.equals(this.user, apiKey.user) &&
+        Objects.equals(this.userId, apiKey.userId);
   }
 
   @Override
@@ -245,7 +245,7 @@ public class APIKey {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class APIKey {\n");
+    sb.append("class ApiKey {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    accessId: ").append(toIndentedString(accessId)).append("\n");

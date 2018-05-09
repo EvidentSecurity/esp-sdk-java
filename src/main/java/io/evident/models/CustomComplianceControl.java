@@ -29,7 +29,7 @@ import org.joda.time.DateTime;
  * A(n) CustomComplianceControl object
  */
 @ApiModel(description = "A(n) CustomComplianceControl object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-25T13:00:36.864-05:00")
+
 public class CustomComplianceControl {
   @SerializedName("id")
   private Integer id = null;
@@ -67,14 +67,8 @@ public class CustomComplianceControl {
   @SerializedName("signatures")
   private List<Signature> signatures = new ArrayList<Signature>();
 
-  @SerializedName("signature_ids")
-  private List<Integer> signatureIds = new ArrayList<Integer>();
-
   @SerializedName("custom_signatures")
   private List<CustomSignature> customSignatures = new ArrayList<CustomSignature>();
-
-  @SerializedName("custom_signature_ids")
-  private List<Integer> customSignatureIds = new ArrayList<Integer>();
 
   public CustomComplianceControl id(Integer id) {
     this.id = id;
@@ -297,29 +291,6 @@ public class CustomComplianceControl {
     this.signatures = signatures;
   }
 
-  public CustomComplianceControl signatureIds(List<Integer> signatureIds) {
-    this.signatureIds = signatureIds;
-    return this;
-  }
-
-  public CustomComplianceControl addSignatureIdsItem(Integer signatureIdsItem) {
-    this.signatureIds.add(signatureIdsItem);
-    return this;
-  }
-
-   /**
-   * Associated Signatures IDs
-   * @return signatureIds
-  **/
-  @ApiModelProperty(example = "null", value = "Associated Signatures IDs")
-  public List<Integer> getSignatureIds() {
-    return signatureIds;
-  }
-
-  public void setSignatureIds(List<Integer> signatureIds) {
-    this.signatureIds = signatureIds;
-  }
-
   public CustomComplianceControl customSignatures(List<CustomSignature> customSignatures) {
     this.customSignatures = customSignatures;
     return this;
@@ -341,29 +312,6 @@ public class CustomComplianceControl {
 
   public void setCustomSignatures(List<CustomSignature> customSignatures) {
     this.customSignatures = customSignatures;
-  }
-
-  public CustomComplianceControl customSignatureIds(List<Integer> customSignatureIds) {
-    this.customSignatureIds = customSignatureIds;
-    return this;
-  }
-
-  public CustomComplianceControl addCustomSignatureIdsItem(Integer customSignatureIdsItem) {
-    this.customSignatureIds.add(customSignatureIdsItem);
-    return this;
-  }
-
-   /**
-   * Associated Custom Signatures IDs
-   * @return customSignatureIds
-  **/
-  @ApiModelProperty(example = "null", value = "Associated Custom Signatures IDs")
-  public List<Integer> getCustomSignatureIds() {
-    return customSignatureIds;
-  }
-
-  public void setCustomSignatureIds(List<Integer> customSignatureIds) {
-    this.customSignatureIds = customSignatureIds;
   }
 
 
@@ -388,14 +336,12 @@ public class CustomComplianceControl {
         Objects.equals(this.customComplianceDomain, customComplianceControl.customComplianceDomain) &&
         Objects.equals(this.customComplianceDomainId, customComplianceControl.customComplianceDomainId) &&
         Objects.equals(this.signatures, customComplianceControl.signatures) &&
-        Objects.equals(this.signatureIds, customComplianceControl.signatureIds) &&
-        Objects.equals(this.customSignatures, customComplianceControl.customSignatures) &&
-        Objects.equals(this.customSignatureIds, customComplianceControl.customSignatureIds);
+        Objects.equals(this.customSignatures, customComplianceControl.customSignatures);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, identifier, description, createdAt, updatedAt, position, customComplianceStandard, customComplianceStandardId, customComplianceDomain, customComplianceDomainId, signatures, signatureIds, customSignatures, customSignatureIds);
+    return Objects.hash(id, name, identifier, description, createdAt, updatedAt, position, customComplianceStandard, customComplianceStandardId, customComplianceDomain, customComplianceDomainId, signatures, customSignatures);
   }
 
 
@@ -416,9 +362,7 @@ public class CustomComplianceControl {
     sb.append("    customComplianceDomain: ").append(toIndentedString(customComplianceDomain)).append("\n");
     sb.append("    customComplianceDomainId: ").append(toIndentedString(customComplianceDomainId)).append("\n");
     sb.append("    signatures: ").append(toIndentedString(signatures)).append("\n");
-    sb.append("    signatureIds: ").append(toIndentedString(signatureIds)).append("\n");
     sb.append("    customSignatures: ").append(toIndentedString(customSignatures)).append("\n");
-    sb.append("    customSignatureIds: ").append(toIndentedString(customSignatureIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

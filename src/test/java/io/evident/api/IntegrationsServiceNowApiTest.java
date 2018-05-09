@@ -30,22 +30,22 @@ public class IntegrationsServiceNowApiTest {
      */
     @Test
     public void createTest() {
-        String instanceUrl = null;
-        String username = null;
-        String password = null;
-        String incidentType = null;
-        String name = null;
         List<Integer> externalAccountIds = null;
+        String incidentType = null;
+        String instanceUrl = null;
+        String name = null;
+        String password = null;
+        String username = null;
+        String include = null;
         Boolean allHighRisk = null;
-        Boolean allMediumRisk = null;
         Boolean allLowRisk = null;
+        Boolean allMediumRisk = null;
+        List<Integer> customSignatureIds = null;
         Boolean sendUpdates = null;
         Boolean sendWhenSuppressed = null;
         List<Integer> signatureIds = null;
         List<String> statuses = null;
-        List<Integer> customSignatureIds = null;
-        String include = null;
-        // IntegrationServicenow response = api.create(instanceUrl, username, password, incidentType, name, externalAccountIds, allHighRisk, allMediumRisk, allLowRisk, sendUpdates, sendWhenSuppressed, signatureIds, statuses, customSignatureIds, include);
+        // IntegrationServicenow response = api.create(externalAccountIds, incidentType, instanceUrl, name, password, username, include, allHighRisk, allLowRisk, allMediumRisk, customSignatureIds, sendUpdates, sendWhenSuppressed, signatureIds, statuses);
 
         // TODO: test validations
     }
@@ -72,22 +72,22 @@ public class IntegrationsServiceNowApiTest {
     @Test
     public void updateTest() {
         Integer integrationId = null;
-        String instanceUrl = null;
-        String username = null;
-        String password = null;
-        String incidentType = null;
-        String name = null;
+        String include = null;
         Boolean allHighRisk = null;
-        Boolean allMediumRisk = null;
         Boolean allLowRisk = null;
+        Boolean allMediumRisk = null;
+        List<Integer> customSignatureIds = null;
+        List<Integer> externalAccountIds = null;
+        String incidentType = null;
+        String instanceUrl = null;
+        String name = null;
+        String password = null;
         Boolean sendUpdates = null;
         Boolean sendWhenSuppressed = null;
         List<Integer> signatureIds = null;
         List<String> statuses = null;
-        List<Integer> externalAccountIds = null;
-        List<Integer> customSignatureIds = null;
-        String include = null;
-        // IntegrationServicenow response = api.update(integrationId, instanceUrl, username, password, incidentType, name, allHighRisk, allMediumRisk, allLowRisk, sendUpdates, sendWhenSuppressed, signatureIds, statuses, externalAccountIds, customSignatureIds, include);
+        String username = null;
+        // IntegrationServicenow response = api.update(integrationId, include, allHighRisk, allLowRisk, allMediumRisk, customSignatureIds, externalAccountIds, incidentType, instanceUrl, name, password, sendUpdates, sendWhenSuppressed, signatureIds, statuses, username);
 
         // TODO: test validations
     }

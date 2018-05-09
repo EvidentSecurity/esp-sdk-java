@@ -28,7 +28,7 @@ import org.joda.time.DateTime;
  * A(n) Signature object
  */
 @ApiModel(description = "A(n) Signature object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-25T13:00:36.864-05:00")
+
 public class Signature {
   @SerializedName("id")
   private Integer id = null;
@@ -65,9 +65,6 @@ public class Signature {
 
   @SerializedName("disabled_external_accounts")
   private ExternalAccount disabledExternalAccounts = null;
-
-  @SerializedName("disabled_external_accounts_id")
-  private Integer disabledExternalAccountsId = null;
 
   @SerializedName("suppressions")
   private List<Suppression> suppressions = new ArrayList<Suppression>();
@@ -291,24 +288,6 @@ public class Signature {
     this.disabledExternalAccounts = disabledExternalAccounts;
   }
 
-  public Signature disabledExternalAccountsId(Integer disabledExternalAccountsId) {
-    this.disabledExternalAccountsId = disabledExternalAccountsId;
-    return this;
-  }
-
-   /**
-   * Associated Disabled External Accounts ID
-   * @return disabledExternalAccountsId
-  **/
-  @ApiModelProperty(example = "null", value = "Associated Disabled External Accounts ID")
-  public Integer getDisabledExternalAccountsId() {
-    return disabledExternalAccountsId;
-  }
-
-  public void setDisabledExternalAccountsId(Integer disabledExternalAccountsId) {
-    this.disabledExternalAccountsId = disabledExternalAccountsId;
-  }
-
   public Signature suppressions(List<Suppression> suppressions) {
     this.suppressions = suppressions;
     return this;
@@ -377,14 +356,13 @@ public class Signature {
         Objects.equals(this.service, signature.service) &&
         Objects.equals(this.serviceId, signature.serviceId) &&
         Objects.equals(this.disabledExternalAccounts, signature.disabledExternalAccounts) &&
-        Objects.equals(this.disabledExternalAccountsId, signature.disabledExternalAccountsId) &&
         Objects.equals(this.suppressions, signature.suppressions) &&
         Objects.equals(this.suppressionIds, signature.suppressionIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, description, identifier, name, resolution, riskLevel, updatedAt, customRiskLevel, service, serviceId, disabledExternalAccounts, disabledExternalAccountsId, suppressions, suppressionIds);
+    return Objects.hash(id, createdAt, description, identifier, name, resolution, riskLevel, updatedAt, customRiskLevel, service, serviceId, disabledExternalAccounts, suppressions, suppressionIds);
   }
 
 
@@ -405,7 +383,6 @@ public class Signature {
     sb.append("    service: ").append(toIndentedString(service)).append("\n");
     sb.append("    serviceId: ").append(toIndentedString(serviceId)).append("\n");
     sb.append("    disabledExternalAccounts: ").append(toIndentedString(disabledExternalAccounts)).append("\n");
-    sb.append("    disabledExternalAccountsId: ").append(toIndentedString(disabledExternalAccountsId)).append("\n");
     sb.append("    suppressions: ").append(toIndentedString(suppressions)).append("\n");
     sb.append("    suppressionIds: ").append(toIndentedString(suppressionIds)).append("\n");
     sb.append("}");

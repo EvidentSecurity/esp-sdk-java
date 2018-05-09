@@ -32,10 +32,10 @@ public class SubOrganizationsApiTest {
      */
     @Test
     public void createTest() {
-        Integer organizationId = null;
         String name = null;
+        Integer organizationId = null;
         String include = null;
-        // SubOrganization response = api.create(organizationId, name, include);
+        // SubOrganization response = api.create(name, organizationId, include);
 
         // TODO: test validations
     }
@@ -60,10 +60,10 @@ public class SubOrganizationsApiTest {
      */
     @Test
     public void listTest() {
+        String include = null;
         Map<String, String> filter = null;
         String page = null;
-        String include = null;
-        // PaginatedCollection response = api.list(filter, page, include);
+        // PaginatedCollection response = api.list(include, filter, page);
 
         // TODO: test validations
     }
@@ -90,9 +90,9 @@ public class SubOrganizationsApiTest {
     @Test
     public void updateTest() {
         Integer id = null;
-        String name = null;
         String include = null;
-        // SubOrganization response = api.update(id, name, include);
+        String name = null;
+        // SubOrganization response = api.update(id, include, name);
 
         // TODO: test validations
     }

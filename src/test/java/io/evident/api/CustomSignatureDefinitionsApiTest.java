@@ -87,10 +87,10 @@ public class CustomSignatureDefinitionsApiTest {
      */
     @Test
     public void listTest() {
+        String include = null;
         Map<String, String> filter = null;
         String page = null;
-        String include = null;
-        // PaginatedCollection response = api.list(filter, page, include);
+        // PaginatedCollection response = api.list(include, filter, page);
 
         // TODO: test validations
     }
@@ -117,10 +117,10 @@ public class CustomSignatureDefinitionsApiTest {
     @Test
     public void updateTest() {
         Integer id = null;
+        String include = null;
         String code = null;
         String language = null;
-        String include = null;
-        // CustomSignatureDefinition response = api.update(id, code, language, include);
+        // CustomSignatureDefinition response = api.update(id, include, code, language);
 
         // TODO: test validations
     }

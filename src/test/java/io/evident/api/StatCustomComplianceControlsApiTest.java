@@ -25,16 +25,17 @@ public class StatCustomComplianceControlsApiTest {
 
     
     /**
-     * Stats for custom compliance controls
+     * Statistics for custom compliance controls
      *
-     * A successful call to this API returns all the stats of all the custom compliance controls for a report identified by the stat_id parameter. Said report contains all statistics for this alert triggered from signatures contained in all custom compliance controls for the selected hour.
+     * A successful call to this API returns all the statistics of all the custom compliance controls for a report identified by the stat_id parameter. Said report contains all statistics for this alert triggered from signatures contained in all custom compliance controls for the selected hour.
      */
     @Test
     public void listForStatTest() {
         Integer statId = null;
-        String page = null;
         String include = null;
-        // PaginatedCollection response = api.listForStat(statId, page, include);
+        Map<String, String> filter = null;
+        String page = null;
+        // PaginatedCollection response = api.listForStat(statId, include, filter, page);
 
         // TODO: test validations
     }

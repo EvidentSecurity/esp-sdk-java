@@ -30,20 +30,20 @@ public class IntegrationsWebhookApiTest {
      */
     @Test
     public void createTest() {
-        String url = null;
-        Integer throttleRate = null;
-        String name = null;
         List<Integer> externalAccountIds = null;
+        String name = null;
+        Integer throttleRate = null;
+        String url = null;
+        String include = null;
         Boolean allHighRisk = null;
-        Boolean allMediumRisk = null;
         Boolean allLowRisk = null;
+        Boolean allMediumRisk = null;
+        List<Integer> customSignatureIds = null;
         Boolean sendUpdates = null;
         Boolean sendWhenSuppressed = null;
         List<Integer> signatureIds = null;
         List<String> statuses = null;
-        List<Integer> customSignatureIds = null;
-        String include = null;
-        // IntegrationWebhook response = api.create(url, throttleRate, name, externalAccountIds, allHighRisk, allMediumRisk, allLowRisk, sendUpdates, sendWhenSuppressed, signatureIds, statuses, customSignatureIds, include);
+        // IntegrationWebhook response = api.create(externalAccountIds, name, throttleRate, url, include, allHighRisk, allLowRisk, allMediumRisk, customSignatureIds, sendUpdates, sendWhenSuppressed, signatureIds, statuses);
 
         // TODO: test validations
     }
@@ -70,20 +70,20 @@ public class IntegrationsWebhookApiTest {
     @Test
     public void updateTest() {
         Integer integrationId = null;
-        String url = null;
-        Integer throttleRate = null;
-        String name = null;
+        String include = null;
         Boolean allHighRisk = null;
-        Boolean allMediumRisk = null;
         Boolean allLowRisk = null;
+        Boolean allMediumRisk = null;
+        List<Integer> customSignatureIds = null;
+        List<Integer> externalAccountIds = null;
+        String name = null;
         Boolean sendUpdates = null;
         Boolean sendWhenSuppressed = null;
         List<Integer> signatureIds = null;
         List<String> statuses = null;
-        List<Integer> externalAccountIds = null;
-        List<Integer> customSignatureIds = null;
-        String include = null;
-        // IntegrationWebhook response = api.update(integrationId, url, throttleRate, name, allHighRisk, allMediumRisk, allLowRisk, sendUpdates, sendWhenSuppressed, signatureIds, statuses, externalAccountIds, customSignatureIds, include);
+        Integer throttleRate = null;
+        String url = null;
+        // IntegrationWebhook response = api.update(integrationId, include, allHighRisk, allLowRisk, allMediumRisk, customSignatureIds, externalAccountIds, name, sendUpdates, sendWhenSuppressed, signatureIds, statuses, throttleRate, url);
 
         // TODO: test validations
     }

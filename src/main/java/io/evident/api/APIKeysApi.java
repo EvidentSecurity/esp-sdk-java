@@ -8,7 +8,7 @@ import retrofit2.http.*;
 
 import okhttp3.RequestBody;
 
-import io.evident.models.APIKey;
+import io.evident.models.ApiKey;
 import io.evident.models.Meta;
 import io.evident.models.PaginatedCollection;
 
@@ -24,12 +24,12 @@ public interface APIKeysApi {
    * The secret key will only be returned once when the key is first created
    * @param include Related objects that can be included in the response:  user See Including Objects for more information. (optional)
    * @param name The name of the API Key (optional)
-   * @return Call&lt;APIKey&gt;
+   * @return Call&lt;ApiKey&gt;
    */
   
   @retrofit2.http.FormUrlEncoded
   @POST("api/v2/api_keys.json_api")
-  Call<APIKey> create(
+  Call<ApiKey> create(
     @retrofit2.http.Query("include") String include, @retrofit2.http.Field("name") String name
   );
 
@@ -67,14 +67,14 @@ public interface APIKeysApi {
    * 
    * @param id API Key ID (required)
    * @param include Related objects that can be included in the response:  user See Including Objects for more information. (optional)
-   * @return Call&lt;APIKey&gt;
+   * @return Call&lt;ApiKey&gt;
    */
   
   @Headers({
   	"Content-Type:application/vnd.api+json" 
   })
   @GET("api/v2/api_keys/{id}.json_api")
-  Call<APIKey> show(
+  Call<ApiKey> show(
     @retrofit2.http.Path("id") Integer id, @retrofit2.http.Query("include") String include
   );
 
@@ -84,12 +84,12 @@ public interface APIKeysApi {
    * @param id API Key ID (required)
    * @param include Related objects that can be included in the response:  user See Including Objects for more information. (optional)
    * @param name The name of the API Key (optional)
-   * @return Call&lt;APIKey&gt;
+   * @return Call&lt;ApiKey&gt;
    */
   
   @retrofit2.http.FormUrlEncoded
   @PATCH("api/v2/api_keys/{id}.json_api")
-  Call<APIKey> update(
+  Call<ApiKey> update(
     @retrofit2.http.Path("id") Integer id, @retrofit2.http.Query("include") String include, @retrofit2.http.Field("name") String name
   );
 

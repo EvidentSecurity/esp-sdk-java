@@ -1,5 +1,5 @@
 
-# APIKey
+# ApiKey
 
 ## Properties
 Name | Type | Description | Notes

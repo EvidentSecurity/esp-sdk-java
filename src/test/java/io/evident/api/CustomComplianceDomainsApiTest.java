@@ -31,12 +31,12 @@ public class CustomComplianceDomainsApiTest {
      */
     @Test
     public void createTest() {
-        String identifier = null;
         Integer customComplianceStandardId = null;
+        String identifier = null;
         String name = null;
-        Integer position = null;
         String include = null;
-        // CustomComplianceDomain response = api.create(identifier, customComplianceStandardId, name, position, include);
+        Integer position = null;
+        // CustomComplianceDomain response = api.create(customComplianceStandardId, identifier, name, include, position);
 
         // TODO: test validations
     }
@@ -76,12 +76,12 @@ public class CustomComplianceDomainsApiTest {
     @Test
     public void updateTest() {
         Integer id = null;
-        String identifier = null;
+        String include = null;
         Integer customComplianceStandardId = null;
+        String identifier = null;
         String name = null;
         Integer position = null;
-        String include = null;
-        // CustomComplianceDomain response = api.update(id, identifier, customComplianceStandardId, name, position, include);
+        // CustomComplianceDomain response = api.update(id, include, customComplianceStandardId, identifier, name, position);
 
         // TODO: test validations
     }

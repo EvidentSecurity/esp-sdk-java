@@ -30,11 +30,11 @@ public class ContactRequestsApiTest {
      */
     @Test
     public void createTest() {
-        String title = null;
         String description = null;
         String requestType = null;
+        String title = null;
         String include = null;
-        // ContactRequest response = api.create(title, description, requestType, include);
+        // ContactRequest response = api.create(description, requestType, title, include);
 
         // TODO: test validations
     }

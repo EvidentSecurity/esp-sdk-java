@@ -32,8 +32,7 @@ public class RolesApiTest {
     @Test
     public void listTest() {
         String page = null;
-        String include = null;
-        // PaginatedCollection response = api.list(page, include);
+        // PaginatedCollection response = api.list(page);
 
         // TODO: test validations
     }
@@ -46,8 +45,7 @@ public class RolesApiTest {
     @Test
     public void showTest() {
         Integer id = null;
-        String include = null;
-        // Role response = api.show(id, include);
+        // Role response = api.show(id);
 
         // TODO: test validations
     }

@@ -24,7 +24,7 @@ import io.swagger.annotations.ApiModelProperty;
  * A(n) StatSignature object
  */
 @ApiModel(description = "A(n) StatSignature object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-25T13:00:36.864-05:00")
+
 public class StatSignature {
   @SerializedName("id")
   private Integer id = null;

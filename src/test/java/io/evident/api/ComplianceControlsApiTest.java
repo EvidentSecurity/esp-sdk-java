@@ -31,10 +31,10 @@ public class ComplianceControlsApiTest {
      */
     @Test
     public void listTest() {
+        String include = null;
         Map<String, String> filter = null;
         String page = null;
-        String include = null;
-        // PaginatedCollection response = api.list(filter, page, include);
+        // PaginatedCollection response = api.list(include, filter, page);
 
         // TODO: test validations
     }
@@ -47,9 +47,9 @@ public class ComplianceControlsApiTest {
     @Test
     public void listSignaturesTest() {
         Integer complianceControlId = null;
-        String page = null;
         String include = null;
-        // PaginatedCollection response = api.listSignatures(complianceControlId, page, include);
+        String page = null;
+        // PaginatedCollection response = api.listSignatures(complianceControlId, include, page);
 
         // TODO: test validations
     }

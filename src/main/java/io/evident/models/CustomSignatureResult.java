@@ -29,7 +29,7 @@ import org.joda.time.DateTime;
  * A(n) CustomSignatureResult object
  */
 @ApiModel(description = "A(n) CustomSignatureResult object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-25T13:00:36.864-05:00")
+
 public class CustomSignatureResult {
   @SerializedName("id")
   private Integer id = null;
@@ -72,9 +72,6 @@ public class CustomSignatureResult {
 
   @SerializedName("alerts")
   private List<Alert> alerts = new ArrayList<Alert>();
-
-  @SerializedName("alert_ids")
-  private List<Integer> alertIds = new ArrayList<Integer>();
 
   public CustomSignatureResult id(Integer id) {
     this.id = id;
@@ -338,29 +335,6 @@ public class CustomSignatureResult {
     this.alerts = alerts;
   }
 
-  public CustomSignatureResult alertIds(List<Integer> alertIds) {
-    this.alertIds = alertIds;
-    return this;
-  }
-
-  public CustomSignatureResult addAlertIdsItem(Integer alertIdsItem) {
-    this.alertIds.add(alertIdsItem);
-    return this;
-  }
-
-   /**
-   * Associated Alerts IDs
-   * @return alertIds
-  **/
-  @ApiModelProperty(example = "null", value = "Associated Alerts IDs")
-  public List<Integer> getAlertIds() {
-    return alertIds;
-  }
-
-  public void setAlertIds(List<Integer> alertIds) {
-    this.alertIds = alertIds;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -384,13 +358,12 @@ public class CustomSignatureResult {
         Objects.equals(this.regionId, customSignatureResult.regionId) &&
         Objects.equals(this.definition, customSignatureResult.definition) &&
         Objects.equals(this.definitionId, customSignatureResult.definitionId) &&
-        Objects.equals(this.alerts, customSignatureResult.alerts) &&
-        Objects.equals(this.alertIds, customSignatureResult.alertIds);
+        Objects.equals(this.alerts, customSignatureResult.alerts);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, code, language, status, updatedAt, errorMessages, externalAccount, externalAccountId, region, regionId, definition, definitionId, alerts, alertIds);
+    return Objects.hash(id, createdAt, code, language, status, updatedAt, errorMessages, externalAccount, externalAccountId, region, regionId, definition, definitionId, alerts);
   }
 
 
@@ -413,7 +386,6 @@ public class CustomSignatureResult {
     sb.append("    definition: ").append(toIndentedString(definition)).append("\n");
     sb.append("    definitionId: ").append(toIndentedString(definitionId)).append("\n");
     sb.append("    alerts: ").append(toIndentedString(alerts)).append("\n");
-    sb.append("    alertIds: ").append(toIndentedString(alertIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }
