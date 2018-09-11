@@ -38,8 +38,10 @@ public class CustomSignaturesApiTest {
         String riskLevel = null;
         String include = null;
         String description = null;
+        Boolean includeNewAccounts = null;
         String resolution = null;
-        // CustomSignature response = api.create(externalAccountIds, identifier, name, riskLevel, include, description, resolution);
+        Integer serviceId = null;
+        // CustomSignature response = api.create(externalAccountIds, identifier, name, riskLevel, include, description, includeNewAccounts, resolution, serviceId);
 
         // TODO: test validations
     }
@@ -98,10 +100,12 @@ public class CustomSignaturesApiTest {
         String description = null;
         List<Integer> externalAccountIds = null;
         String identifier = null;
+        Boolean includeNewAccounts = null;
         String name = null;
         String resolution = null;
         String riskLevel = null;
-        // CustomSignature response = api.update(id, include, description, externalAccountIds, identifier, name, resolution, riskLevel);
+        Integer serviceId = null;
+        // CustomSignature response = api.update(id, include, description, externalAccountIds, identifier, includeNewAccounts, name, resolution, riskLevel, serviceId);
 
         // TODO: test validations
     }

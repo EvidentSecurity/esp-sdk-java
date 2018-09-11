@@ -162,7 +162,7 @@ Update the user attributions on an external account
 
 UserAttributionsApi apiInstance = new UserAttributionsApi();
 Integer externalAccountId = 56; // Integer | The ID of the external account to update the user attributions of
-String include = "include_example"; // String | Related objects that can be included in the response:  organization, sub_organization, team, scan_intervals, disabled_signatures, suppressions, azure_group, credentials See Including Objects for more information.
+String include = "include_example"; // String | Related objects that can be included in the response:  organization, sub_organization, team, scan_intervals, disabled_signatures, suppressions, azure_group See Including Objects for more information.
 String cloudtrailName = "cloudtrailName_example"; // String | The name of the cloudetrail associated with the user attribution.
 try {
     ExternalAccount result = apiInstance.update(externalAccountId, include, cloudtrailName);
@@ -178,7 +178,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **externalAccountId** | **Integer**| The ID of the external account to update the user attributions of |
- **include** | **String**| Related objects that can be included in the response:  organization, sub_organization, team, scan_intervals, disabled_signatures, suppressions, azure_group, credentials See Including Objects for more information. | [optional]
+ **include** | **String**| Related objects that can be included in the response:  organization, sub_organization, team, scan_intervals, disabled_signatures, suppressions, azure_group See Including Objects for more information. | [optional]
  **cloudtrailName** | **String**| The name of the cloudetrail associated with the user attribution. | [optional]
 
 ### Return type

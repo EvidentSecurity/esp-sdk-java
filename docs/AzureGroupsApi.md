@@ -31,7 +31,7 @@ Add an External Account to an Azure Group
 AzureGroupsApi apiInstance = new AzureGroupsApi();
 Integer azureGroupId = 56; // Integer | The ID of the Azure group associated with this memberhsip
 Integer externalAccountId = 56; // Integer | The ID of the External Account associated with this memberhsip
-String include = "include_example"; // String | Related objects that can be included in the response:  organization, sub_organization, team, scan_intervals, disabled_signatures, suppressions, azure_group, credentials See Including Objects for more information.
+String include = "include_example"; // String | Related objects that can be included in the response:  organization, sub_organization, team, scan_intervals, disabled_signatures, suppressions, azure_group See Including Objects for more information.
 try {
     ExternalAccount result = apiInstance.addExternalAccount(azureGroupId, externalAccountId, include);
     System.out.println(result);
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **azureGroupId** | **Integer**| The ID of the Azure group associated with this memberhsip |
  **externalAccountId** | **Integer**| The ID of the External Account associated with this memberhsip |
- **include** | **String**| Related objects that can be included in the response:  organization, sub_organization, team, scan_intervals, disabled_signatures, suppressions, azure_group, credentials See Including Objects for more information. | [optional]
+ **include** | **String**| Related objects that can be included in the response:  organization, sub_organization, team, scan_intervals, disabled_signatures, suppressions, azure_group See Including Objects for more information. | [optional]
 
 ### Return type
 

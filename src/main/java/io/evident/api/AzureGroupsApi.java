@@ -25,7 +25,7 @@ public interface AzureGroupsApi {
    * 
    * @param azureGroupId The ID of the Azure group associated with this memberhsip (required)
    * @param externalAccountId The ID of the External Account associated with this memberhsip (required)
-   * @param include Related objects that can be included in the response:  organization, sub_organization, team, scan_intervals, disabled_signatures, suppressions, azure_group, credentials See Including Objects for more information. (optional)
+   * @param include Related objects that can be included in the response:  organization, sub_organization, team, scan_intervals, disabled_signatures, suppressions, azure_group See Including Objects for more information. (optional)
    * @return Call&lt;ExternalAccount&gt;
    */
   

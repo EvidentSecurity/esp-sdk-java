@@ -18,6 +18,7 @@ import com.google.gson.annotations.SerializedName;
 import io.evident.models.CustomSignatureDefinition;
 import io.evident.models.ExternalAccount;
 import io.evident.models.Organization;
+import io.evident.models.Service;
 import io.evident.models.Suppression;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -42,6 +43,9 @@ public class CustomSignature {
 
   @SerializedName("identifier")
   private String identifier = null;
+
+  @SerializedName("include_new_accounts")
+  private Boolean includeNewAccounts = null;
 
   @SerializedName("name")
   private String name = null;
@@ -78,6 +82,12 @@ public class CustomSignature {
 
   @SerializedName("suppression_ids")
   private List<Integer> suppressionIds = new ArrayList<Integer>();
+
+  @SerializedName("service")
+  private Service service = null;
+
+  @SerializedName("service_id")
+  private Integer serviceId = null;
 
   public CustomSignature id(Integer id) {
     this.id = id;
@@ -149,6 +159,24 @@ public class CustomSignature {
 
   public void setIdentifier(String identifier) {
     this.identifier = identifier;
+  }
+
+  public CustomSignature includeNewAccounts(Boolean includeNewAccounts) {
+    this.includeNewAccounts = includeNewAccounts;
+    return this;
+  }
+
+   /**
+   * When enabled, automatically adds new accounts to this signature. This field can only be set by an organization level user.
+   * @return includeNewAccounts
+  **/
+  @ApiModelProperty(example = "null", value = "When enabled, automatically adds new accounts to this signature. This field can only be set by an organization level user.")
+  public Boolean getIncludeNewAccounts() {
+    return includeNewAccounts;
+  }
+
+  public void setIncludeNewAccounts(Boolean includeNewAccounts) {
+    this.includeNewAccounts = includeNewAccounts;
   }
 
   public CustomSignature name(String name) {
@@ -397,6 +425,42 @@ public class CustomSignature {
     this.suppressionIds = suppressionIds;
   }
 
+  public CustomSignature service(Service service) {
+    this.service = service;
+    return this;
+  }
+
+   /**
+   * Associated Service
+   * @return service
+  **/
+  @ApiModelProperty(example = "null", value = "Associated Service")
+  public Service getService() {
+    return service;
+  }
+
+  public void setService(Service service) {
+    this.service = service;
+  }
+
+  public CustomSignature serviceId(Integer serviceId) {
+    this.serviceId = serviceId;
+    return this;
+  }
+
+   /**
+   * Associated Service ID
+   * @return serviceId
+  **/
+  @ApiModelProperty(example = "null", value = "Associated Service ID")
+  public Integer getServiceId() {
+    return serviceId;
+  }
+
+  public void setServiceId(Integer serviceId) {
+    this.serviceId = serviceId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -411,6 +475,7 @@ public class CustomSignature {
         Objects.equals(this.createdAt, customSignature.createdAt) &&
         Objects.equals(this.description, customSignature.description) &&
         Objects.equals(this.identifier, customSignature.identifier) &&
+        Objects.equals(this.includeNewAccounts, customSignature.includeNewAccounts) &&
         Objects.equals(this.name, customSignature.name) &&
         Objects.equals(this.resolution, customSignature.resolution) &&
         Objects.equals(this.riskLevel, customSignature.riskLevel) &&
@@ -422,12 +487,14 @@ public class CustomSignature {
         Objects.equals(this.definitions, customSignature.definitions) &&
         Objects.equals(this.definitionIds, customSignature.definitionIds) &&
         Objects.equals(this.suppressions, customSignature.suppressions) &&
-        Objects.equals(this.suppressionIds, customSignature.suppressionIds);
+        Objects.equals(this.suppressionIds, customSignature.suppressionIds) &&
+        Objects.equals(this.service, customSignature.service) &&
+        Objects.equals(this.serviceId, customSignature.serviceId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, description, identifier, name, resolution, riskLevel, updatedAt, organization, organizationId, externalAccounts, externalAccountIds, definitions, definitionIds, suppressions, suppressionIds);
+    return Objects.hash(id, createdAt, description, identifier, includeNewAccounts, name, resolution, riskLevel, updatedAt, organization, organizationId, externalAccounts, externalAccountIds, definitions, definitionIds, suppressions, suppressionIds, service, serviceId);
   }
 
 
@@ -440,6 +507,7 @@ public class CustomSignature {
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    identifier: ").append(toIndentedString(identifier)).append("\n");
+    sb.append("    includeNewAccounts: ").append(toIndentedString(includeNewAccounts)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    resolution: ").append(toIndentedString(resolution)).append("\n");
     sb.append("    riskLevel: ").append(toIndentedString(riskLevel)).append("\n");
@@ -452,6 +520,8 @@ public class CustomSignature {
     sb.append("    definitionIds: ").append(toIndentedString(definitionIds)).append("\n");
     sb.append("    suppressions: ").append(toIndentedString(suppressions)).append("\n");
     sb.append("    suppressionIds: ").append(toIndentedString(suppressionIds)).append("\n");
+    sb.append("    service: ").append(toIndentedString(service)).append("\n");
+    sb.append("    serviceId: ").append(toIndentedString(serviceId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

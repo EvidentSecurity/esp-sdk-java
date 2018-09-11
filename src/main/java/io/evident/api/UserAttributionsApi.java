@@ -68,7 +68,7 @@ public interface UserAttributionsApi {
    * Update the user attributions on an external account
    * 
    * @param externalAccountId The ID of the external account to update the user attributions of (required)
-   * @param include Related objects that can be included in the response:  organization, sub_organization, team, scan_intervals, disabled_signatures, suppressions, azure_group, credentials See Including Objects for more information. (optional)
+   * @param include Related objects that can be included in the response:  organization, sub_organization, team, scan_intervals, disabled_signatures, suppressions, azure_group See Including Objects for more information. (optional)
    * @param cloudtrailName The name of the cloudetrail associated with the user attribution. (optional)
    * @return Call&lt;ExternalAccount&gt;
    */

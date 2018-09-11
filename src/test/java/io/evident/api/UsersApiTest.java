@@ -36,13 +36,14 @@ public class UsersApiTest {
         String firstName = null;
         String lastName = null;
         String include = null;
+        String accessLevel = null;
         Boolean disableDailyEmails = null;
         String phone = null;
         Integer roleId = null;
         List<Integer> subOrganizationIds = null;
         List<Integer> teamIds = null;
         String timeZone = null;
-        // User response = api.create(email, firstName, lastName, include, disableDailyEmails, phone, roleId, subOrganizationIds, teamIds, timeZone);
+        // User response = api.create(email, firstName, lastName, include, accessLevel, disableDailyEmails, phone, roleId, subOrganizationIds, teamIds, timeZone);
 
         // TODO: test validations
     }
@@ -99,6 +100,7 @@ public class UsersApiTest {
     public void updateTest() {
         Integer id = null;
         String include = null;
+        String accessLevel = null;
         Boolean disableDailyEmails = null;
         String firstName = null;
         String lastName = null;
@@ -107,7 +109,7 @@ public class UsersApiTest {
         List<Integer> subOrganizationIds = null;
         List<Integer> teamIds = null;
         String timeZone = null;
-        // User response = api.update(id, include, disableDailyEmails, firstName, lastName, phone, roleId, subOrganizationIds, teamIds, timeZone);
+        // User response = api.update(id, include, accessLevel, disableDailyEmails, firstName, lastName, phone, roleId, subOrganizationIds, teamIds, timeZone);
 
         // TODO: test validations
     }

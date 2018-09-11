@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="create"></a>
 # **create**
-> User create(email, firstName, lastName, include, disableDailyEmails, phone, roleId, subOrganizationIds, teamIds, timeZone)
+> User create(email, firstName, lastName, include, accessLevel, disableDailyEmails, phone, roleId, subOrganizationIds, teamIds, timeZone)
 
 Create a(n) User
 
@@ -31,6 +31,7 @@ String email = "email_example"; // String | The email of the user
 String firstName = "firstName_example"; // String | The first name of the user
 String lastName = "lastName_example"; // String | The last name of the user
 String include = "include_example"; // String | Related objects that can be included in the response:  organization, sub_organizations, teams, role See Including Objects for more information.
+String accessLevel = "accessLevel_example"; // String | The level of access this user has. Team access has access to items belonging only to that team. Sub Organization access has access to items belonging only to all teams under that sub organization. Organization access has access to all sub organizations and teams under that organization. Valid values are organization_level, sub_organization_level, team_level
 Boolean disableDailyEmails = true; // Boolean | Specifies whether the daily emails should be turned off or not
 String phone = "phone_example"; // String | The phone number of the user
 Integer roleId = 56; // Integer | The ID of the role of the user. Only a manager can set or modify the role id.
@@ -38,7 +39,7 @@ List<Integer> subOrganizationIds = Arrays.asList(56); // List<Integer> | A list 
 List<Integer> teamIds = Arrays.asList(56); // List<Integer> | A list of team IDs that the user should have access to. Only a manager can set or modify the team ids.
 String timeZone = "timeZone_example"; // String | The time zone of the user. See Time Zones for a list of valid time zones
 try {
-    User result = apiInstance.create(email, firstName, lastName, include, disableDailyEmails, phone, roleId, subOrganizationIds, teamIds, timeZone);
+    User result = apiInstance.create(email, firstName, lastName, include, accessLevel, disableDailyEmails, phone, roleId, subOrganizationIds, teamIds, timeZone);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#create");
@@ -54,6 +55,7 @@ Name | Type | Description  | Notes
  **firstName** | **String**| The first name of the user |
  **lastName** | **String**| The last name of the user |
  **include** | **String**| Related objects that can be included in the response:  organization, sub_organizations, teams, role See Including Objects for more information. | [optional]
+ **accessLevel** | **String**| The level of access this user has. Team access has access to items belonging only to that team. Sub Organization access has access to items belonging only to all teams under that sub organization. Organization access has access to all sub organizations and teams under that organization. Valid values are organization_level, sub_organization_level, team_level | [optional] [enum: organization_level, sub_organization_level, team_level]
  **disableDailyEmails** | **Boolean**| Specifies whether the daily emails should be turned off or not | [optional]
  **phone** | **String**| The phone number of the user | [optional]
  **roleId** | **Integer**| The ID of the role of the user. Only a manager can set or modify the role id. | [optional]
@@ -219,7 +221,7 @@ No authorization required
 
 <a name="update"></a>
 # **update**
-> User update(id, include, disableDailyEmails, firstName, lastName, phone, roleId, subOrganizationIds, teamIds, timeZone)
+> User update(id, include, accessLevel, disableDailyEmails, firstName, lastName, phone, roleId, subOrganizationIds, teamIds, timeZone)
 
 Update a(n) User
 
@@ -235,6 +237,7 @@ Update a(n) User
 UsersApi apiInstance = new UsersApi();
 Integer id = 56; // Integer | User ID
 String include = "include_example"; // String | Related objects that can be included in the response:  organization, sub_organizations, teams, role See Including Objects for more information.
+String accessLevel = "accessLevel_example"; // String | The level of access this user has. Team access has access to items belonging only to that team. Sub Organization access has access to items belonging only to all teams under that sub organization. Organization access has access to all sub organizations and teams under that organization. Valid values are organization_level, sub_organization_level, team_level
 Boolean disableDailyEmails = true; // Boolean | Specifies whether the daily emails should be turned off or not
 String firstName = "firstName_example"; // String | The first name of the user
 String lastName = "lastName_example"; // String | The last name of the user
@@ -244,7 +247,7 @@ List<Integer> subOrganizationIds = Arrays.asList(56); // List<Integer> | A list 
 List<Integer> teamIds = Arrays.asList(56); // List<Integer> | A list of team IDs that the user should have access to. Only a manager can set or modify the team ids.
 String timeZone = "timeZone_example"; // String | The time zone of the user. See Time Zones for a list of valid time zones
 try {
-    User result = apiInstance.update(id, include, disableDailyEmails, firstName, lastName, phone, roleId, subOrganizationIds, teamIds, timeZone);
+    User result = apiInstance.update(id, include, accessLevel, disableDailyEmails, firstName, lastName, phone, roleId, subOrganizationIds, teamIds, timeZone);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#update");
@@ -258,6 +261,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| User ID |
  **include** | **String**| Related objects that can be included in the response:  organization, sub_organizations, teams, role See Including Objects for more information. | [optional]
+ **accessLevel** | **String**| The level of access this user has. Team access has access to items belonging only to that team. Sub Organization access has access to items belonging only to all teams under that sub organization. Organization access has access to all sub organizations and teams under that organization. Valid values are organization_level, sub_organization_level, team_level | [optional] [enum: organization_level, sub_organization_level, team_level]
  **disableDailyEmails** | **Boolean**| Specifies whether the daily emails should be turned off or not | [optional]
  **firstName** | **String**| The first name of the user | [optional]
  **lastName** | **String**| The last name of the user | [optional]

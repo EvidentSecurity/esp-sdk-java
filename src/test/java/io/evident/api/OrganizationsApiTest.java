@@ -77,9 +77,10 @@ public class OrganizationsApiTest {
     public void updateTest() {
         Integer id = null;
         String include = null;
+        Boolean enableNewSignatures = null;
         String name = null;
         Boolean requireMfa = null;
-        // Organization response = api.update(id, include, name, requireMfa);
+        // Organization response = api.update(id, include, enableNewSignatures, name, requireMfa);
 
         // TODO: test validations
     }

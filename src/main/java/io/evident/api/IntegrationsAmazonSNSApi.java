@@ -25,7 +25,7 @@ public interface IntegrationsAmazonSNSApi {
    * @param externalId The external ID for the IAM role (required)
    * @param name Name of the integration (required)
    * @param topic The SNS topic arn (required)
-   * @param include Related objects that can be included in the response:  region, integration See Including Objects for more information. (optional)
+   * @param include Related objects that can be included in the response:  integration See Including Objects for more information. (optional)
    * @param allHighRisk Send all high risk alerts (optional)
    * @param allLowRisk Send all low risk alerts (optional)
    * @param allMediumRisk Send all medium risk alerts (optional)
@@ -47,7 +47,7 @@ public interface IntegrationsAmazonSNSApi {
    * Show a single Amazon SNS Integration
    * 
    * @param integrationId The ID of the integration (required)
-   * @param include Related objects that can be included in the response:  region, integration See Including Objects for more information. (optional)
+   * @param include Related objects that can be included in the response:  integration See Including Objects for more information. (optional)
    * @return Call&lt;IntegrationAmazonSns&gt;
    */
   
@@ -63,7 +63,7 @@ public interface IntegrationsAmazonSNSApi {
    * Update an Amazon SNS Integration
    * 
    * @param integrationId The ID of the integration (required)
-   * @param include Related objects that can be included in the response:  region, integration See Including Objects for more information. (optional)
+   * @param include Related objects that can be included in the response:  integration See Including Objects for more information. (optional)
    * @param allHighRisk Send all high risk alerts (optional)
    * @param allLowRisk Send all low risk alerts (optional)
    * @param allMediumRisk Send all medium risk alerts (optional)

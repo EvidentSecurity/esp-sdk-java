@@ -33,6 +33,9 @@ public class Signature {
   @SerializedName("id")
   private Integer id = null;
 
+  @SerializedName("copyable")
+  private Boolean copyable = null;
+
   @SerializedName("created_at")
   private DateTime createdAt = null;
 
@@ -51,6 +54,9 @@ public class Signature {
   @SerializedName("risk_level")
   private String riskLevel = null;
 
+  @SerializedName("supports_user_attribution")
+  private Boolean supportsUserAttribution = null;
+
   @SerializedName("updated_at")
   private DateTime updatedAt = null;
 
@@ -64,7 +70,7 @@ public class Signature {
   private Integer serviceId = null;
 
   @SerializedName("disabled_external_accounts")
-  private ExternalAccount disabledExternalAccounts = null;
+  private List<ExternalAccount> disabledExternalAccounts = new ArrayList<ExternalAccount>();
 
   @SerializedName("suppressions")
   private List<Suppression> suppressions = new ArrayList<Suppression>();
@@ -88,6 +94,24 @@ public class Signature {
 
   public void setId(Integer id) {
     this.id = id;
+  }
+
+  public Signature copyable(Boolean copyable) {
+    this.copyable = copyable;
+    return this;
+  }
+
+   /**
+   * Indicates if this signature is able to be copied or not
+   * @return copyable
+  **/
+  @ApiModelProperty(example = "null", value = "Indicates if this signature is able to be copied or not")
+  public Boolean getCopyable() {
+    return copyable;
+  }
+
+  public void setCopyable(Boolean copyable) {
+    this.copyable = copyable;
   }
 
   public Signature createdAt(DateTime createdAt) {
@@ -198,6 +222,24 @@ public class Signature {
     this.riskLevel = riskLevel;
   }
 
+  public Signature supportsUserAttribution(Boolean supportsUserAttribution) {
+    this.supportsUserAttribution = supportsUserAttribution;
+    return this;
+  }
+
+   /**
+   * Indicates if this signature supports user attribution or not
+   * @return supportsUserAttribution
+  **/
+  @ApiModelProperty(example = "null", value = "Indicates if this signature supports user attribution or not")
+  public Boolean getSupportsUserAttribution() {
+    return supportsUserAttribution;
+  }
+
+  public void setSupportsUserAttribution(Boolean supportsUserAttribution) {
+    this.supportsUserAttribution = supportsUserAttribution;
+  }
+
   public Signature updatedAt(DateTime updatedAt) {
     this.updatedAt = updatedAt;
     return this;
@@ -270,8 +312,13 @@ public class Signature {
     this.serviceId = serviceId;
   }
 
-  public Signature disabledExternalAccounts(ExternalAccount disabledExternalAccounts) {
+  public Signature disabledExternalAccounts(List<ExternalAccount> disabledExternalAccounts) {
     this.disabledExternalAccounts = disabledExternalAccounts;
+    return this;
+  }
+
+  public Signature addDisabledExternalAccountsItem(ExternalAccount disabledExternalAccountsItem) {
+    this.disabledExternalAccounts.add(disabledExternalAccountsItem);
     return this;
   }
 
@@ -280,11 +327,11 @@ public class Signature {
    * @return disabledExternalAccounts
   **/
   @ApiModelProperty(example = "null", value = "Associated Disabled External Accounts")
-  public ExternalAccount getDisabledExternalAccounts() {
+  public List<ExternalAccount> getDisabledExternalAccounts() {
     return disabledExternalAccounts;
   }
 
-  public void setDisabledExternalAccounts(ExternalAccount disabledExternalAccounts) {
+  public void setDisabledExternalAccounts(List<ExternalAccount> disabledExternalAccounts) {
     this.disabledExternalAccounts = disabledExternalAccounts;
   }
 
@@ -345,12 +392,14 @@ public class Signature {
     }
     Signature signature = (Signature) o;
     return Objects.equals(this.id, signature.id) &&
+        Objects.equals(this.copyable, signature.copyable) &&
         Objects.equals(this.createdAt, signature.createdAt) &&
         Objects.equals(this.description, signature.description) &&
         Objects.equals(this.identifier, signature.identifier) &&
         Objects.equals(this.name, signature.name) &&
         Objects.equals(this.resolution, signature.resolution) &&
         Objects.equals(this.riskLevel, signature.riskLevel) &&
+        Objects.equals(this.supportsUserAttribution, signature.supportsUserAttribution) &&
         Objects.equals(this.updatedAt, signature.updatedAt) &&
         Objects.equals(this.customRiskLevel, signature.customRiskLevel) &&
         Objects.equals(this.service, signature.service) &&
@@ -362,7 +411,7 @@ public class Signature {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, description, identifier, name, resolution, riskLevel, updatedAt, customRiskLevel, service, serviceId, disabledExternalAccounts, suppressions, suppressionIds);
+    return Objects.hash(id, copyable, createdAt, description, identifier, name, resolution, riskLevel, supportsUserAttribution, updatedAt, customRiskLevel, service, serviceId, disabledExternalAccounts, suppressions, suppressionIds);
   }
 
 
@@ -372,12 +421,14 @@ public class Signature {
     sb.append("class Signature {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    copyable: ").append(toIndentedString(copyable)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    identifier: ").append(toIndentedString(identifier)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    resolution: ").append(toIndentedString(resolution)).append("\n");
     sb.append("    riskLevel: ").append(toIndentedString(riskLevel)).append("\n");
+    sb.append("    supportsUserAttribution: ").append(toIndentedString(supportsUserAttribution)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    customRiskLevel: ").append(toIndentedString(customRiskLevel)).append("\n");
     sb.append("    service: ").append(toIndentedString(service)).append("\n");

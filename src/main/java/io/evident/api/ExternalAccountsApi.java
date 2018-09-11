@@ -51,18 +51,18 @@ public interface ExternalAccountsApi {
   );
 
   /**
-   * Disable a signature for an external account
+   * Disable a set of signatures for an external account or a set of external accounts for a signature
    * 
-   * @param externalAccountId The ID of the external account to disable a signature on (required)
-   * @param signatureId The ID of the signature to disable (required)
+   * @param externalAccountIds The IDs of the external_account(s) to disable (required)
+   * @param signatureIds The IDs of the signature(s) to disable (required)
    * @param include Related objects that can be included in the response:  service, suppressions See Including Objects for more information. (optional)
    * @return Call&lt;Signature&gt;
    */
   
   @retrofit2.http.FormUrlEncoded
-  @POST("api/v2/external_accounts/{external_account_id}/disabled_signatures.json_api")
+  @POST("api/v2/external_accounts/disabled_signatures.json_api")
   Call<Signature> addDisabledSignature(
-    @retrofit2.http.Path("external_account_id") Integer externalAccountId, @retrofit2.http.Field("signature_id") Integer signatureId, @retrofit2.http.Query("include") String include
+    @retrofit2.http.Field("external_account_ids") List<Integer> externalAccountIds, @retrofit2.http.Field("signature_ids") List<Integer> signatureIds, @retrofit2.http.Query("include") String include
   );
 
   /**
@@ -83,8 +83,8 @@ public interface ExternalAccountsApi {
   /**
    * Get a list of External Accounts
    * 
-   * @param include Related objects that can be included in the response:  organization, sub_organization, team, scan_intervals, disabled_signatures, suppressions, azure_group, credentials See Including Objects for more information. (optional)
-   * @param filter Filter Params for Searching.  Equality Searchable Attributes: [id, nickname, name] Matching Searchable Attributes: [nickname, name] Limited Searchable Attributes: [account_eq, arn_eq, provider_eq, subscription_id_eq] Sortable Attributes: [name, updated_at, created_at, id] Searchable Associations: [organization, sub_organization, team, compliance_standards, azure_group, disabled_signatures, suppressions] See Searching Lists for more information. See the filter parameter of the association&#39;s list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information. (optional)
+   * @param include Related objects that can be included in the response:  organization, sub_organization, team, scan_intervals, disabled_signatures, suppressions, azure_group See Including Objects for more information. (optional)
+   * @param filter Filter Params for Searching.  Equality Searchable Attributes: [id, nickname, name] Matching Searchable Attributes: [nickname, name] Limited Searchable Attributes: [account_eq, arn_eq, provider_eq, subscription_id_eq] Sortable Attributes: [name, updated_at, created_at, id] Searchable Associations: [organization, sub_organization, team, azure_group, compliance_standards, disabled_signatures, integrations, scheduled_exports, suppressions] See Searching Lists for more information. See the filter parameter of the association&#39;s list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information. (optional)
    * @param page Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page. (optional, default to {:number=>1,+:size=>20})
    * @return Call&lt;PaginatedCollection&gt;
    */
@@ -130,7 +130,7 @@ public interface ExternalAccountsApi {
    * 
    * @param externalAccountId The ID of the external account to retrieve the disabled signatures for (required)
    * @param include Related objects that can be included in the response:  service, suppressions See Including Objects for more information. (optional)
-   * @param filter Filter Params for Searching.  Equality Searchable Attributes: [id, risk_level, service_id, disabled, supports_user_attribution, name, identifier, description, resolution] Matching Searchable Attributes: [name, identifier, description, resolution] Limited Searchable Attribute: [service_provider_eq] Sortable Attributes: [name, identifier, updated_at, created_at, id] Searchable Associations: [signature_copy, disabled_external_accounts, integrations, suppressions] See Searching Lists for more information. See the filter parameter of the association&#39;s list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information. (optional)
+   * @param filter Filter Params for Searching.  Equality Searchable Attributes: [id, risk_level, service_id, disabled, supports_user_attribution, name, identifier, description, resolution] Matching Searchable Attributes: [name, identifier, description, resolution] Limited Searchable Attributes: [service_provider_eq, service_provider_in, service_name_in] Sortable Attributes: [name, identifier, updated_at, created_at, id] Searchable Associations: [signature_copy, disabled_external_accounts, integrations, suppressions] See Searching Lists for more information. See the filter parameter of the association&#39;s list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information. (optional)
    * @param page Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page. (optional, default to {:number=>1,+:size=>20})
    * @return Call&lt;PaginatedCollection&gt;
    */
@@ -174,26 +174,24 @@ public interface ExternalAccountsApi {
   );
 
   /**
-   * Re-enable a signature for an external account
+   * Re-enable a set of signatures for an external account or a set of external accounts for a signature
    * 
-   * @param externalAccountId The ID of the external account to enable a signature on (required)
-   * @param signatureId The ID of the signature to enable (required)
+   * @param externalAccountIds The IDs of the external_account(s) to enable (required)
+   * @param signatureIds The IDs of the signature(s) to enable (required)
    * @return Call&lt;Meta&gt;
    */
   
-  @Headers({
-  	"Content-Type:application/vnd.api+json" 
-  })
-  @DELETE("api/v2/external_accounts/{external_account_id}/disabled_signatures/{signature_id}.json_api")
+  @retrofit2.http.FormUrlEncoded
+  @DELETE("api/v2/external_accounts/disabled_signatures.json_api")
   Call<Meta> removeDisabledSignature(
-    @retrofit2.http.Path("external_account_id") Integer externalAccountId, @retrofit2.http.Path("signature_id") Integer signatureId
+    @retrofit2.http.Field("external_account_ids") List<Integer> externalAccountIds, @retrofit2.http.Field("signature_ids") List<Integer> signatureIds
   );
 
   /**
    * Show a single External Account
    * 
    * @param id External Account ID (required)
-   * @param include Related objects that can be included in the response:  organization, sub_organization, team, scan_intervals, disabled_signatures, suppressions, azure_group, credentials See Including Objects for more information. (optional)
+   * @param include Related objects that can be included in the response:  organization, sub_organization, team, scan_intervals, disabled_signatures, suppressions, azure_group See Including Objects for more information. (optional)
    * @return Call&lt;ExternalAccount&gt;
    */
   

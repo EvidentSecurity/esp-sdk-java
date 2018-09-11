@@ -157,7 +157,7 @@ No authorization required
 
 <a name="update"></a>
 # **update**
-> Organization update(id, include, name, requireMfa)
+> Organization update(id, include, enableNewSignatures, name, requireMfa)
 
 Update a(n) Organization
 
@@ -173,10 +173,11 @@ Update a(n) Organization
 OrganizationsApi apiInstance = new OrganizationsApi();
 Integer id = 56; // Integer | Organization ID
 String include = "include_example"; // String | Related objects that can be included in the response:  subscription, custom_signatures, external_accounts, sub_organizations, teams, users, compliance_standards, integrations See Including Objects for more information.
+Boolean enableNewSignatures = true; // Boolean | Whether new signatures should be enabled for all accounts on this organization
 String name = "name_example"; // String | Name of the organization
 Boolean requireMfa = true; // Boolean | Whether or not users for this organization are required to enable Multi Factor Authentication
 try {
-    Organization result = apiInstance.update(id, include, name, requireMfa);
+    Organization result = apiInstance.update(id, include, enableNewSignatures, name, requireMfa);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#update");
@@ -190,6 +191,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| Organization ID |
  **include** | **String**| Related objects that can be included in the response:  subscription, custom_signatures, external_accounts, sub_organizations, teams, users, compliance_standards, integrations See Including Objects for more information. | [optional]
+ **enableNewSignatures** | **Boolean**| Whether new signatures should be enabled for all accounts on this organization | [optional]
  **name** | **String**| Name of the organization | [optional]
  **requireMfa** | **Boolean**| Whether or not users for this organization are required to enable Multi Factor Authentication | [optional]
 

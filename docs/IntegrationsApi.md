@@ -117,7 +117,7 @@ This will return a list of every type of Integration.
 
 
 IntegrationsApi apiInstance = new IntegrationsApi();
-String include = "include_example"; // String | Related objects that can be included in the response:  organization, creator, service, external_accounts, signatures, custom_signatures See Including Objects for more information.
+String include = "include_example"; // String | Related objects that can be included in the response:  organization, creator, external_accounts, signatures, custom_signatures See Including Objects for more information.
 Map<String, String> filter = new HashMap(); // Map<String, String> | Filter Params for Searching.  Equality Searchable Attributes: [id, organization_id, name, service_type] Matching Searchable Attributes: [name, service_type]   Searchable Associations: [teams, signatures, custom_signatures] See Searching Lists for more information. See the filter parameter of the association's list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information.
 String page = "{:number=>1,+:size=>20}"; // String | Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page.
 try {
@@ -133,7 +133,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **include** | **String**| Related objects that can be included in the response:  organization, creator, service, external_accounts, signatures, custom_signatures See Including Objects for more information. | [optional]
+ **include** | **String**| Related objects that can be included in the response:  organization, creator, external_accounts, signatures, custom_signatures See Including Objects for more information. | [optional]
  **filter** | [**Map&lt;String, String&gt;**](String.md)| Filter Params for Searching.  Equality Searchable Attributes: [id, organization_id, name, service_type] Matching Searchable Attributes: [name, service_type]   Searchable Associations: [teams, signatures, custom_signatures] See Searching Lists for more information. See the filter parameter of the association&#39;s list action to see what attributes are searchable on each association. See Conditions on Relationships in Searching Lists for more information. | [optional]
  **page** | **String**| Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page. | [optional] [default to {:number&#x3D;&gt;1,+:size&#x3D;&gt;20}]
 
@@ -167,7 +167,7 @@ This will return any type of Integration.
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 Integer id = 56; // Integer | Integration ID
-String include = "include_example"; // String | Related objects that can be included in the response:  organization, creator, service, external_accounts, signatures, custom_signatures See Including Objects for more information.
+String include = "include_example"; // String | Related objects that can be included in the response:  organization, creator, external_accounts, signatures, custom_signatures See Including Objects for more information.
 try {
     Integration result = apiInstance.show(id, include);
     System.out.println(result);
@@ -182,7 +182,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| Integration ID |
- **include** | **String**| Related objects that can be included in the response:  organization, creator, service, external_accounts, signatures, custom_signatures See Including Objects for more information. | [optional]
+ **include** | **String**| Related objects that can be included in the response:  organization, creator, external_accounts, signatures, custom_signatures See Including Objects for more information. | [optional]
 
 ### Return type
 

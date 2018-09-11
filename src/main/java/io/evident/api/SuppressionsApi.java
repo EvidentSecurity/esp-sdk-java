@@ -26,6 +26,7 @@ public interface SuppressionsApi {
    * @param regions Codes of regions to be suppressed (required)
    * @param include Related objects that can be included in the response:  organization, created_by, regions, external_accounts, signatures, custom_signatures See Including Objects for more information. (optional)
    * @param customSignatureIds IDs of custom signatures to be suppressed (optional)
+   * @param includeNewAccounts When enabled, automatically adds new accounts to this suppression. This field can only be set by an organization level user. (optional)
    * @param resource The resource string this suppression will suppress alerts for (optional)
    * @param signatureIds IDs of signatures to be suppressed (optional)
    * @return Call&lt;Suppression&gt;
@@ -34,12 +35,13 @@ public interface SuppressionsApi {
   @retrofit2.http.FormUrlEncoded
   @POST("api/v2/suppressions.json_api")
   Call<Suppression> create(
-    @retrofit2.http.Field("external_account_ids") List<Integer> externalAccountIds, @retrofit2.http.Field("reason") String reason, @retrofit2.http.Field("regions") List<String> regions, @retrofit2.http.Query("include") String include, @retrofit2.http.Field("custom_signature_ids") List<Integer> customSignatureIds, @retrofit2.http.Field("resource") String resource, @retrofit2.http.Field("signature_ids") List<Integer> signatureIds
+    @retrofit2.http.Field("external_account_ids") List<Integer> externalAccountIds, @retrofit2.http.Field("reason") String reason, @retrofit2.http.Field("regions") List<String> regions, @retrofit2.http.Query("include") String include, @retrofit2.http.Field("custom_signature_ids") List<Integer> customSignatureIds, @retrofit2.http.Field("include_new_accounts") Boolean includeNewAccounts, @retrofit2.http.Field("resource") String resource, @retrofit2.http.Field("signature_ids") List<Integer> signatureIds
   );
 
   /**
    * Creates a suppression from an alert
    * A successful call to this API creates a new suppression based on the supplied alert_id. The body of the request must contain a json api compliant hash of the suppression reason and an alert id.
+   * @param alertId The ID for the alert you want to create a suppression for (required)
    * @param reason The reason for creating the suppression (required)
    * @param include Related objects that can be included in the response:  organization, created_by, regions, external_accounts, signatures, custom_signatures See Including Objects for more information. (optional)
    * @return Call&lt;Suppression&gt;
@@ -48,7 +50,7 @@ public interface SuppressionsApi {
   @retrofit2.http.FormUrlEncoded
   @POST("api/v2/suppressions/alerts.json_api")
   Call<Suppression> createFromAlert(
-    @retrofit2.http.Field("reason") String reason, @retrofit2.http.Query("include") String include
+    @retrofit2.http.Field("alert_id") Integer alertId, @retrofit2.http.Field("reason") String reason, @retrofit2.http.Query("include") String include
   );
 
   /**
@@ -96,6 +98,27 @@ public interface SuppressionsApi {
   @GET("api/v2/suppressions/{id}.json_api")
   Call<Suppression> show(
     @retrofit2.http.Path("id") Integer id, @retrofit2.http.Query("include") String include
+  );
+
+  /**
+   * Update a(n) Suppression
+   * 
+   * @param id Suppression ID (required)
+   * @param include Related objects that can be included in the response:  organization, created_by, regions, external_accounts, signatures, custom_signatures See Including Objects for more information. (optional)
+   * @param customSignatureIds IDs of custom signatures to be suppressed (optional)
+   * @param externalAccountIds IDs of external accounts to be suppressed (optional)
+   * @param includeNewAccounts When enabled, automatically adds new accounts to this suppression. This field can only be set by an organization level user. (optional)
+   * @param reason The reason for the suppresion (optional)
+   * @param regions Codes of regions to be suppressed (optional)
+   * @param resource The resource string this suppression will suppress alerts for (optional)
+   * @param signatureIds IDs of signatures to be suppressed (optional)
+   * @return Call&lt;Suppression&gt;
+   */
+  
+  @retrofit2.http.FormUrlEncoded
+  @PATCH("api/v2/suppressions/{id}.json_api")
+  Call<Suppression> update(
+    @retrofit2.http.Path("id") Integer id, @retrofit2.http.Query("include") String include, @retrofit2.http.Field("custom_signature_ids") List<Integer> customSignatureIds, @retrofit2.http.Field("external_account_ids") List<Integer> externalAccountIds, @retrofit2.http.Field("include_new_accounts") Boolean includeNewAccounts, @retrofit2.http.Field("reason") String reason, @retrofit2.http.Field("regions") List<String> regions, @retrofit2.http.Field("resource") String resource, @retrofit2.http.Field("signature_ids") List<Integer> signatureIds
   );
 
 }

@@ -96,10 +96,10 @@ public class Report {
   }
 
    /**
-   * Status of the report. Valid values are queued, processing, partial, complete, failed
+   * Status of the report. Valid values are complete
    * @return status
   **/
-  @ApiModelProperty(example = "null", value = "Status of the report. Valid values are queued, processing, partial, complete, failed")
+  @ApiModelProperty(example = "null", value = "Status of the report. Valid values are complete")
   public String getStatus() {
     return status;
   }

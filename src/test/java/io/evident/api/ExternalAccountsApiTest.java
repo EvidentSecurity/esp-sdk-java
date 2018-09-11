@@ -57,16 +57,16 @@ public class ExternalAccountsApiTest {
     }
     
     /**
-     * Disable a signature for an external account
+     * Disable a set of signatures for an external account or a set of external accounts for a signature
      *
      * 
      */
     @Test
     public void addDisabledSignatureTest() {
-        Integer externalAccountId = null;
-        Integer signatureId = null;
+        List<Integer> externalAccountIds = null;
+        List<Integer> signatureIds = null;
         String include = null;
-        // Signature response = api.addDisabledSignature(externalAccountId, signatureId, include);
+        // Signature response = api.addDisabledSignature(externalAccountIds, signatureIds, include);
 
         // TODO: test validations
     }
@@ -174,15 +174,15 @@ public class ExternalAccountsApiTest {
     }
     
     /**
-     * Re-enable a signature for an external account
+     * Re-enable a set of signatures for an external account or a set of external accounts for a signature
      *
      * 
      */
     @Test
     public void removeDisabledSignatureTest() {
-        Integer externalAccountId = null;
-        Integer signatureId = null;
-        // Meta response = api.removeDisabledSignature(externalAccountId, signatureId);
+        List<Integer> externalAccountIds = null;
+        List<Integer> signatureIds = null;
+        // Meta response = api.removeDisabledSignature(externalAccountIds, signatureIds);
 
         // TODO: test validations
     }

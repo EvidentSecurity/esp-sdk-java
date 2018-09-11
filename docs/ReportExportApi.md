@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="requestFile"></a>
 # **requestFile**
-> ExportedReport requestFile(reportIds, requestedFormat, include, filter)
+> ExportedReport requestFile(reportIds, requestedFormat, filter)
 
 Export all alerts for a set of reports to a file
 
@@ -27,10 +27,9 @@ Export all alerts for a set of reports to a file
 ReportExportApi apiInstance = new ReportExportApi();
 List<Integer> reportIds = Arrays.asList(56); // List<Integer> | An array of report IDs to export alerts for
 String requestedFormat = "requestedFormat_example"; // String | The file format of the export. Valid values are csv, json, pdf
-String include = "include_example"; // String | Related objects that can be included in the response:  user See Including Objects for more information.
 Map<String, String> filter = new HashMap(); // Map<String, String> | Params used to filter the alerts that will be exported
 try {
-    ExportedReport result = apiInstance.requestFile(reportIds, requestedFormat, include, filter);
+    ExportedReport result = apiInstance.requestFile(reportIds, requestedFormat, filter);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ReportExportApi#requestFile");
@@ -44,7 +43,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reportIds** | [**List&lt;Integer&gt;**](Integer.md)| An array of report IDs to export alerts for |
  **requestedFormat** | **String**| The file format of the export. Valid values are csv, json, pdf | [enum: csv, json, pdf]
- **include** | **String**| Related objects that can be included in the response:  user See Including Objects for more information. | [optional]
  **filter** | [**Map&lt;String, String&gt;**](String.md)| Params used to filter the alerts that will be exported | [optional]
 
 ### Return type
@@ -111,7 +109,7 @@ No authorization required
 
 <a name="showFileDetails"></a>
 # **showFileDetails**
-> ExportedReport showFileDetails(id, include)
+> ExportedReport showFileDetails(id)
 
 Show a single Exported Report
 
@@ -126,9 +124,8 @@ The URL provided is temporary and will expire shortly after the request. To down
 
 ReportExportApi apiInstance = new ReportExportApi();
 Integer id = 56; // Integer | Exported Report ID
-String include = "include_example"; // String | Related objects that can be included in the response:  user See Including Objects for more information.
 try {
-    ExportedReport result = apiInstance.showFileDetails(id, include);
+    ExportedReport result = apiInstance.showFileDetails(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ReportExportApi#showFileDetails");
@@ -141,7 +138,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| Exported Report ID |
- **include** | **String**| Related objects that can be included in the response:  user See Including Objects for more information. | [optional]
 
 ### Return type
 

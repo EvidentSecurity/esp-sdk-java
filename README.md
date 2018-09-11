@@ -2,8 +2,6 @@
 [![Gem Version](https://badge.fury.io/rb/esp-sdk-ruby.svg)](http://badge.fury.io/rb/esp-sdk-java)
 
 
-# This project is still a work in progress. Once it is ready for Beta testing, a beta release will be published to Maven Central.
-
 # esp-sdk-java
 
 The Evident Security Platform API (version 2.0) is designed to allow users granular control over their Amazon Web Service security experience by allowing them to review alerts, monitor signatures, and create custom signatures.
@@ -39,7 +37,7 @@ After the client library is installed/deployed, you can use it in your Maven pro
 <dependency>
     <groupId>io.evident</groupId>
     <artifactId>esp-sdk-java</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0.rc1</version>
     <scope>compile</scope>
 </dependency>
 
@@ -456,7 +454,6 @@ Class | Method | HTTP request | Description
 *::ComplianceDomainsApi* | [**show**](docs/ComplianceDomainsApi.md#show) | **GET** api/v2/compliance_domains/{id}.json_api | Show a single Compliance Domain
 *::ComplianceStandardsApi* | [**list**](docs/ComplianceStandardsApi.md#list) | **PUT** api/v2/compliance_standards.json_api | Get a list of Compliance Standards
 *::ComplianceStandardsApi* | [**show**](docs/ComplianceStandardsApi.md#show) | **GET** api/v2/compliance_standards/{id}.json_api | Show a single Compliance Standard
-*::ContactRequestsApi* | [**create**](docs/ContactRequestsApi.md#create) | **POST** api/v2/contact_requests.json_api | Create a(n) Contact Request
 *::CustomComplianceControlsApi* | [**addCustomSignature**](docs/CustomComplianceControlsApi.md#addCustomSignature) | **POST** api/v2/custom_compliance_controls/{custom_compliance_control_id}/custom_signatures.json_api | Add a Custom Signature to a Custom Compliance Control
 *::CustomComplianceControlsApi* | [**addSignature**](docs/CustomComplianceControlsApi.md#addSignature) | **POST** api/v2/custom_compliance_controls/{custom_compliance_control_id}/signatures.json_api | Add a Signature to a Custom Compliance Control
 *::CustomComplianceControlsApi* | [**create**](docs/CustomComplianceControlsApi.md#create) | **POST** api/v2/custom_compliance_controls.json_api | Create a(n) Custom Compliance Control
@@ -493,7 +490,7 @@ Class | Method | HTTP request | Description
 *::CustomSignaturesApi* | [**update**](docs/CustomSignaturesApi.md#update) | **PATCH** api/v2/custom_signatures/{id}.json_api | Update a(n) Custom Signature
 *::ExternalAccountsApi* | [**addComplianceStandard**](docs/ExternalAccountsApi.md#addComplianceStandard) | **POST** api/v2/external_accounts/{external_account_id}/compliance_standards.json_api | Add a compliance standard to an external account
 *::ExternalAccountsApi* | [**addCustomComplianceStandard**](docs/ExternalAccountsApi.md#addCustomComplianceStandard) | **POST** api/v2/external_accounts/{external_account_id}/custom_compliance_standards.json_api | Add a custom compliance standard to an external account
-*::ExternalAccountsApi* | [**addDisabledSignature**](docs/ExternalAccountsApi.md#addDisabledSignature) | **POST** api/v2/external_accounts/{external_account_id}/disabled_signatures.json_api | Disable a signature for an external account
+*::ExternalAccountsApi* | [**addDisabledSignature**](docs/ExternalAccountsApi.md#addDisabledSignature) | **POST** api/v2/external_accounts/disabled_signatures.json_api | Disable a set of signatures for an external account or a set of external accounts for a signature
 *::ExternalAccountsApi* | [**delete**](docs/ExternalAccountsApi.md#delete) | **DELETE** api/v2/external_accounts/{id}.json_api | Delete a(n) External Account
 *::ExternalAccountsApi* | [**list**](docs/ExternalAccountsApi.md#list) | **PUT** api/v2/external_accounts.json_api | Get a list of External Accounts
 *::ExternalAccountsApi* | [**listComplianceStandards**](docs/ExternalAccountsApi.md#listComplianceStandards) | **GET** api/v2/external_accounts/{external_account_id}/compliance_standards.json_api | Get a list of compliance standards for an external account
@@ -501,7 +498,7 @@ Class | Method | HTTP request | Description
 *::ExternalAccountsApi* | [**listDisabledSignatures**](docs/ExternalAccountsApi.md#listDisabledSignatures) | **PUT** api/v2/external_accounts/{external_account_id}/disabled_signatures.json_api | Get a list all the disabled signatures for an external account
 *::ExternalAccountsApi* | [**removeComplianceStandard**](docs/ExternalAccountsApi.md#removeComplianceStandard) | **DELETE** api/v2/external_accounts/{external_account_id}/compliance_standards/{compliance_standard_id}.json_api | Remove a compliance standard from an external account
 *::ExternalAccountsApi* | [**removeCustomComplianceStandard**](docs/ExternalAccountsApi.md#removeCustomComplianceStandard) | **DELETE** api/v2/external_accounts/{external_account_id}/custom_compliance_standards/{custom_compliance_standard_id}.json_api | Remove a custom compliance standard from an external account
-*::ExternalAccountsApi* | [**removeDisabledSignature**](docs/ExternalAccountsApi.md#removeDisabledSignature) | **DELETE** api/v2/external_accounts/{external_account_id}/disabled_signatures/{signature_id}.json_api | Re-enable a signature for an external account
+*::ExternalAccountsApi* | [**removeDisabledSignature**](docs/ExternalAccountsApi.md#removeDisabledSignature) | **DELETE** api/v2/external_accounts/disabled_signatures.json_api | Re-enable a set of signatures for an external account or a set of external accounts for a signature
 *::ExternalAccountsApi* | [**show**](docs/ExternalAccountsApi.md#show) | **GET** api/v2/external_accounts/{id}.json_api | Show a single External Account
 *::ExternalAccountsAmazonApi* | [**create**](docs/ExternalAccountsAmazonApi.md#create) | **POST** api/v2/external_accounts/amazon.json_api | Create an Amazon External Account
 *::ExternalAccountsAmazonApi* | [**show**](docs/ExternalAccountsAmazonApi.md#show) | **GET** api/v2/external_accounts/{external_account_id}/amazon.json_api | Show an Amazon External Account
@@ -559,6 +556,15 @@ Class | Method | HTTP request | Description
 *::ScanIntervalsApi* | [**listForExternalAccount**](docs/ScanIntervalsApi.md#listForExternalAccount) | **GET** api/v2/external_accounts/{external_account_id}/scan_intervals.json_api | Get a list of Scan Intervals
 *::ScanIntervalsApi* | [**show**](docs/ScanIntervalsApi.md#show) | **GET** api/v2/scan_intervals/{id}.json_api | Show a single Scan Interval
 *::ScanIntervalsApi* | [**update**](docs/ScanIntervalsApi.md#update) | **PATCH** api/v2/scan_intervals/{id}.json_api | Update a(n) Scan Interval
+*::ScheduledExportsApi* | [**activateExport**](docs/ScheduledExportsApi.md#activateExport) | **PATCH** api/v2/scheduled_exports/{scheduled_export_id}/activate.json_api | Update a(n) Scheduled Export
+*::ScheduledExportsApi* | [**create**](docs/ScheduledExportsApi.md#create) | **POST** api/v2/scheduled_exports.json_api | Create a(n) Scheduled Export
+*::ScheduledExportsApi* | [**delete**](docs/ScheduledExportsApi.md#delete) | **DELETE** api/v2/scheduled_exports/{id}.json_api | Delete a(n) Scheduled Export
+*::ScheduledExportsApi* | [**disableExport**](docs/ScheduledExportsApi.md#disableExport) | **PATCH** api/v2/scheduled_exports/{scheduled_export_id}/disable.json_api | Update a(n) Scheduled Export
+*::ScheduledExportsApi* | [**list**](docs/ScheduledExportsApi.md#list) | **PUT** api/v2/scheduled_exports.json_api | Get a list of Scheduled Exports
+*::ScheduledExportsApi* | [**show**](docs/ScheduledExportsApi.md#show) | **GET** api/v2/scheduled_exports/{id}.json_api | Show a single Scheduled Export
+*::ScheduledExportsApi* | [**showFileDetails**](docs/ScheduledExportsApi.md#showFileDetails) | **GET** api/v2/reports/scheduled_export/files/{uuid}.json_api | Show a single Scheduled Export Result
+*::ScheduledExportsApi* | [**unsubscribeExport**](docs/ScheduledExportsApi.md#unsubscribeExport) | **PATCH** api/v2/scheduled_exports/{uuid}/unsubscribe.json_api | Update a(n) Scheduled Export
+*::ScheduledExportsApi* | [**update**](docs/ScheduledExportsApi.md#update) | **PATCH** api/v2/scheduled_exports/{id}.json_api | Update a(n) Scheduled Export
 *::ServicesApi* | [**list**](docs/ServicesApi.md#list) | **PUT** api/v2/services.json_api | Get a list of Services
 *::ServicesApi* | [**show**](docs/ServicesApi.md#show) | **GET** api/v2/services/{id}.json_api | Show a single Service
 *::SignaturesApi* | [**list**](docs/SignaturesApi.md#list) | **PUT** api/v2/signatures.json_api | Get a list of Signatures
@@ -594,6 +600,7 @@ Class | Method | HTTP request | Description
 *::SuppressionsApi* | [**deactivate**](docs/SuppressionsApi.md#deactivate) | **PATCH** api/v2/suppressions/{id}/deactivate.json_api | Deactivate a suppression
 *::SuppressionsApi* | [**list**](docs/SuppressionsApi.md#list) | **PUT** api/v2/suppressions.json_api | Get a list of Suppressions
 *::SuppressionsApi* | [**show**](docs/SuppressionsApi.md#show) | **GET** api/v2/suppressions/{id}.json_api | Show a single Suppression
+*::SuppressionsApi* | [**update**](docs/SuppressionsApi.md#update) | **PATCH** api/v2/suppressions/{id}.json_api | Update a(n) Suppression
 *::TagsApi* | [**listForAlert**](docs/TagsApi.md#listForAlert) | **GET** api/v2/alerts/{alert_id}/tags.json_api | Get a list of Tags
 *::TagsApi* | [**show**](docs/TagsApi.md#show) | **GET** api/v2/tags/{id}.json_api | Show a single Tag
 *::TeamsApi* | [**create**](docs/TeamsApi.md#create) | **POST** api/v2/teams.json_api | Create a(n) Team
@@ -623,7 +630,6 @@ Class | Method | HTTP request | Description
  - [::ComplianceControl](docs/ComplianceControl.md)
  - [::ComplianceDomain](docs/ComplianceDomain.md)
  - [::ComplianceStandard](docs/ComplianceStandard.md)
- - [::ContactRequest](docs/ContactRequest.md)
  - [::CustomComplianceControl](docs/CustomComplianceControl.md)
  - [::CustomComplianceDomain](docs/CustomComplianceDomain.md)
  - [::CustomComplianceStandard](docs/CustomComplianceStandard.md)
@@ -653,6 +659,8 @@ Class | Method | HTTP request | Description
  - [::Report](docs/Report.md)
  - [::Role](docs/Role.md)
  - [::ScanInterval](docs/ScanInterval.md)
+ - [::ScheduledExport](docs/ScheduledExport.md)
+ - [::ScheduledExportResult](docs/ScheduledExportResult.md)
  - [::Service](docs/Service.md)
  - [::Signature](docs/Signature.md)
  - [::Stat](docs/Stat.md)

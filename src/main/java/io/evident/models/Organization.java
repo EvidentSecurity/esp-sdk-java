@@ -41,6 +41,9 @@ public class Organization {
   @SerializedName("created_at")
   private DateTime createdAt = null;
 
+  @SerializedName("enable_new_signatures")
+  private Boolean enableNewSignatures = null;
+
   @SerializedName("name")
   private String name = null;
 
@@ -132,6 +135,24 @@ public class Organization {
 
   public void setCreatedAt(DateTime createdAt) {
     this.createdAt = createdAt;
+  }
+
+  public Organization enableNewSignatures(Boolean enableNewSignatures) {
+    this.enableNewSignatures = enableNewSignatures;
+    return this;
+  }
+
+   /**
+   * Whether new signatures should be enabled for all accounts on this organization
+   * @return enableNewSignatures
+  **/
+  @ApiModelProperty(example = "null", value = "Whether new signatures should be enabled for all accounts on this organization")
+  public Boolean getEnableNewSignatures() {
+    return enableNewSignatures;
+  }
+
+  public void setEnableNewSignatures(Boolean enableNewSignatures) {
+    this.enableNewSignatures = enableNewSignatures;
   }
 
   public Organization name(String name) {
@@ -558,6 +579,7 @@ public class Organization {
     Organization organization = (Organization) o;
     return Objects.equals(this.id, organization.id) &&
         Objects.equals(this.createdAt, organization.createdAt) &&
+        Objects.equals(this.enableNewSignatures, organization.enableNewSignatures) &&
         Objects.equals(this.name, organization.name) &&
         Objects.equals(this.requireMfa, organization.requireMfa) &&
         Objects.equals(this.updatedAt, organization.updatedAt) &&
@@ -581,7 +603,7 @@ public class Organization {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, name, requireMfa, updatedAt, subscription, subscriptionId, customSignatures, customSignatureIds, externalAccounts, externalAccountIds, subOrganizations, subOrganizationIds, teams, teamIds, users, userIds, complianceStandards, complianceStandardIds, integrations, integrationIds);
+    return Objects.hash(id, createdAt, enableNewSignatures, name, requireMfa, updatedAt, subscription, subscriptionId, customSignatures, customSignatureIds, externalAccounts, externalAccountIds, subOrganizations, subOrganizationIds, teams, teamIds, users, userIds, complianceStandards, complianceStandardIds, integrations, integrationIds);
   }
 
 
@@ -592,6 +614,7 @@ public class Organization {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    enableNewSignatures: ").append(toIndentedString(enableNewSignatures)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    requireMfa: ").append(toIndentedString(requireMfa)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
