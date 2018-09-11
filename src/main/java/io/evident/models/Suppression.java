@@ -39,6 +39,9 @@ public class Suppression {
   @SerializedName("created_at")
   private DateTime createdAt = null;
 
+  @SerializedName("include_new_accounts")
+  private Boolean includeNewAccounts = null;
+
   @SerializedName("reason")
   private String reason = null;
 
@@ -121,6 +124,24 @@ public class Suppression {
 
   public void setCreatedAt(DateTime createdAt) {
     this.createdAt = createdAt;
+  }
+
+  public Suppression includeNewAccounts(Boolean includeNewAccounts) {
+    this.includeNewAccounts = includeNewAccounts;
+    return this;
+  }
+
+   /**
+   * When enabled, automatically adds new accounts to this suppression. This field can only be set by an organization level user.
+   * @return includeNewAccounts
+  **/
+  @ApiModelProperty(example = "null", value = "When enabled, automatically adds new accounts to this suppression. This field can only be set by an organization level user.")
+  public Boolean getIncludeNewAccounts() {
+    return includeNewAccounts;
+  }
+
+  public void setIncludeNewAccounts(Boolean includeNewAccounts) {
+    this.includeNewAccounts = includeNewAccounts;
   }
 
   public Suppression reason(String reason) {
@@ -463,6 +484,7 @@ public class Suppression {
     Suppression suppression = (Suppression) o;
     return Objects.equals(this.id, suppression.id) &&
         Objects.equals(this.createdAt, suppression.createdAt) &&
+        Objects.equals(this.includeNewAccounts, suppression.includeNewAccounts) &&
         Objects.equals(this.reason, suppression.reason) &&
         Objects.equals(this.resource, suppression.resource) &&
         Objects.equals(this.status, suppression.status) &&
@@ -483,7 +505,7 @@ public class Suppression {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, reason, resource, status, updatedAt, organization, organizationId, createdBy, createdById, regions, regionIds, externalAccounts, externalAccountIds, signatures, signatureIds, customSignatures, customSignatureIds);
+    return Objects.hash(id, createdAt, includeNewAccounts, reason, resource, status, updatedAt, organization, organizationId, createdBy, createdById, regions, regionIds, externalAccounts, externalAccountIds, signatures, signatureIds, customSignatures, customSignatureIds);
   }
 
 
@@ -494,6 +516,7 @@ public class Suppression {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    includeNewAccounts: ").append(toIndentedString(includeNewAccounts)).append("\n");
     sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("    resource: ").append(toIndentedString(resource)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");

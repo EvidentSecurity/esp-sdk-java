@@ -31,8 +31,11 @@ public class ExportedReport {
   @SerializedName("id")
   private Integer id = null;
 
-  @SerializedName("user_id")
-  private Integer userId = null;
+  @SerializedName("recipient_id")
+  private Integer recipientId = null;
+
+  @SerializedName("recipient_type")
+  private String recipientType = null;
 
   @SerializedName("report_ids")
   private List<Integer> reportIds = new ArrayList<Integer>();
@@ -55,8 +58,8 @@ public class ExportedReport {
   @SerializedName("updated_at")
   private DateTime updatedAt = null;
 
-  @SerializedName("user")
-  private User user = null;
+  @SerializedName("recipient")
+  private User recipient = null;
 
   public ExportedReport id(Integer id) {
     this.id = id;
@@ -76,22 +79,40 @@ public class ExportedReport {
     this.id = id;
   }
 
-  public ExportedReport userId(Integer userId) {
-    this.userId = userId;
+  public ExportedReport recipientId(Integer recipientId) {
+    this.recipientId = recipientId;
     return this;
   }
 
    /**
-   * Associated User ID
-   * @return userId
+   * Associated Recipient ID
+   * @return recipientId
   **/
-  @ApiModelProperty(example = "null", value = "Associated User ID")
-  public Integer getUserId() {
-    return userId;
+  @ApiModelProperty(example = "null", value = "Associated Recipient ID")
+  public Integer getRecipientId() {
+    return recipientId;
   }
 
-  public void setUserId(Integer userId) {
-    this.userId = userId;
+  public void setRecipientId(Integer recipientId) {
+    this.recipientId = recipientId;
+  }
+
+  public ExportedReport recipientType(String recipientType) {
+    this.recipientType = recipientType;
+    return this;
+  }
+
+   /**
+   * Polymorphic recipient type. Valid values are User, ScheduledExportResult
+   * @return recipientType
+  **/
+  @ApiModelProperty(example = "null", value = "Polymorphic recipient type. Valid values are User, ScheduledExportResult")
+  public String getRecipientType() {
+    return recipientType;
+  }
+
+  public void setRecipientType(String recipientType) {
+    this.recipientType = recipientType;
   }
 
   public ExportedReport reportIds(List<Integer> reportIds) {
@@ -225,22 +246,22 @@ public class ExportedReport {
     this.updatedAt = updatedAt;
   }
 
-  public ExportedReport user(User user) {
-    this.user = user;
+  public ExportedReport recipient(User recipient) {
+    this.recipient = recipient;
     return this;
   }
 
    /**
-   * Associated User
-   * @return user
+   * Associated Recipient
+   * @return recipient
   **/
-  @ApiModelProperty(example = "null", value = "Associated User")
-  public User getUser() {
-    return user;
+  @ApiModelProperty(example = "null", value = "Associated Recipient")
+  public User getRecipient() {
+    return recipient;
   }
 
-  public void setUser(User user) {
-    this.user = user;
+  public void setRecipient(User recipient) {
+    this.recipient = recipient;
   }
 
 
@@ -254,7 +275,8 @@ public class ExportedReport {
     }
     ExportedReport exportedReport = (ExportedReport) o;
     return Objects.equals(this.id, exportedReport.id) &&
-        Objects.equals(this.userId, exportedReport.userId) &&
+        Objects.equals(this.recipientId, exportedReport.recipientId) &&
+        Objects.equals(this.recipientType, exportedReport.recipientType) &&
         Objects.equals(this.reportIds, exportedReport.reportIds) &&
         Objects.equals(this.format, exportedReport.format) &&
         Objects.equals(this.url, exportedReport.url) &&
@@ -262,12 +284,12 @@ public class ExportedReport {
         Objects.equals(this.filter, exportedReport.filter) &&
         Objects.equals(this.createdAt, exportedReport.createdAt) &&
         Objects.equals(this.updatedAt, exportedReport.updatedAt) &&
-        Objects.equals(this.user, exportedReport.user);
+        Objects.equals(this.recipient, exportedReport.recipient);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, userId, reportIds, format, url, fileName, filter, createdAt, updatedAt, user);
+    return Objects.hash(id, recipientId, recipientType, reportIds, format, url, fileName, filter, createdAt, updatedAt, recipient);
   }
 
 
@@ -277,7 +299,8 @@ public class ExportedReport {
     sb.append("class ExportedReport {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+    sb.append("    recipientId: ").append(toIndentedString(recipientId)).append("\n");
+    sb.append("    recipientType: ").append(toIndentedString(recipientType)).append("\n");
     sb.append("    reportIds: ").append(toIndentedString(reportIds)).append("\n");
     sb.append("    format: ").append(toIndentedString(format)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
@@ -285,7 +308,7 @@ public class ExportedReport {
     sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
-    sb.append("    user: ").append(toIndentedString(user)).append("\n");
+    sb.append("    recipient: ").append(toIndentedString(recipient)).append("\n");
     sb.append("}");
     return sb.toString();
   }

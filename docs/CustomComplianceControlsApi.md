@@ -34,7 +34,7 @@ Add a Custom Signature to a Custom Compliance Control
 CustomComplianceControlsApi apiInstance = new CustomComplianceControlsApi();
 Integer customComplianceControlId = 56; // Integer | The ID of the Custom Compliance Control this custom signature belongs to
 Integer customSignatureId = 56; // Integer | The ID of the custom signature that belongs to this custom control
-String include = "include_example"; // String | Related objects that can be included in the response:  organization, teams, external_accounts, definitions, suppressions See Including Objects for more information.
+String include = "include_example"; // String | Related objects that can be included in the response:  organization, teams, external_accounts, definitions, suppressions, service See Including Objects for more information.
 try {
     CustomSignature result = apiInstance.addCustomSignature(customComplianceControlId, customSignatureId, include);
     System.out.println(result);
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customComplianceControlId** | **Integer**| The ID of the Custom Compliance Control this custom signature belongs to |
  **customSignatureId** | **Integer**| The ID of the custom signature that belongs to this custom control |
- **include** | **String**| Related objects that can be included in the response:  organization, teams, external_accounts, definitions, suppressions See Including Objects for more information. | [optional]
+ **include** | **String**| Related objects that can be included in the response:  organization, teams, external_accounts, definitions, suppressions, service See Including Objects for more information. | [optional]
 
 ### Return type
 
@@ -235,7 +235,7 @@ Get a list of Custom Signatures for a Custom Compliance Control
 
 CustomComplianceControlsApi apiInstance = new CustomComplianceControlsApi();
 Integer customComplianceControlId = 56; // Integer | The ID of the Custom Compliance Control this custom signature belongs to
-String include = "include_example"; // String | Related objects that can be included in the response:  organization, teams, external_accounts, definitions, suppressions See Including Objects for more information.
+String include = "include_example"; // String | Related objects that can be included in the response:  organization, teams, external_accounts, definitions, suppressions, service See Including Objects for more information.
 String page = "{:number=>1,+:size=>20}"; // String | Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page.
 try {
     PaginatedCollection result = apiInstance.listCustomSignatures(customComplianceControlId, include, page);
@@ -251,7 +251,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customComplianceControlId** | **Integer**| The ID of the Custom Compliance Control this custom signature belongs to |
- **include** | **String**| Related objects that can be included in the response:  organization, teams, external_accounts, definitions, suppressions See Including Objects for more information. | [optional]
+ **include** | **String**| Related objects that can be included in the response:  organization, teams, external_accounts, definitions, suppressions, service See Including Objects for more information. | [optional]
  **page** | **String**| Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page. | [optional] [default to {:number&#x3D;&gt;1,+:size&#x3D;&gt;20}]
 
 ### Return type

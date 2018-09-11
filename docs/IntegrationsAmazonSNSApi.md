@@ -30,7 +30,7 @@ List<Integer> externalAccountIds = Arrays.asList(56); // List<Integer> | Externa
 String externalId = "externalId_example"; // String | The external ID for the IAM role
 String name = "name_example"; // String | Name of the integration
 String topic = "topic_example"; // String | The SNS topic arn
-String include = "include_example"; // String | Related objects that can be included in the response:  region, integration See Including Objects for more information.
+String include = "include_example"; // String | Related objects that can be included in the response:  integration See Including Objects for more information.
 Boolean allHighRisk = true; // Boolean | Send all high risk alerts
 Boolean allLowRisk = true; // Boolean | Send all low risk alerts
 Boolean allMediumRisk = true; // Boolean | Send all medium risk alerts
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
  **externalId** | **String**| The external ID for the IAM role |
  **name** | **String**| Name of the integration |
  **topic** | **String**| The SNS topic arn |
- **include** | **String**| Related objects that can be included in the response:  region, integration See Including Objects for more information. | [optional]
+ **include** | **String**| Related objects that can be included in the response:  integration See Including Objects for more information. | [optional]
  **allHighRisk** | **Boolean**| Send all high risk alerts | [optional]
  **allLowRisk** | **Boolean**| Send all low risk alerts | [optional]
  **allMediumRisk** | **Boolean**| Send all medium risk alerts | [optional]
@@ -97,7 +97,7 @@ Show a single Amazon SNS Integration
 
 IntegrationsAmazonSNSApi apiInstance = new IntegrationsAmazonSNSApi();
 Integer integrationId = 56; // Integer | The ID of the integration
-String include = "include_example"; // String | Related objects that can be included in the response:  region, integration See Including Objects for more information.
+String include = "include_example"; // String | Related objects that can be included in the response:  integration See Including Objects for more information.
 try {
     IntegrationAmazonSns result = apiInstance.show(integrationId, include);
     System.out.println(result);
@@ -112,7 +112,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **integrationId** | **Integer**| The ID of the integration |
- **include** | **String**| Related objects that can be included in the response:  region, integration See Including Objects for more information. | [optional]
+ **include** | **String**| Related objects that can be included in the response:  integration See Including Objects for more information. | [optional]
 
 ### Return type
 
@@ -144,7 +144,7 @@ Update an Amazon SNS Integration
 
 IntegrationsAmazonSNSApi apiInstance = new IntegrationsAmazonSNSApi();
 Integer integrationId = 56; // Integer | The ID of the integration
-String include = "include_example"; // String | Related objects that can be included in the response:  region, integration See Including Objects for more information.
+String include = "include_example"; // String | Related objects that can be included in the response:  integration See Including Objects for more information.
 Boolean allHighRisk = true; // Boolean | Send all high risk alerts
 Boolean allLowRisk = true; // Boolean | Send all low risk alerts
 Boolean allMediumRisk = true; // Boolean | Send all medium risk alerts
@@ -172,7 +172,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **integrationId** | **Integer**| The ID of the integration |
- **include** | **String**| Related objects that can be included in the response:  region, integration See Including Objects for more information. | [optional]
+ **include** | **String**| Related objects that can be included in the response:  integration See Including Objects for more information. | [optional]
  **allHighRisk** | **Boolean**| Send all high risk alerts | [optional]
  **allLowRisk** | **Boolean**| Send all low risk alerts | [optional]
  **allMediumRisk** | **Boolean**| Send all medium risk alerts | [optional]

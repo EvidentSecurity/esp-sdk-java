@@ -26,7 +26,7 @@ public interface CustomComplianceControlsApi {
    * 
    * @param customComplianceControlId The ID of the Custom Compliance Control this custom signature belongs to (required)
    * @param customSignatureId The ID of the custom signature that belongs to this custom control (required)
-   * @param include Related objects that can be included in the response:  organization, teams, external_accounts, definitions, suppressions See Including Objects for more information. (optional)
+   * @param include Related objects that can be included in the response:  organization, teams, external_accounts, definitions, suppressions, service See Including Objects for more information. (optional)
    * @return Call&lt;CustomSignature&gt;
    */
   
@@ -90,7 +90,7 @@ public interface CustomComplianceControlsApi {
    * Get a list of Custom Signatures for a Custom Compliance Control
    * 
    * @param customComplianceControlId The ID of the Custom Compliance Control this custom signature belongs to (required)
-   * @param include Related objects that can be included in the response:  organization, teams, external_accounts, definitions, suppressions See Including Objects for more information. (optional)
+   * @param include Related objects that can be included in the response:  organization, teams, external_accounts, definitions, suppressions, service See Including Objects for more information. (optional)
    * @param page Page Number and Page Size.  Number is the page number of the collection to return, size is the number of items to return per page. (optional, default to {:number=>1,+:size=>20})
    * @return Call&lt;PaginatedCollection&gt;
    */

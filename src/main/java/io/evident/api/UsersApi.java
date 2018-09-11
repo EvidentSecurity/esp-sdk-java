@@ -26,6 +26,7 @@ public interface UsersApi {
    * @param firstName The first name of the user (required)
    * @param lastName The last name of the user (required)
    * @param include Related objects that can be included in the response:  organization, sub_organizations, teams, role See Including Objects for more information. (optional)
+   * @param accessLevel The level of access this user has. Team access has access to items belonging only to that team. Sub Organization access has access to items belonging only to all teams under that sub organization. Organization access has access to all sub organizations and teams under that organization. Valid values are organization_level, sub_organization_level, team_level (optional)
    * @param disableDailyEmails Specifies whether the daily emails should be turned off or not (optional)
    * @param phone The phone number of the user (optional)
    * @param roleId The ID of the role of the user. Only a manager can set or modify the role id. (optional)
@@ -38,7 +39,7 @@ public interface UsersApi {
   @retrofit2.http.FormUrlEncoded
   @POST("api/v2/users.json_api")
   Call<User> create(
-    @retrofit2.http.Field("email") String email, @retrofit2.http.Field("first_name") String firstName, @retrofit2.http.Field("last_name") String lastName, @retrofit2.http.Query("include") String include, @retrofit2.http.Field("disable_daily_emails") Boolean disableDailyEmails, @retrofit2.http.Field("phone") String phone, @retrofit2.http.Field("role_id") Integer roleId, @retrofit2.http.Field("sub_organization_ids") List<Integer> subOrganizationIds, @retrofit2.http.Field("team_ids") List<Integer> teamIds, @retrofit2.http.Field("time_zone") String timeZone
+    @retrofit2.http.Field("email") String email, @retrofit2.http.Field("first_name") String firstName, @retrofit2.http.Field("last_name") String lastName, @retrofit2.http.Query("include") String include, @retrofit2.http.Field("access_level") String accessLevel, @retrofit2.http.Field("disable_daily_emails") Boolean disableDailyEmails, @retrofit2.http.Field("phone") String phone, @retrofit2.http.Field("role_id") Integer roleId, @retrofit2.http.Field("sub_organization_ids") List<Integer> subOrganizationIds, @retrofit2.http.Field("team_ids") List<Integer> teamIds, @retrofit2.http.Field("time_zone") String timeZone
   );
 
   /**
@@ -91,6 +92,7 @@ public interface UsersApi {
    * 
    * @param id User ID (required)
    * @param include Related objects that can be included in the response:  organization, sub_organizations, teams, role See Including Objects for more information. (optional)
+   * @param accessLevel The level of access this user has. Team access has access to items belonging only to that team. Sub Organization access has access to items belonging only to all teams under that sub organization. Organization access has access to all sub organizations and teams under that organization. Valid values are organization_level, sub_organization_level, team_level (optional)
    * @param disableDailyEmails Specifies whether the daily emails should be turned off or not (optional)
    * @param firstName The first name of the user (optional)
    * @param lastName The last name of the user (optional)
@@ -105,7 +107,7 @@ public interface UsersApi {
   @retrofit2.http.FormUrlEncoded
   @PATCH("api/v2/users/{id}.json_api")
   Call<User> update(
-    @retrofit2.http.Path("id") Integer id, @retrofit2.http.Query("include") String include, @retrofit2.http.Field("disable_daily_emails") Boolean disableDailyEmails, @retrofit2.http.Field("first_name") String firstName, @retrofit2.http.Field("last_name") String lastName, @retrofit2.http.Field("phone") String phone, @retrofit2.http.Field("role_id") Integer roleId, @retrofit2.http.Field("sub_organization_ids") List<Integer> subOrganizationIds, @retrofit2.http.Field("team_ids") List<Integer> teamIds, @retrofit2.http.Field("time_zone") String timeZone
+    @retrofit2.http.Path("id") Integer id, @retrofit2.http.Query("include") String include, @retrofit2.http.Field("access_level") String accessLevel, @retrofit2.http.Field("disable_daily_emails") Boolean disableDailyEmails, @retrofit2.http.Field("first_name") String firstName, @retrofit2.http.Field("last_name") String lastName, @retrofit2.http.Field("phone") String phone, @retrofit2.http.Field("role_id") Integer roleId, @retrofit2.http.Field("sub_organization_ids") List<Integer> subOrganizationIds, @retrofit2.http.Field("team_ids") List<Integer> teamIds, @retrofit2.http.Field("time_zone") String timeZone
   );
 
 }

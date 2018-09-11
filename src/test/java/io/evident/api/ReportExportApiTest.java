@@ -33,9 +33,8 @@ public class ReportExportApiTest {
     public void requestFileTest() {
         List<Integer> reportIds = null;
         String requestedFormat = null;
-        String include = null;
         Map<String, String> filter = null;
-        // ExportedReport response = api.requestFile(reportIds, requestedFormat, include, filter);
+        // ExportedReport response = api.requestFile(reportIds, requestedFormat, filter);
 
         // TODO: test validations
     }
@@ -63,8 +62,7 @@ public class ReportExportApiTest {
     @Test
     public void showFileDetailsTest() {
         Integer id = null;
-        String include = null;
-        // ExportedReport response = api.showFileDetails(id, include);
+        // ExportedReport response = api.showFileDetails(id);
 
         // TODO: test validations
     }

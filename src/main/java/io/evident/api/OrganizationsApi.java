@@ -69,6 +69,7 @@ public interface OrganizationsApi {
    * 
    * @param id Organization ID (required)
    * @param include Related objects that can be included in the response:  subscription, custom_signatures, external_accounts, sub_organizations, teams, users, compliance_standards, integrations See Including Objects for more information. (optional)
+   * @param enableNewSignatures Whether new signatures should be enabled for all accounts on this organization (optional)
    * @param name Name of the organization (optional)
    * @param requireMfa Whether or not users for this organization are required to enable Multi Factor Authentication (optional)
    * @return Call&lt;Organization&gt;
@@ -77,7 +78,7 @@ public interface OrganizationsApi {
   @retrofit2.http.FormUrlEncoded
   @PATCH("api/v2/organizations/{id}.json_api")
   Call<Organization> update(
-    @retrofit2.http.Path("id") Integer id, @retrofit2.http.Query("include") String include, @retrofit2.http.Field("name") String name, @retrofit2.http.Field("require_mfa") Boolean requireMfa
+    @retrofit2.http.Path("id") Integer id, @retrofit2.http.Query("include") String include, @retrofit2.http.Field("enable_new_signatures") Boolean enableNewSignatures, @retrofit2.http.Field("name") String name, @retrofit2.http.Field("require_mfa") Boolean requireMfa
   );
 
 }

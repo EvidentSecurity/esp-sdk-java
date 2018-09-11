@@ -36,9 +36,10 @@ public class SuppressionsApiTest {
         List<String> regions = null;
         String include = null;
         List<Integer> customSignatureIds = null;
+        Boolean includeNewAccounts = null;
         String resource = null;
         List<Integer> signatureIds = null;
-        // Suppression response = api.create(externalAccountIds, reason, regions, include, customSignatureIds, resource, signatureIds);
+        // Suppression response = api.create(externalAccountIds, reason, regions, include, customSignatureIds, includeNewAccounts, resource, signatureIds);
 
         // TODO: test validations
     }
@@ -50,9 +51,10 @@ public class SuppressionsApiTest {
      */
     @Test
     public void createFromAlertTest() {
+        Integer alertId = null;
         String reason = null;
         String include = null;
-        // Suppression response = api.createFromAlert(reason, include);
+        // Suppression response = api.createFromAlert(alertId, reason, include);
 
         // TODO: test validations
     }
@@ -96,6 +98,27 @@ public class SuppressionsApiTest {
         Integer id = null;
         String include = null;
         // Suppression response = api.show(id, include);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Update a(n) Suppression
+     *
+     * 
+     */
+    @Test
+    public void updateTest() {
+        Integer id = null;
+        String include = null;
+        List<Integer> customSignatureIds = null;
+        List<Integer> externalAccountIds = null;
+        Boolean includeNewAccounts = null;
+        String reason = null;
+        List<String> regions = null;
+        String resource = null;
+        List<Integer> signatureIds = null;
+        // Suppression response = api.update(id, include, customSignatureIds, externalAccountIds, includeNewAccounts, reason, regions, resource, signatureIds);
 
         // TODO: test validations
     }
